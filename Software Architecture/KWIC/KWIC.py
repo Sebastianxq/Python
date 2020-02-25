@@ -51,8 +51,14 @@ def readAndSortFile():
 
 		# Sorting list in case-insensitive manner
 		finalSort = sorted(premutationList, key = lambda s: s[0][0][0].casefold()) 
+
+		#Converts list into a string sentence
+		tempString = ""
 		for i in finalSort:
-			print(i)
+			for word in i:
+				tempString+=word + " "
+			print(tempString)
+			tempString=""
 
 def main():
 	readAndSortFile()
