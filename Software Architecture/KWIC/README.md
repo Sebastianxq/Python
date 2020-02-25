@@ -19,3 +19,8 @@ This script can be run from the command line and, although I haven't explicitly 
 
 # Additional
 Initially I drafted a algorithm that generated all combinations of each word in the line, this algorithm wasn't a requirement but I misinterpreted the prompt and decided I might as well leave it in here since I already created and debugged it. 
+
+
+
+# TO DO
+1. Add missing file error check
