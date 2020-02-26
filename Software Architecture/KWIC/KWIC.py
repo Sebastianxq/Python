@@ -1,35 +1,21 @@
 #!/usr/bin/python3
 
 def premutation(fileLine):
-
 	if (len(fileLine)==1):	
 		return [fileLine]
-
-	
 	premutationList = []
-
-	#generates premutations
-	for i in range(len(fileLine)): 
+	for i in range(len(fileLine)):					# generates premutations
 		temp = fileLine[i] 
-		
-		# remaining list 
-		remainingWords = fileLine[:i] + fileLine[i+1:] 
-		
+		remainingWords = fileLine[:i] + fileLine[i+1:]  	# remaining list 
 		for p in premutation(remainingWords): 
 			premutationList.append([temp] + p) 
-
 	return premutationList
 
 def circulatShift(fileLine):
 	premutationList = []
-	
-	#generate premutations
-	for i in range(len(fileLine)): 
-
-		#generates all cyclic possibilies
-		combined = fileLine[i:]+fileLine[:i]
+	for i in range(len(fileLine)): 					# generate premutations
+		combined = fileLine[i:]+fileLine[:i] 			# generates all cyclic possibilies
 		premutationList.append(combined)
-
 	return premutationList
 
 def readAndSortFile():
@@ -37,24 +23,13 @@ def readAndSortFile():
 	try:
 		with open(filepath) as fileReader:
 			line = fileReader.readline()
-
 			premutationList = []
-
-			#iterates through file line by line
-			while line:
+			while line: 					#iterates through file line by line
 				wordArr = line.split()
-
-				#appends premuations to the list
-				premutationList+=circulatShift(wordArr)
-
-				#prepare next line
-				line = fileReader.readline()
-
-			# Sorting list in case-insensitive manner
+				premutationList+=circulatShift(wordArr) #appends premuations to the list
+				line = fileReader.readline() 		#prepare next line
 			finalSort = sorted(premutationList, key = lambda s: s[0][0][0].casefold()) 
-
-			#Converts list into a string sentence
-			tempString = ""
+			tempString = "" 				#Converts list into a string sentence
 			for i in finalSort:
 				for word in i:
 					tempString+=word + " "
@@ -62,8 +37,9 @@ def readAndSortFile():
 				tempString=""
 	except FileNotFoundError:
 		print("The file specified does not exist, please try again")
+		
 def main():
 	readAndSortFile()
-
+	
 if __name__== "__main__":
   main()
