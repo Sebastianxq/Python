@@ -22,5 +22,3 @@ Initially I drafted a algorithm that generated all combinations of each word in 
 
 
 
-# TO DO
-1. Add missing file error check
