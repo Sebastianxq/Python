@@ -34,32 +34,34 @@ def circulatShift(fileLine):
 
 def readAndSortFile():
 	filepath = input("What is the name of your file? ") 
-	with open(filepath) as fileReader:
-		line = fileReader.readline()
-
-		premutationList = []
-
-		#iterates through file line by line
-		while line:
-			wordArr = line.split()
-			
-			#appends premuations to the list
-			premutationList+=circulatShift(wordArr)
-	
-			#prepare next line
+	try:
+		with open(filepath) as fileReader:
 			line = fileReader.readline()
 
-		# Sorting list in case-insensitive manner
-		finalSort = sorted(premutationList, key = lambda s: s[0][0][0].casefold()) 
+			premutationList = []
 
-		#Converts list into a string sentence
-		tempString = ""
-		for i in finalSort:
-			for word in i:
-				tempString+=word + " "
-			print(tempString)
-			tempString=""
+			#iterates through file line by line
+			while line:
+				wordArr = line.split()
 
+				#appends premuations to the list
+				premutationList+=circulatShift(wordArr)
+
+				#prepare next line
+				line = fileReader.readline()
+
+			# Sorting list in case-insensitive manner
+			finalSort = sorted(premutationList, key = lambda s: s[0][0][0].casefold()) 
+
+			#Converts list into a string sentence
+			tempString = ""
+			for i in finalSort:
+				for word in i:
+					tempString+=word + " "
+				print(tempString)
+				tempString=""
+	except FileNotFoundError:
+		print("The file specified does not exist, please try again")
 def main():
 	readAndSortFile()
 
