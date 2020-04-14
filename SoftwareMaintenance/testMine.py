@@ -1,3 +1,4 @@
+#Test file to get the hang of the pydriller library, pulls the commits from this repo and then returns the LOC, lines added/removed and the complexity of each commit. Self explanatory code tbh
 from pydriller import RepositoryMining
 
 project_url = 'https://github.com/Sebastianxq/python.git'
