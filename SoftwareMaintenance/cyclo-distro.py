@@ -10,8 +10,10 @@
 
 from pydriller import RepositoryMining
 
-#project_url = 'https://github.com/NationalSecurityAgency/ghidra.git'
-project_url = 'https://github.com/Sebastianxq/python.git'
+project_url = 'https://github.com/NationalSecurityAgency/ghidra.git'
+
+#Used for debugging since the actual repo is WAY too big hehe
+#project_url = 'https://github.com/Sebastianxq/python.git'
 
 
 #Give a distribution of complexity based on overall
@@ -20,11 +22,11 @@ count = 0
 avgLinesOfCode=0
 CommitList = []
 
-with open("csvTest.csv",'w') as myfile:
+with open("ghidra.csv",'w') as myfile:
 	for commit in RepositoryMining(project_url).traverse_commits():
 		for m in commit.modifications:
 			commitInfo = "author "+ commit.author.name+",hash "+ commit.hash+ ",complexity,"+ str(m.complexity)+"\n"
-			print(commitInfo)
+			#print(commitInfo)
 			myfile.write(commitInfo)
 		count+=1
 
