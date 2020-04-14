@@ -23,7 +23,7 @@ CommitList = []
 with open("csvTest.csv",'w') as myfile:
 	for commit in RepositoryMining(project_url).traverse_commits():
 		for m in commit.modifications:
-			commitInfo = "author "+ commit.author.name+",hash "+ commit.hash+ ",complexity,"+ str(m.complexity)
+			commitInfo = "author "+ commit.author.name+",hash "+ commit.hash+ ",complexity,"+ str(m.complexity)+"\n"
 			print(commitInfo)
 			myfile.write(commitInfo)
 		count+=1
