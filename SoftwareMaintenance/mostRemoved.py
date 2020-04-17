@@ -17,37 +17,37 @@
 
 from pydriller import RepositoryMining
 
-#project_url = 'https://github.com/NationalSecurityAgency/ghidra.git'
+project_url = 'https://github.com/NationalSecurityAgency/ghidra.git'
 
 #Used for debugging since the actual repo is WAY too big hehe
-project_url = 'https://github.com/Sebastianxq/python.git'
+#project_url = 'https://github.com/Sebastianxq/python.git'
 
-
-avgLinesOfCode=0
 users = {}
-
-#syntax
-#dict.update(newkey = 'value')
-count = 0
 
 
 for commit in RepositoryMining(project_url).traverse_commits():
 	for m in commit.modifications:
-		count += m.added
 		if (commit.author.name not in users):
-			print("only here once")
-			print (commit.author.name)
-			name = str(commit.author.name)
-			linesAdded = m.added
-			userAdd = {commit.author.name: m.added}
-			users.update(userAdd)
+			userEntry = {commit.author.name: m.removed}
+			users.update(userEntry)
 		else:
 			temp = users[commit.author.name]
-			temp += m.added
+			temp += m.removed
 			users[commit.author.name] = temp
 			
-		
-print("done with loop")
-print(users)
-print("count is: ",count)
+lowScore = 0
+winningUser = ""
+for key in users:
+	if(lowScore < users[key]):
+		winningUser = key
+		lowScore = users[key]
 
+print(winningUser," has removed a total of ", lowScore, "lines of code")
+
+highScore = 0
+for commit in RepositoryMining(project_url).traverse_commits():
+	for m in commit.modifications:
+		if (commit.author.name == winningUser):
+			highScore += m.added
+
+print(winningUser," has added a total of ", highScore, "lines of code")
