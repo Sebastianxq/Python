@@ -13,6 +13,11 @@ def sendAndReceive(msg, currSock):
 	msgReturn = currSock.recv(1024)
 	print(msgReturn.decode()+'\n')
 
+def convertTob64(word):
+	byteForm = word.encode('ascii') #encodes word in bytes
+	b64Bytes = base64.b64encode(byteForm) #encodes bytes into b64
+	return b64Bytes.decode('ascii') #returns b64 as a str
+
 first = sock.recv(1024)
 first.decode()
 print(first.decode())
@@ -31,13 +36,17 @@ auth = ('auth login\r\n')
 sendAndReceive(auth,secSock)
 
 #send username in already formatted b64
-print("send username")
-use = ("B64_ACCOUNTNAME_HERE \r\n")
+#print("send username") DEBUG
+username = "GMAIL_HERE@gmail.com"
+b64Username = convertTob64(username)
+use = (b64Username+" \r\n")
 sendAndReceive(use,secSock)
 
 #send password in already formatted b64
-print("send pw")
-pw = ("B64_PASSWORD_HERE \r\n")
+#print("send pw") DEBUG
+password = "PASSWORD_HERE"
+b64Password = convertTob64(password)
+pw = (b64Password + " \r\n")
 sendAndReceive(pw,secSock)
 
 
@@ -46,7 +55,7 @@ fwd = "mail from: <GMAIL_HERE@gmail.com>\r\n"
 sendAndReceive(fwd,secSock)
 
 #Recipient Info
-rcpt = "rcpt to: <UTEP_HERE@miners.utep.edu>\r\n"
+rcpt = "rcpt to: <RECIPIENT@mail.com>\r\n"
 sendAndReceive(rcpt,secSock)
 
 #Begin mail
@@ -54,5 +63,5 @@ dataReq = "data\r\n"
 sendAndReceive(dataReq,secSock)
 
 #Mail contents
-email = 'subject: Testing google python script\r\n' + 'This is a scripted email\r\n' + '.\r\n'
+email = 'subject: Testing google python script\r\n' + 'This is a scripted emai with fixed b64\r\n' + '.\r\n'
 sendAndReceive(email,secSock)
