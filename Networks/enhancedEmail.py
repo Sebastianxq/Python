@@ -33,7 +33,7 @@ sendAndReceive(sender)
 
 #send mail TO request
 print("sending mail TO addr\n")
-recipient = 'rcpt to: sebastianq1290@gmail.com\r\n'
+recipient = 'rcpt to: dktosh.utep@gmail.com\r\n'
 sendAndReceive(recipient)
 
 #send data request
@@ -44,7 +44,7 @@ sendAndReceive(dataReq)
 
 #email contents 
 print("sending subject line\n")
-subject = 'subject: Testing smtp python script\r\n' + 'This is a scripted email\r\n' + '.\r\n'
+subject = 'subject: Email from my email Client\r\n\r\n' +'\n'+ 'This is a test email from my own email client. Hot it finds you well. -Quinones Sebastian\r\n' + '.\r\n'
 sendAndReceive(subject)
 
 clientSocket.close()
