@@ -27,13 +27,13 @@ sendAndReceive(helo)
 
 #send mail FROM request
 print("sending mail FROM addr\n")
-sender = 'mail from: sxquinones@utep.edu\r\n'
+sender = 'mail from: UTEP_EMAIL@utep.edu\r\n'
 sendAndReceive(sender)
 
 
 #send mail TO request
 print("sending mail TO addr\n")
-recipient = 'rcpt to: dktosh.utep@gmail.com\r\n'
+recipient = 'rcpt to: RECIPIENT@PROVIDER.com\r\n'
 sendAndReceive(recipient)
 
 #send data request
