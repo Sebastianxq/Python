@@ -37,25 +37,28 @@ sendAndReceive(auth,secSock)
 
 #send username in already formatted b64
 #print("send username") DEBUG
-username = "GMAIL_HERE@gmail.com"
+username = input("Enter Your Gmail:")
+#username = "GMAIL_HERE@gmail.com"
 b64Username = convertTob64(username)
 use = (b64Username+" \r\n")
 sendAndReceive(use,secSock)
 
 #send password in already formatted b64
 #print("send pw") DEBUG
-password = "PASSWORD_HERE"
+password = input("Enter your password:")
+#password = "PASSWORD_HERE"
 b64Password = convertTob64(password)
 pw = (b64Password + " \r\n")
 sendAndReceive(pw,secSock)
 
 
 #Sender info
-fwd = "mail from: <GMAIL_HERE@gmail.com>\r\n"
+fwd = "mail from: <"+username+">\r\n"
 sendAndReceive(fwd,secSock)
 
 #Recipient Info
-rcpt = "rcpt to: <RECIPIENT@mail.com>\r\n"
+recip = input("Who would you like to send the email to?")
+rcpt = "rcpt to: <"+recip+">\r\n"
 sendAndReceive(rcpt,secSock)
 
 #Begin mail
