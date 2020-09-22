@@ -1,0 +1,20 @@
+Steps for command line google
+
+openssl s_client -starttls smtp  -connect smtp-relay.gmail.com:587
+openssl s_client -starttls smtp  -connect smtp.gmail.com:587
+helo smtp.gmail.com
+auth login
+username (in b64) FOO
+password (in b64) BAR
+mail from: <FOO@gmail.com>
+rcpt to: <BAR@miners.utep.edu>
+data
+subject: Test1
+
+This is a test from openssl
+.
+
+from here I should have free access to do whatever?
+
+
+CLoses at auth login because gmail thinks im sending in junk
