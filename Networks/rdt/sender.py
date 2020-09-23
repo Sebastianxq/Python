@@ -45,14 +45,30 @@ def send_snw(sock):
     pkt = packet.make(seq, "END".encode())
     udt.send(pkt, sock, RECEIVER_ADDR)
 
-# Send using GBN protocol
-def send_gbn(sock):
-
-    return
+def mod_snw(sock):
+	seq = 0
+	bio = open("bio.txt", "r")
+	lines = bio.readlines()
+	for line in lines:
+		#Send here
+		data = line
+		pkt = packet.make(seq, data)
+		print("Sending seq ", seq, "\n")
+		udt.send(pkt, sock, RECEIVER_ADDR)
+		seq = seq+1
+		time.sleep(TIMEOUT_INTERVAL)
+	#Signifies end of comms
+	pkt = packet.make(seq, "END".encode())
+	udt.send(pkt, sock, RECEIVER_ADDR)
 
 # Receive thread for stop-n-wait
 def receive_snw(sock, pkt):
     # Fill here to handle acks
+    return
+
+# Send using GBN protocol
+def send_gbn(sock):
+
     return
 
 # Receive thread for GBN
@@ -72,7 +88,8 @@ if __name__ == '__main__':
 
     # filename = sys.argv[1]
 
-    send_snw(sock)
+    #send_snw(sock)
+    mod_snw(sock)
     sock.close()
 
 
