@@ -45,28 +45,14 @@ def send_snw(sock):
     pkt = packet.make(seq, "END".encode())
     udt.send(pkt, sock, RECEIVER_ADDR)
 
+#Modifed Send and Wait method
+#Packets send identically to send_snw function
 def mod_snw(sock):
 	seq = 0
-	textFile = open("helloFr1end.txt", "rb")
-	
-	#Attempt1
-	#Works but doesnt know when to STOP lol
-	# with open("helloFr1end.txt", "rb") as file:
-	# 	while True:
-	# 		data = file.read(512)
-			
-	# 		if data == "":
-	# 			pkt = packet.make(seq, "END".encode())
-	# 			udt.send(pkt, sock, RECEIVER_ADDR)
-	# 			break #EOF
 
-	# 		pkt = packet.make(seq, data)
-	# 		print("Sending seq ", seq, "\n")
-	# 		udt.send(pkt, sock, RECEIVER_ADDR)
-	# 		seq = seq+1
-	# 		time.sleep(TIMEOUT_INTERVAL)
-
-	#Attempt 2
+	#Opens file and reads first 512 bytes to get the ball rolling
+	#From there, sends those 512 and reads another 512 bytes
+	#Once file is emptied, sends FIN Packet
 	with open("helloFr1end.txt", "rb") as file:
 		data = file.read(512)
 		while data:
@@ -80,6 +66,23 @@ def mod_snw(sock):
 		pkt = packet.make(seq, "END".encode())
 		udt.send(pkt, sock, RECEIVER_ADDR)
 
+#Debug function. sends text file in lines rather than bytes
+#Easier to send way more packets with this one (for debugging retransmission)
+def lineSnW(sock):
+	seq = 0
+	bio = open("bio.txt", "r")
+	lines = bio.readlines()
+	for line in lines:
+		#Send here
+		data = line
+		pkt = packet.make(seq, data)
+		print("Sending seq ", seq, "\n")
+		udt.send(pkt, sock, RECEIVER_ADDR)
+		seq = seq+1
+		time.sleep(TIMEOUT_INTERVAL)
+	#Signifies end of comms
+	pkt = packet.make(seq, "END".encode())
+	udt.send(pkt, sock, RECEIVER_ADDR)
 
 # Receive thread for stop-n-wait
 def receive_snw(sock, pkt):
