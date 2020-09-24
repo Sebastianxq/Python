@@ -27,7 +27,17 @@ def receive_snw(sock):
        endStr = data.decode()
        print("From: ", senderaddr, ", Seq# ", seq, endStr)
 
-
+def mod_receive_snw(sock):
+   endStr = ''
+   f = open("bio2.txt", "w")
+   while endStr!='END':
+       pkt, senderaddr = udt.recv(sock)
+       seq, data = packet.extract(pkt)
+       endStr = data.decode()
+       print("From: ", senderaddr, ", Seq# ", seq, endStr)
+       if (endStr != 'END'):
+        f.write(endStr)
+   f.close()
 # Main function
 if __name__ == '__main__':
     # if len(sys.argv) != 2:
@@ -37,7 +47,7 @@ if __name__ == '__main__':
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     sock.bind(RECEIVER_ADDR)
     # filename = sys.argv[1]
-    receive_snw(sock)
+    mod_receive_snw(sock)
 
     # Close the socket
     sock.close()
