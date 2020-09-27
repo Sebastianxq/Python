@@ -8,9 +8,28 @@ RECEIVER_ADDR = ('localhost', 8080)
 
 # Receive packets from the sender w/ GBN protocol
 def receive_gbn(sock):
-    # Fill here
-    return
+    #upon each receival send an ACK back
+   endStr = ''
+   seqList = []
+   f = open("gbn_receiver.txt", "w")
+   while endStr!='END':
+       pkt, senderaddr = udt.recv(sock)
+       seq, data = packet.extract(pkt)
+       seqList.append(seq)
+       dataStr = data.decode()
+       print("From: ", senderaddr, ", Seq# ", seq, endStr) #debug
+       
+       #Sends ACK back to sender to continue comms
+       ack = packet.make(seq, "ACK".encode())
+       udt.send(ack, sock, senderaddr)
 
+       #Does not write if duplicate pkt or FIN pkt
+       if (endStr != 'END'):
+        if (seq not in seqList):
+          f.write(dataStr)
+
+      #Need a way to account for duplicate ACKS
+   f.close()
 
 # Receive packets from the sender w/ SR protocol
 def receive_sr(sock, windowsize):
