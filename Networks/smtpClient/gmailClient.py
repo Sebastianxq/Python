@@ -1,6 +1,7 @@
 from socket import *
 import ssl
 import base64
+import getpass
 
 serverName = 'smtp.gmail.com'
 serverPort = 587
@@ -38,6 +39,7 @@ sendAndReceive(auth,secSock)
 #send username in already formatted b64
 #print("send username") DEBUG
 username = input("Enter Your Gmail:")
+
 #username = "GMAIL_HERE@gmail.com"
 b64Username = convertTob64(username)
 use = (b64Username+" \r\n")
@@ -45,7 +47,9 @@ sendAndReceive(use,secSock)
 
 #send password in already formatted b64
 #print("send pw") DEBUG
-password = input("Enter your password:")
+#password = input("Enter your password:")
+password = getpass.getpass(prompt='Enter your password: ') 
+
 #password = "PASSWORD_HERE"
 b64Password = convertTob64(password)
 pw = (b64Password + " \r\n")
