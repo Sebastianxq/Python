@@ -1,6 +1,6 @@
 import socket
 import sys
-# import _thread
+import _thread
 import time
 import string
 import packet
@@ -16,10 +16,10 @@ SLEEP_INTERVAL = 0.05 # (In seconds)
 TIMEOUT_INTERVAL = 0.5
 WINDOW_SIZE = 4
 
-# You can use some shared resources over the two threads
-# base = 0
-# mutex = _thread.allocate_lock()
-# timer = Timer(TIMEOUT_INTERVAL)
+#Shared Resources for multithreading
+base = 0 #AKA Min
+mutex = _thread.allocate_lock() #Allows Thread to work/take a break
+timer = Timer(TIMEOUT_INTERVAL) #Needed for retransmissions
 
 # Need to have two threads: one for sending and another for receiving ACKs
 
@@ -90,14 +90,78 @@ def receive_snw(sock, pkt):
     return
 
 # Send using GBN protocol
+#Need some sort of mutex?
 def send_gbn(sock):
+	#Global Vars for comms with receiver
+	global base
+	global mutex
+	global timer
 
-    return
+	#starts ACK reciever
+	_thread.start_new_thread(receive_gbn, (sock,))
+
+	print("in send")
+	#Fill here to send msgs
+	seq = 0
+	pktBuffer = []
+	bio = open("helloFr1end.txt", "r")
+	lines = bio.readlines()
+
+
+	#Add all packets to a buffer
+	#buffer is a tuple of seq# and data
+	for line in lines:
+		pktBuffer.append(tuple((seq, line)))
+		seq = seq+1
+
+	
+	print("lines added to buffer")
+	buffSize = len(pktBuffer)
+	index = 0
+	winSize = min(WINDOW_SIZE, buffSize - base)
+	
+	
+	while (base < buffSize):
+		mutex.acquire()
+		while index < base+buffSize:
+			print("Sending next packet")
+			seqNum,pktData = pktBuffer[index]
+			pkt = packet.make(seqNum,pktData)
+			udt.send(pkt, sock, RECEIVER_ADDR)
+			index = index+1
+
+		#If timer was stopped by receive
+		if not timer.running():
+			print("Starting the timer")
+			timer.start()
+		else:
+			winSize = min(WINDOW_SIZE, buffSize - base)
+		mutex.release() 
+
+	#Signifies end of comms
+	pkt = packet.make(seq, "END".encode())
+	udt.send(pkt, sock, RECEIVER_ADDR)
+
 
 # Receive thread for GBN
 def receive_gbn(sock):
-    # Fill here to handle acks
-    return
+    #global vars for comms with sender
+    global mutex
+    global base
+    global timer
+
+    print("in receive")
+    while True:
+    	pkt,senderAddy = udt.recv(sock);
+    	ack,ackData = packet.extract(pkt)
+
+    	if (ack >= base):
+    		mutex.acquire() #Stops sending to update base
+    		base = ack+1 
+    		timer.stop()	#stops timer to avoid retransmitts
+    		mutex.release() #Lets Sender continue working
+
+
 
 
 # Main function
@@ -111,8 +175,19 @@ if __name__ == '__main__':
 
     # filename = sys.argv[1]
 
-    #send_snw(sock)
-    mod_snw(sock)
+    #SNW Stuff
+    #mod_snw(sock)
+
+    #gbn Stuff
+    send_gbn(sock)
+	#Creates threads with sock arg
+    # print("starting send")
+    # send_gbn(sock)
+    # #_thread.start_new_thread(send_gbn, (sock,))
+    # print("starting receive")
+    # _thread.start_new_thread(receive_gbn, (sock,))
+
+
     sock.close()
 
 
