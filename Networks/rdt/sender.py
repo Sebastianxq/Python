@@ -110,11 +110,12 @@ def send_gbn(sock):
 
 	#Add all packets to a buffer
 	#buffer is a tuple of seq# and data
+	#Now actually packets
 	for line in lines:
-		pktBuffer.append(tuple((seq, line)))
+		pktBuffer.append(packet.make(seq, line))
 		seq = seq+1
 
-	
+
 	print("lines added to buffer")
 	buffSize = len(pktBuffer)
 	index = 0
@@ -125,9 +126,7 @@ def send_gbn(sock):
 		mutex.acquire()
 		while index < base+buffSize:
 			print("Sending next packet")
-			seqNum,pktData = pktBuffer[index]
-			pkt = packet.make(seqNum,pktData)
-			udt.send(pkt, sock, RECEIVER_ADDR)
+			udt.send(pktBuffer[index], sock, RECEIVER_ADDR)
 			index = index+1
 
 		#If timer was stopped by receive
@@ -177,9 +176,10 @@ if __name__ == '__main__':
 
     #SNW Stuff
     #mod_snw(sock)
+    lineSnW(sock)
 
     #gbn Stuff
-    send_gbn(sock)
+    #send_gbn(sock)
 	#Creates threads with sock arg
     # print("starting send")
     # send_gbn(sock)
