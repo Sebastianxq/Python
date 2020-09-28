@@ -75,7 +75,7 @@ def lineSnW(sock):
 	for line in lines:
 		#Send here
 		data = line
-		pkt = packet.make(seq, data)
+		pkt = packet.make(seq, data.encode())
 		print("Sending seq ", seq, "\n")
 		udt.send(pkt, sock, RECEIVER_ADDR)
 		seq = seq+1
@@ -112,8 +112,9 @@ def send_gbn(sock):
 	#buffer is a tuple of seq# and data
 	#Now actually packets
 	for line in lines:
-		pktBuffer.append(packet.make(seq, line))
+		pktBuffer.append(packet.make(seq, line.encode()))
 		seq = seq+1
+
 
 
 	print("lines added to buffer")
