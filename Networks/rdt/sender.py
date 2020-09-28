@@ -97,14 +97,13 @@ def send_gbn(sock):
 	global mutex
 	global timer
 
-	#starts ACK reciever
-	_thread.start_new_thread(receive_gbn, (sock,))
 
 	print("in send")
 	#Fill here to send msgs
 	seq = 0
 	pktBuffer = []
-	bio = open("helloFr1end.txt", "r")
+	bio = open("bio.txt", "r")
+	#bio = open("bio.txt" , "r")
 	lines = bio.readlines()
 
 
@@ -121,24 +120,41 @@ def send_gbn(sock):
 	buffSize = len(pktBuffer)
 	index = 0
 	winSize = min(WINDOW_SIZE, buffSize - base)
+	#starts ACK reciever
+	_thread.start_new_thread(receive_gbn, (sock,))
 	
 	
 	while (base < buffSize):
+		print("base:%s, buffSize:%s" %(base,buffSize))
 		mutex.acquire()
-		while index < base+buffSize:
-			print("Sending next packet")
+		while (index < base+winSize):
 			udt.send(pktBuffer[index], sock, RECEIVER_ADDR)
+			print("Sent Packet:%s"%(index))
 			index = index+1
 
 		#If timer was stopped by receive
 		if not timer.running():
-			print("Starting the timer")
 			timer.start()
+			print("Timer Started")
+
+			#If we get an ACK or timer completes
+		while timer.running() and not timer.timeout():
+			mutex.release()
+			time.sleep(TIMEOUT_INTERVAL)
+			mutex.acquire()
+
+		#need to add a section to restransmit if timeout happens
+		#Retransmission will be entire window frame.
+		if timer.timeout():
+			timer.stop()
+			index = base
+
 		else:
 			winSize = min(WINDOW_SIZE, buffSize - base)
 		mutex.release() 
 
 	#Signifies end of comms
+	print("sending FIN pkt")
 	pkt = packet.make(seq, "END".encode())
 	udt.send(pkt, sock, RECEIVER_ADDR)
 
@@ -154,8 +170,10 @@ def receive_gbn(sock):
     while True:
     	pkt,senderAddy = udt.recv(sock);
     	ack,ackData = packet.extract(pkt)
+    	print("got ack")
 
     	if (ack >= base):
+    		print("ack is relevant")
     		mutex.acquire() #Stops sending to update base
     		base = ack+1 
     		timer.stop()	#stops timer to avoid retransmitts
@@ -177,16 +195,16 @@ if __name__ == '__main__':
 
     #SNW Stuff
     #mod_snw(sock)
-    lineSnW(sock)
+    #lineSnW(sock)
 
     #gbn Stuff
     #send_gbn(sock)
 	#Creates threads with sock arg
     # print("starting send")
-    # send_gbn(sock)
-    # #_thread.start_new_thread(send_gbn, (sock,))
+    send_gbn(sock)
+    #_thread.start_new_thread(send_gbn, (sock,))
     # print("starting receive")
-    # _thread.start_new_thread(receive_gbn, (sock,))
+    #_thread.start_new_thread(receive_gbn, (sock,))
 
 
     sock.close()

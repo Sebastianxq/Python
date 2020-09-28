@@ -9,22 +9,22 @@ RECEIVER_ADDR = ('localhost', 8080)
 # Receive packets from the sender w/ GBN protocol
 def receive_gbn(sock):
     #upon each receival send an ACK back
-   endStr = ''
+   dataStr = ''
    seqList = []
    f = open("gbn_receiver.txt", "w")
-   while endStr!='END':
+   while dataStr!='END':
        pkt, senderaddr = udt.recv(sock)
        seq, data = packet.extract(pkt)
        seqList.append(seq)
        dataStr = data.decode()
-       print("From: ", senderaddr, ", Seq# ", seq, endStr) #debug
+       print("From: ", senderaddr, ", Seq# ", seq, dataStr) #debug
        
        #Sends ACK back to sender to continue comms
        ack = packet.make(seq, "ACK".encode())
        udt.send(ack, sock, senderaddr)
 
        #Does not write if duplicate pkt or FIN pkt
-       if (endStr != 'END'):
+       if (dataStr != 'END'):
         if (seq not in seqList):
           f.write(dataStr)
 
@@ -66,7 +66,8 @@ if __name__ == '__main__':
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     sock.bind(RECEIVER_ADDR)
     # filename = sys.argv[1]
-    mod_receive_snw(sock)
+    #mod_receive_snw(sock)
 
+    receive_gbn(sock)
     # Close the socket
     sock.close()
