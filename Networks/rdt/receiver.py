@@ -10,13 +10,14 @@ RECEIVER_ADDR = ('localhost', 8080)
 def receive_gbn(sock):
    seqList = [] #Holds Sequence numbers prev received
    f = open("gbn_receiver.txt", "w")
+   dataStr = ''
    
    #While NO FIN pkt
    while dataStr!='END':
        pkt, senderaddr = udt.recv(sock)
        seq, data = packet.extract(pkt)
        dataStr = data.decode()
-       
+
        #Does not write if duplicate pkt or FIN pkt 
        #print("data is "+data.decode()) #DEBUG
        if (seq not in seqList and not dataStr == "END"):
