@@ -15,6 +15,12 @@ def receive_gbn(sock):
    while dataStr!='END':
        pkt, senderaddr = udt.recv(sock)
        seq, data = packet.extract(pkt)
+
+       #Does not write if duplicate pkt or FIN pkt 
+       print("data is "+data.decode())
+       if (seq not in seqList and not data.decode() == "END"):
+          f.write(data.decode())
+
        seqList.append(seq)
        dataStr = data.decode()
        print("From: ", senderaddr, ", Seq# ", seq, dataStr) #debug
@@ -23,10 +29,6 @@ def receive_gbn(sock):
        ack = packet.make(seq, "ACK".encode())
        udt.send(ack, sock, senderaddr)
 
-       #Does not write if duplicate pkt or FIN pkt
-       if (dataStr != 'END'):
-        if (seq not in seqList):
-          f.write(dataStr)
 
       #Need a way to account for duplicate ACKS
    f.close()
