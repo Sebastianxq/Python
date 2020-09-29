@@ -90,38 +90,45 @@ def receive_snw(sock, pkt):
     return
 
 # Send using GBN protocol
-#Need some sort of mutex?
 def send_gbn(sock):
 	#Global Vars for comms with receiver
 	global base
 	global mutex
 	global timer
+	global PACKET_SIZE
+
+	#starts ACK receiver thread
+	_thread.start_new_thread(receive_gbn, (sock,))
 
 
-	print("in send")
-	#Fill here to send msgs
-	seq = 0
-	pktBuffer = []
-	bio = open("bio.txt", "r")
-	#bio = open("bio.txt" , "r")
-	lines = bio.readlines()
-
+	#print("in send") #DEBUG
+	
+	seq = 0 
+	pktBuffer = [] 
+	#bio = open("helloFr1end.txt", "rb")
+	# bio = open("bio.txt" , "r") #DEBUG
+	# lines = bio.readlines()
 
 	#Add all packets to a buffer
 	#buffer is a tuple of seq# and data
 	#Now actually packets
-	for line in lines:
-		pktBuffer.append(packet.make(seq, line.encode()))
-		seq = seq+1
+	# for line in lines:
+	# 	pktBuffer.append(packet.make(seq, line.encode()))
+	# 	seq = seq+1
+
+	with open("helloFr1end.txt", "rb") as file:
+		data = file.read(PACKET_SIZE)
+		while data:
+			print("adding seq:%d" %(seq))
+			pktBuffer.append(packet.make(seq, data))
+			seq = seq+1
+			data = file.read(PACKET_SIZE)
 
 
-
-	print("lines added to buffer")
+	print("packets added to buffer")
 	buffSize = len(pktBuffer)
 	index = 0
 	winSize = min(WINDOW_SIZE, buffSize - base)
-	#starts ACK reciever
-	_thread.start_new_thread(receive_gbn, (sock,))
 	
 	
 	while (base < buffSize):
