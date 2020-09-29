@@ -103,19 +103,11 @@ def send_gbn(sock):
 
 	#print("in send") #DEBUG
 	
+	
+	#Reads all contents of the file and stores into a list
+	#of sliced up packets
 	seq = 0 
 	pktBuffer = [] 
-	#bio = open("helloFr1end.txt", "rb")
-	# bio = open("bio.txt" , "r") #DEBUG
-	# lines = bio.readlines()
-
-	#Add all packets to a buffer
-	#buffer is a tuple of seq# and data
-	#Now actually packets
-	# for line in lines:
-	# 	pktBuffer.append(packet.make(seq, line.encode()))
-	# 	seq = seq+1
-
 	with open("helloFr1end.txt", "rb") as file:
 		data = file.read(PACKET_SIZE)
 		while data:
@@ -125,42 +117,47 @@ def send_gbn(sock):
 			data = file.read(PACKET_SIZE)
 
 
-	print("packets added to buffer")
-	buffSize = len(pktBuffer)
+	#List is then iterated through using some classic-
+	#mergesort type variables.
+	#print("packets added to buffer") #DEBUG
+	buffSize = seq  
 	index = 0
-	winSize = min(WINDOW_SIZE, buffSize - base)
+	winSize = min(WINDOW_SIZE, buffSize - base) #Ensure Window size doesnt overflow
 	
 	
+	#while bottom of list is not equal to top
 	while (base < buffSize):
-		print("base:%s, buffSize:%s" %(base,buffSize))
+		#print("base:%s, buffSize:%s" %(base,buffSize)) #DEBUG
 		mutex.acquire()
-		while (index < base+winSize):
+
+		#Iterate(Send) until windowSize is met
+		while (index < base+winSize): 
 			udt.send(pktBuffer[index], sock, RECEIVER_ADDR)
 			print("Sent Packet:%s"%(index))
 			index = index+1
 
-		#If timer was stopped by receive
+		#If timer was stopped by receive or timed out
 		if not timer.running():
 			timer.start()
 			print("Timer Started")
 
-			#If we get an ACK or timer completes
+		#If we get an ACK or timer completes
 		while timer.running() and not timer.timeout():
 			mutex.release()
 			time.sleep(TIMEOUT_INTERVAL)
 			mutex.acquire()
 
-		#need to add a section to restransmit if timeout happens
-		#Retransmission will be entire window frame.
+		#If timeout, retransmit entire frame
 		if timer.timeout():
 			timer.stop()
 			index = base
 
+		#Transmission is fine, prepare window for next batch
 		else:
 			winSize = min(WINDOW_SIZE, buffSize - base)
 		mutex.release() 
 
-	#Signifies end of comms
+	#End of comms
 	print("sending FIN pkt")
 	pkt = packet.make(seq, "END".encode())
 	udt.send(pkt, sock, RECEIVER_ADDR)
@@ -173,19 +170,21 @@ def receive_gbn(sock):
     global base
     global timer
 
-    print("in receive")
+    #print("in receive") #DEBUG
+
+    #Check for incoming ACKS
     while True:
     	pkt,senderAddy = udt.recv(sock);
     	ack,ackData = packet.extract(pkt)
-    	print("got ack")
+    	#print("got ack") #DEBUG
 
+ 		#Might have multiple ACKS in buffer, empty it out and iterate accordingly
     	if (ack >= base):
-    		print("ack is relevant")
+    		#print("ack is relevant") #DEBUG
     		mutex.acquire() #Stops sending to update base
-    		base = ack+1 
-    		timer.stop()	#stops timer to avoid retransmitts
+    		base = ack+1    #scoot up base on each successful ACK
+    		timer.stop()	#timeout expired (in a good way)
     		mutex.release() #Lets Sender continue working
-
 
 
 
@@ -204,14 +203,9 @@ if __name__ == '__main__':
     #mod_snw(sock)
     #lineSnW(sock)
 
-    #gbn Stuff
-    #send_gbn(sock)
-	#Creates threads with sock arg
+    #GBN Stuff
     # print("starting send")
     send_gbn(sock)
-    #_thread.start_new_thread(send_gbn, (sock,))
-    # print("starting receive")
-    #_thread.start_new_thread(receive_gbn, (sock,))
 
 
     sock.close()
