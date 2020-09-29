@@ -8,30 +8,38 @@ RECEIVER_ADDR = ('localhost', 8080)
 
 # Receive packets from the sender w/ GBN protocol
 def receive_gbn(sock):
-    #upon each receival send an ACK back
-   dataStr = ''
-   seqList = []
+   seqList = [] #Holds Sequence numbers prev received
    f = open("gbn_receiver.txt", "w")
+   
+   #While NO FIN pkt
    while dataStr!='END':
        pkt, senderaddr = udt.recv(sock)
        seq, data = packet.extract(pkt)
-
-       #Does not write if duplicate pkt or FIN pkt 
-       print("data is "+data.decode())
-       if (seq not in seqList and not data.decode() == "END"):
-          f.write(data.decode())
-
-       seqList.append(seq)
        dataStr = data.decode()
-       print("From: ", senderaddr, ", Seq# ", seq, dataStr) #debug
        
-       #Sends ACK back to sender to continue comms
+       #Does not write if duplicate pkt or FIN pkt 
+       #print("data is "+data.decode()) #DEBUG
+       if (seq not in seqList and not dataStr == "END"):
+          f.write(dataStr)
+
+       #Data recv, ensure duplicate packets are ignored
+       seqList.append(seq)
+       #print("From: ", senderaddr, ", Seq# ", seq, dataStr) #DEBUG
+
+       #Send back ACK to confirm rcpt. 
+       #If ACK lost, retransmission happens on sender side :)
        ack = packet.make(seq, "ACK".encode())
        udt.send(ack, sock, senderaddr)
 
+       #TODO
+       #I think instead of checking against an entire list we can
+       #just have it check to see if ACK is
+       #Sends ACK back to sender to confirm receipt
+       #Obviously a list is unfeasible for modern comms
+       #Ex.) Imagine trying to hold a list of ACKs for 512b from a 5GB file??
+       #     That would be like 10 million numbers lol
 
-      #Need a way to account for duplicate ACKS
-   f.close()
+   f.close() 
 
 # Receive packets from the sender w/ SR protocol
 def receive_sr(sock, windowsize):
