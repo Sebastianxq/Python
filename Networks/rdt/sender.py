@@ -110,7 +110,7 @@ def send_gbn(sock):
 	with open("helloFr1end.txt", "rb") as file:
 		data = file.read(PACKET_SIZE)
 		while data:
-			print("adding seq:%d" %(seq))
+			#print("adding seq:%d" %(seq)) #DEBUG
 			pktBuffer.append(packet.make(seq, data))
 			seq = seq+1
 			data = file.read(PACKET_SIZE)
@@ -128,6 +128,7 @@ def send_gbn(sock):
 	while (buffSize > base):
 		#print("base:%s, buffSize:%s" %(base,buffSize)) #DEBUG
 		mutex.acquire()
+		#print("MUTEX TAKEN") #DEBUG
 
 
 		#Iterate(Send) until windowSize is met
@@ -137,29 +138,34 @@ def send_gbn(sock):
 			index = index+1
 
 
-		#As long as timer is still running with no timeouts
-		while not timer.timeout() and timer.running():
-			mutex.release()
-			time.sleep(TIMEOUT_INTERVAL)
-			mutex.acquire()
-
-
-		#If timer was stopped by receive or timed out
-		if not timer.running():
-			timer.start()
-			print("Timer Started")
-
 
 		#If timeout, retransmit entire frame
 		if timer.timeout():
 			index = base
 			timer.stop()
+			#print("timeout, resend") #DEBUG
 		else: #Transmission is fine, prepare window for next batch
 			winSize = min(WINDOW_SIZE, buffSize - base)
+			#print("Moving on to next set of packets") #DEBUG
 		mutex.release() 
+		#print("MUTEX RELEASED") #DEBUG
+
+		#As long as timer is still running with no timeouts
+		while not timer.timeout() and timer.running():
+			mutex.release()
+			#print("MUTEX RELEASED")  #DEBUG
+			time.sleep(TIMEOUT_INTERVAL)
+			mutex.acquire()
+			#print("MUTEX TAKEN") #DEBUG
+
+
+		#If timer was stopped by receive or timed out
+		if not timer.running():
+			timer.start()
+			#print("Timer Started")  #DEBUG
 
 	#End of comms
-	print("sending FIN pkt")
+	#print("sending FIN pkt") #DEBUG
 	pkt = packet.make(seq, "END".encode())
 	udt.send(pkt, sock, RECEIVER_ADDR)
 
