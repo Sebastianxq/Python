@@ -54,23 +54,29 @@ def newGBN(sock):
     f = open("gbn_receiver.txt", "w")
     dataStr = ''
 
-    while dataStr!='END':
+    while True:
+    #while dataStr!='END':
        pkt, senderaddr = udt.recv(sock)
        seq, data = packet.extract(pkt)
        dataStr = data.decode()
 
        #Does not write if duplicate pkt or FIN pkt 
        #print("data is "+data.decode()) #DEBUG
+       print("receiver seq:%d, sender gave:%d" %(initSeq, seq))
        if (seq == initSeq and not dataStr == "END"):
           print("packet fine, writing to file")
           f.write(dataStr)
+          ack = packet.make(initSeq, "ACK".encode())
           initSeq = initSeq+1
+          udt.send(ack, sock, senderaddr)
        elif not seq == initSeq:
             print("Not in ordered pkt received")
             ack = packet.make(initSeq, "ACK".encode())
+       else: #dataStr==end
+        break
 
-       ack = packet.make(seq, "ACK".encode())
-       udt.send(ack, sock, senderaddr)
+       #ack = packet.make(seq, "ACK".encode())
+       #udt.send(ack, sock, senderaddr)
 
     f.close() 
 # Receive packets from the sender w/ Stop-n-wait protocol

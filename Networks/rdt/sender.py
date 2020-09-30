@@ -107,7 +107,7 @@ def send_gbn(sock):
 	#of sliced up packets
 	seq = 0 
 	pktBuffer = [] 
-	with open("helloFr1end.txt", "rb") as file:
+	with open("test3.txt", "rb") as file:
 		data = file.read(PACKET_SIZE)
 		while data:
 			#print("adding seq:%d" %(seq)) #DEBUG
@@ -134,7 +134,7 @@ def send_gbn(sock):
 		#Iterate(Send) until windowSize is met
 		while (index < winSize+base): 
 			udt.send(pktBuffer[index], sock, RECEIVER_ADDR)
-			#print("Sent Packet:%s"%(index)) #DEBUG
+			print("Sent Packet:%s"%(index)) #DEBUG
 			index = index+1
 
 
