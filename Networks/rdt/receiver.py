@@ -11,7 +11,7 @@ def receive_gbn(sock):
    seqList = [] #Holds Sequence numbers prev received
    f = open("gbn_receiver.txt", "w")
    dataStr = ''
-   
+
    #While NO FIN pkt
    while dataStr!='END':
        pkt, senderaddr = udt.recv(sock)
@@ -40,6 +40,7 @@ def receive_gbn(sock):
        #Ex.) Imagine trying to hold a list of ACKs for 512b from a 5GB file??
        #     That would be like 10 million numbers lol
 
+
    f.close() 
 
 # Receive packets from the sender w/ SR protocol
@@ -47,7 +48,31 @@ def receive_sr(sock, windowsize):
     # Fill here
     return
 
+def newGBN(sock):
+    initSeq = 0
+    seqList = [] #Holds Sequence numbers prev received
+    f = open("gbn_receiver.txt", "w")
+    dataStr = ''
 
+    while dataStr!='END':
+       pkt, senderaddr = udt.recv(sock)
+       seq, data = packet.extract(pkt)
+       dataStr = data.decode()
+
+       #Does not write if duplicate pkt or FIN pkt 
+       #print("data is "+data.decode()) #DEBUG
+       if (seq == initSeq and not dataStr == "END"):
+          print("packet fine, writing to file")
+          f.write(dataStr)
+          initSeq = initSeq+1
+       elif not seq == initSeq:
+            print("Not in ordered pkt received")
+            ack = packet.make(initSeq, "ACK".encode())
+
+       ack = packet.make(seq, "ACK".encode())
+       udt.send(ack, sock, senderaddr)
+
+    f.close() 
 # Receive packets from the sender w/ Stop-n-wait protocol
 def receive_snw(sock):
    endStr = ''
@@ -79,6 +104,7 @@ if __name__ == '__main__':
     # filename = sys.argv[1]
     #mod_receive_snw(sock)
 
-    receive_gbn(sock)
+    #receive_gbn(sock)
+    newGBN(sock)
     # Close the socket
     sock.close()
