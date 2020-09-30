@@ -139,16 +139,7 @@ def send_gbn(sock):
 
 
 
-		#If timeout, retransmit entire frame
-		if timer.timeout():
-			index = base
-			timer.stop()
-			#print("timeout, resend") #DEBUG
-		else: #Transmission is fine, prepare window for next batch
-			winSize = min(WINDOW_SIZE, buffSize - base)
-			#print("Moving on to next set of packets") #DEBUG
-		mutex.release() 
-		#print("MUTEX RELEASED") #DEBUG
+		
 
 		#As long as timer is still running with no timeouts
 		while not timer.timeout() and timer.running():
@@ -163,6 +154,17 @@ def send_gbn(sock):
 		if not timer.running():
 			timer.start()
 			#print("Timer Started")  #DEBUG
+
+		#If timeout, retransmit entire frame
+		if timer.timeout():
+			index = base
+			timer.stop()
+			#print("timeout, resend") #DEBUG
+		else: #Transmission is fine, prepare window for next batch
+			winSize = min(WINDOW_SIZE, buffSize - base)
+			#print("Moving on to next set of packets") #DEBUG
+		#print("MUTEX RELEASED") #DEBUG
+		mutex.release() 
 
 	#End of comms
 	#print("sending FIN pkt") #DEBUG
