@@ -21,7 +21,6 @@ base = 0 #AKA Min
 mutex = _thread.allocate_lock() #Allows Thread to work/take a break
 timer = Timer(TIMEOUT_INTERVAL) #Needed for retransmissions
 
-# Need to have two threads: one for sending and another for receiving ACKs
 
 # Generate random payload of any length
 def generate_payload(length=10):
@@ -54,14 +53,14 @@ def mod_snw(sock):
 	#From there, sends those 512 and reads another 512 bytes
 	#Once file is emptied, sends FIN Packet
 	with open("helloFr1end.txt", "rb") as file:
-		data = file.read(512)
+		data = file.read(PACKET_SIZE)
 		while data:
 			pkt = packet.make(seq, data)
 			print("Sending seq ", seq, "\n")
 			udt.send(pkt, sock, RECEIVER_ADDR)
 			seq = seq+1
 			time.sleep(TIMEOUT_INTERVAL)
-			data = file.read(512)
+			data = file.read(PACKET_SIZE)
 		
 		pkt = packet.make(seq, "END".encode())
 		udt.send(pkt, sock, RECEIVER_ADDR)
@@ -125,35 +124,37 @@ def send_gbn(sock):
 	winSize = min(WINDOW_SIZE, buffSize - base) #Ensure Window size doesnt overflow
 	
 	
-	#while bottom of list is not equal to top
-	while (base < buffSize):
+	#while bottom of list hasnt reached top
+	while (buffSize > base):
 		#print("base:%s, buffSize:%s" %(base,buffSize)) #DEBUG
 		mutex.acquire()
 
+
 		#Iterate(Send) until windowSize is met
-		while (index < base+winSize): 
+		while (index < winSize+base): 
 			udt.send(pktBuffer[index], sock, RECEIVER_ADDR)
-			print("Sent Packet:%s"%(index))
+			#print("Sent Packet:%s"%(index)) #DEBUG
 			index = index+1
+
+
+		#As long as timer is still running with no timeouts
+		while not timer.timeout() and timer.running():
+			mutex.release()
+			time.sleep(TIMEOUT_INTERVAL)
+			mutex.acquire()
+
 
 		#If timer was stopped by receive or timed out
 		if not timer.running():
 			timer.start()
 			print("Timer Started")
 
-		#If we get an ACK or timer completes
-		while timer.running() and not timer.timeout():
-			mutex.release()
-			time.sleep(TIMEOUT_INTERVAL)
-			mutex.acquire()
 
 		#If timeout, retransmit entire frame
 		if timer.timeout():
-			timer.stop()
 			index = base
-
-		#Transmission is fine, prepare window for next batch
-		else:
+			timer.stop()
+		else: #Transmission is fine, prepare window for next batch
 			winSize = min(WINDOW_SIZE, buffSize - base)
 		mutex.release() 
 
@@ -174,12 +175,12 @@ def receive_gbn(sock):
 
     #Check for incoming ACKS
     while True:
-    	pkt,senderAddy = udt.recv(sock);
-    	ack,ackData = packet.extract(pkt)
+    	pkt,senderAddress = udt.recv(sock); #Address unused
+    	ack,ackData = packet.extract(pkt)   #Data could be checked for corruption
     	#print("got ack") #DEBUG
 
  		#Might have multiple ACKS in buffer, empty it out and iterate accordingly
-    	if (ack >= base):
+    	if (base <= ack):
     		#print("ack is relevant") #DEBUG
     		mutex.acquire() #Stops sending to update base
     		base = ack+1    #scoot up base on each successful ACK
@@ -206,6 +207,7 @@ if __name__ == '__main__':
     #GBN Stuff
     # print("starting send")
     send_gbn(sock)
+
 
 
     sock.close()
