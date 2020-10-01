@@ -32,14 +32,6 @@ def receive_gbn(sock):
        ack = packet.make(seq, "ACK".encode())
        udt.send(ack, sock, senderaddr)
 
-       #TODO
-       #I think instead of checking against an entire list we can
-       #just have it check to see if ACK is
-       #Sends ACK back to sender to confirm receipt
-       #Obviously a list is unfeasible for modern comms
-       #Ex.) Imagine trying to hold a list of ACKs for 512b from a 5GB file??
-       #     That would be like 10 million numbers lol
-
 
    f.close() 
 
@@ -82,8 +74,7 @@ def newGBN(sock):
 
     f.close() 
 # Receive packets from the sender w/ Stop-n-wait protocol
-#Modified version created by Jennifer
-def receive_snw(sock):
+def receive_snw(sock): #Mod rcvr SNW by Jennifer
     endStr = ''
     _seq = -1
     while True:

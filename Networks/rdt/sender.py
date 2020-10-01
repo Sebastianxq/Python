@@ -21,66 +21,78 @@ base = 0 #AKA Min
 mutex = _thread.allocate_lock() #Allows Thread to work/take a break
 timer = Timer(TIMEOUT_INTERVAL) #Needed for retransmissions
 
-
-# Generate random payload of any length
-def generate_payload(length=10):
-    letters = string.ascii_lowercase
-    result_str = ''.join(random.choice(letters) for i in range(length))
-
-    return result_str
-
 # Send using Stop_n_wait protocol
-#Modified Sender by jennifer
-def send_snw(sock):
-
-    # Access to shared resources
+def send_snw(sock): #mod sndr by Jennifer
     global threads, sync
-
-    # Put name in hat
-    threads += 1
-
-    # Track packet count
-    seq = 0
+    threads += 1 #Put name in hat
+    seq = 0 #Tracks pkt count
 
     # Open local stream
     with open(filename, "r") as f:
-
-        # Do-While Trick
-        data = True
-
-        # Sequential File Access
-        while data:
-
-            # Lock Context
-            with mutex:
-
-                # Debugging Info
-                print("1 - Acquired w/ {}".format(seq+1))
+        data = True #Do While Trick
+        while data: 
+            with mutex: #Lock Context
+                print("1 - Acquired w/ {}".format(seq+1)) #DEBUG
 
                 # Generate Packet & Link Buffer
                 data = f.read(PACKET_SIZE).encode()
                 pkt = packet.make(seq, data)
                 pkt_buffer.append(pkt)
 
-                # Handle Thread Timing
-                sync = True
+                sync = True #Handles Thread timing
 
                 # Send Packet and Increment Sequence
                 udt.send(pkt, sock, RECEIVER_ADDR)
                 seq += 1
 
             # Delay Mutex for sister thread
-            time.sleep(SLEEP_INTERVAL)
+            time.sleep(SLEEP_INTERVAL) 
 
         # Prepare & Send END packet
         with mutex:
-            pkt = packet.make(seq, "END".encode())            # Prepare last packet
+            pkt = packet.make(seq, "END".encode())         
             pkt_buffer.append(pkt)
-            udt.send(pkt, sock, RECEIVER_ADDR)                # Send EOF
+            udt.send(pkt, sock, RECEIVER_ADDR)                
 
-    # Remove name from hat
-    threads -= 1
+    threads -= 1 #Remove name from hat
 
+# Receive thread for stop-n-wait
+def receive_snw(sock, pkt): #Mod rcvr by Jennifer
+    global threads, sync
+    threads += 1 #Put name in hat
+
+    while not sync: #Spin Lock to Synchronize Execution
+        continue
+
+    while pkt_buffer: #While Packets still need to be sent
+        mutex.acquire() #Lock
+        print("2 - Acquired") #DEBUG
+
+        timer.start() #Restart TTL
+        p = pkt.pop() #Get next pkt
+
+        #Checks for final ACK
+        retry = RETRY_ATTEMPTS
+        while retry:
+            try:
+                # Try ACK Check
+                ack, recvaddr = udt.recv(sock)
+
+                # If received, cleanup and pass baton
+                timer.stop() 
+                mutex.release()
+                time.sleep(SLEEP_INTERVAL)
+                retry = RETRY_ATTEMPTS
+                break
+
+            except BlockingIOError:
+                # Otherwise, check timer and restart
+                if timer.timeout():
+                    retry -= 1
+                    udt.send(p, sock, RECEIVER_ADDR)
+                    timer.start()
+    threads -= 1 #Remove name from hat
+   
 #Modifed Send and Wait method
 #Packets send identically to send_snw function
 def mod_snw(sock):
@@ -120,58 +132,7 @@ def lineSnW(sock):
 	pkt = packet.make(seq, "END".encode())
 	udt.send(pkt, sock, RECEIVER_ADDR)
 
-# Receive thread for stop-n-wait
-#Modified Receiver by Jennifer
-def receive_snw(sock, pkt):
 
-    # Shared Resource Access
-    global threads, sync
-
-    # Put Name in Hat
-    threads += 1
-
-    # Spin lock to synchronize execution
-    while not sync:
-        continue
-
-    # While Packets still exist
-    while pkt_buffer:
-
-        # Manually lock
-        mutex.acquire()
-
-        # Debugging info
-        print("2 - Acquired")
-
-        # Retry Delay
-        timer.start()
-
-        # Get Packet
-        p = pkt.pop()
-
-        # R
-        retry = RETRY_ATTEMPTS
-        while retry:
-            try:
-                # Try ACK Check
-                ack, recvaddr = udt.recv(sock)
-
-                # If received, cleanup and pass baton
-                timer.stop()
-                mutex.release()
-                time.sleep(SLEEP_INTERVAL)
-                retry = RETRY_ATTEMPTS
-                break
-
-            except BlockingIOError:
-                # Otherwise, check timer and restart
-                if timer.timeout():
-                    retry -= 1
-                    udt.send(p, sock, RECEIVER_ADDR)
-                    timer.start()
-    # Remove name from hat
-    threads -= 1
-   
 
 # Send using GBN protocol
 def send_gbn(sock):
