@@ -56,6 +56,7 @@ def newGBN(sock):
        #Does not write if duplicate pkt or FIN pkt 
        #print("data is "+data.decode()) #DEBUG
        print("receiver seq:%d, sender gave:%d" %(initSeq, seq))
+       print("data:%s" %(dataStr))
        if (seq == initSeq and not dataStr == "END"):
           print("packet fine, writing to file")
           f.write(dataStr)
@@ -83,8 +84,8 @@ def receive_snw(sock): #Mod rcvr SNW by Jennifer
         if _seq != seq:
             _seq = seq
             endStr = data.decode()
-            sys.stderr.write("From: {}, Seq# {}\n".format(senderaddr, seq))
-            sys.stderr.flush()
+            #sys.stderr.write("From: {}, Seq# {}\n".format(senderaddr, seq))
+            #sys.stderr.flush()
             if endStr == 'END':
                 return
             sys.stdout.write(endStr)
@@ -113,6 +114,9 @@ if __name__ == '__main__':
     sock.bind(RECEIVER_ADDR)
     # filename = sys.argv[1]
     #mod_receive_snw(sock)
+
+    #SNW (Does not work with GBN)
+    #receive_snw(sock)
 
     #receive_gbn(sock)
     newGBN(sock)
