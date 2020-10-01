@@ -48,7 +48,7 @@ def newGBN(sock):
 
     while True:
     #while dataStr!='END':
-       print("In true loop")
+       #print("In true loop") #DEBUG
        pkt, senderaddr = udt.recv(sock)
        seq, data = packet.extract(pkt)
        dataStr = data.decode()
@@ -56,15 +56,15 @@ def newGBN(sock):
        #Does not write if duplicate pkt or FIN pkt 
        #print("data is "+data.decode()) #DEBUG
        print("receiver seq:%d, sender gave:%d" %(initSeq, seq))
-       print("data:%s" %(dataStr))
+       #print("data:%s" %(dataStr))
        if (seq == initSeq and not dataStr == "END"):
-          print("packet fine, writing to file")
+          #print("packet fine, writing to file")
           f.write(dataStr)
           ack = packet.make(initSeq, "ACK".encode())
           initSeq = initSeq+1
           udt.send(ack, sock, senderaddr)
        elif not seq == initSeq:
-            print("Not in ordered pkt received")
+            #print("Not in ordered pkt received")
             ack = packet.make(initSeq, "ACK".encode())
        elif dataStr == 'END':
         print("Received end, we're done")
