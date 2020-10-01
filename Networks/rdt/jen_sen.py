@@ -153,7 +153,7 @@ def send_gbn(sock):
     #of sliced up packets
     seq = 0 
     pktBuffer = [] 
-    with open("test3.txt", "rb") as file:
+    with open("test4.txt", "rb") as file:
         data = file.read(PACKET_SIZE)
         while data:
             #print("adding seq:%d" %(seq)) #DEBUG
@@ -212,7 +212,11 @@ def send_gbn(sock):
         mutex.release() 
 
         print("index:%d" %(index))
-        if index == buffSize and base==index-1:
+        #REMINDER: Explain the hogwarts below
+        #NOTE: There's been 1 fail out of ~8 attempts
+        #Maybe change base == buffSize-1?? (i.e base is equal to top)
+        if index == buffSize and base==buffSize-1:
+        #if base==buffSize-1:
             break
 
     #End of comms
