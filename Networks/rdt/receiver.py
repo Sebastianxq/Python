@@ -56,6 +56,7 @@ def newGBN(sock):
 
     while True:
     #while dataStr!='END':
+       print("In true loop")
        pkt, senderaddr = udt.recv(sock)
        seq, data = packet.extract(pkt)
        dataStr = data.decode()
@@ -72,7 +73,8 @@ def newGBN(sock):
        elif not seq == initSeq:
             print("Not in ordered pkt received")
             ack = packet.make(initSeq, "ACK".encode())
-       else: #dataStr==end
+       elif dataStr == 'END':
+        print("Received end, we're done")
         break
 
        #ack = packet.make(seq, "ACK".encode())
@@ -80,13 +82,23 @@ def newGBN(sock):
 
     f.close() 
 # Receive packets from the sender w/ Stop-n-wait protocol
+#Modified version created by Jennifer
 def receive_snw(sock):
-   endStr = ''
-   while endStr!='END':
-       pkt, senderaddr = udt.recv(sock)
-       seq, data = packet.extract(pkt)
-       endStr = data.decode()
-       print("From: ", senderaddr, ", Seq# ", seq, endStr)
+    endStr = ''
+    _seq = -1
+    while True:
+        pkt, senderaddr = udt.recv(sock)
+        seq, data = packet.extract(pkt)
+        if _seq != seq:
+            _seq = seq
+            endStr = data.decode()
+            sys.stderr.write("From: {}, Seq# {}\n".format(senderaddr, seq))
+            sys.stderr.flush()
+            if endStr == 'END':
+                return
+            sys.stdout.write(endStr)
+            sys.stdout.flush()
+        udt.send(b' ', sock, ('localhost', 9090))
 
 def mod_receive_snw(sock):
    endStr = ''
@@ -99,6 +111,7 @@ def mod_receive_snw(sock):
        if (endStr != 'END'):
         f.write(endStr)
    f.close()
+
 # Main function
 if __name__ == '__main__':
     # if len(sys.argv) != 2:
