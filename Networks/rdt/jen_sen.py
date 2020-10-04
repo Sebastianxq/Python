@@ -134,6 +134,8 @@ def send_gbn(sock):
     global mutex
     global timer
     global PACKET_SIZE
+    global RETRY_ATTEMPTS
+    retries = 0
 
     #starts ACK receiver thread
     _thread.start_new_thread(receive_gbn, (sock,))
@@ -179,6 +181,11 @@ def send_gbn(sock):
             print("Sent Packet:%s"%(index)) #DEBUG
             index = index+1
 
+        #If timer was stopped by receive or a previous timed out
+        if not timer.running():
+            timer.start()
+            #print("Timer Started")  #DEBUG
+
         #As long as timer is still running with no timeouts
         while not timer.timeout() and timer.running():
             mutex.release()
@@ -186,12 +193,6 @@ def send_gbn(sock):
             time.sleep(TIMEOUT_INTERVAL)
             mutex.acquire()
             #print("MUTEX TAKEN") #DEBUG
-
-
-        #If timer was stopped by receive or a previous timed out
-        if not timer.running():
-            timer.start()
-            #print("Timer Started")  #DEBUG
 
         #If timeout, retransmit entire frame
         if timer.timeout():
@@ -208,9 +209,16 @@ def send_gbn(sock):
 
         #Still not sure why only this combination helps counteract the FIN getting lost
         #Not 100% consistent however
+
+
         if index == buffSize and base==buffSize-1:
-            print("in hogwarts")
+            print("in hogwarts") #DEBUG
+
+            #For safety, send FIN packet 3 times
+            for i in range(0,3):
+                udt.send(pktBuffer[buffSize-1], sock, RECEIVER_ADDR)
             break
+
 
 
 # Receive thread for GBN
