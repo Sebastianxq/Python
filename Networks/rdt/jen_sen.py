@@ -157,8 +157,8 @@ def send_gbn(sock):
             data = file.read(PACKET_SIZE)
     
     
-        pktBuffer.append(packet.make(seq, "END".encode())) #Once file is stored, append FIN pkt
-        seq = seq+1
+        #pktBuffer.append(packet.make(seq, "END".encode())) #Once file is stored, append FIN pkt
+        #seq = seq+1
 
 
 
@@ -214,11 +214,14 @@ def send_gbn(sock):
         if index == buffSize and base==buffSize-1:
             print("in hogwarts") #DEBUG
 
-            #For safety, send FIN packet 3 times
-            for i in range(0,3):
-                udt.send(pktBuffer[buffSize-1], sock, RECEIVER_ADDR)
-            break
+    #For safety, send FIN packet 3 times
+    #At a 20% failure rate per drop this results in only a .008 change of a failed transmission
+    for i in range(0,3):
+        print("sending final ACK")
+        FIN = packet.make(seq, "END".encode())
+        udt.send(FIN, sock, RECEIVER_ADDR)
 
+    #Issue where sometimes sender doesn't increment the final packet, resulting in a infinite loop of retransmissions
 
 
 # Receive thread for GBN
@@ -241,7 +244,7 @@ def receive_gbn(sock):
             print("ack is relevant") #DEBUG
             mutex.acquire() #Stops sending to update base
             base = ack+1    #scoot up base on each successful ACK
-            timer.stop()    #timeout expired (in a good way)
+            timer.stop()    #stop timer since ack made it back in time
             mutex.release() #Lets Sender continue working
 
 
