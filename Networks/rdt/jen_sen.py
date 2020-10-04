@@ -162,7 +162,7 @@ def send_gbn(sock):
             data = file.read(PACKET_SIZE)
     
     
-        pktBuffer.append(packet.make(seq, "END".encode())) #try just appending to the existing buffer
+        pktBuffer.append(packet.make(seq, "END".encode())) #Once file is read, append FIN pkt
         seq = seq+1
 
 
@@ -215,13 +215,9 @@ def send_gbn(sock):
         #REMINDER: Explain the hogwarts below
         #NOTE: There's been 1 fail out of ~8 attempts
         #Maybe change base == buffSize-1?? (i.e base is equal to top)
-        if index == buffSize and base==buffSize-1:
-        #if base==buffSize-1:
+        if index == buffSize or base==buffSize-1:
             break
 
-    #End of comms
-    #print("sending FIN pkt") #DEBUG
-    #Might have to add an entire section here with all the timer stuff again
 
 # Receive thread for GBN
 def receive_gbn(sock):
