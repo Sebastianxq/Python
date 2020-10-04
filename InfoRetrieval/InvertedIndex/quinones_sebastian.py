@@ -10,31 +10,11 @@ def normalization(word):
 	word = word.translate(table) #removes most punctuation 
 	word = word.replace('"', '') #removes quotations from words
 
-	return word
+	#Might have to add something that removes hyphens later.
+	return word               
 
 
-	#if "-"  in word: #splits hyphenated words                    
-    #elif "'"  in word:  #splits concatenated words
-               
-
-def index2():
-	index = {}
-	directory = os.fsencode("data")
-	#print(os.path.splitext(file)[0])
-
-	for file in os.listdir(directory):
-		#print(os.path.splitext(file)[0].decode())
-
-		filename = os.path.splitext(file)[0].decode()
-		with open("data/"+filename+".txt", "r") as file:
-
-			for line in file:          
-				for word in line.split():
-					print(type(word))
-					#if word not in index:
-					#	index[word].append(filename,)
-	print(index)
-
+#Appends input file words' to the global Inverted Index
 def indexGenerator(inputFile):
 	global index #brings index in-scope
 	with open(inputFile, "r") as file:
@@ -42,45 +22,35 @@ def indexGenerator(inputFile):
 		#print(fileNum) #DEBUG
 		for line in file:    
 			for word in line.split():
-				word = normalization(word) #Break this up later
-				#print(word)
+				word = normalization(word) #Removes certain special chars
 
-				#Need to fix duplicate listings showing up
-				if word in index:
-					#print("word was already in index")
+				if word in index: #If word already in index, ensure that we don't enter a duplicate document
+					#print("word was already in index") #DEBUG
 					if (fileNum not in index[word]):					
-						docList = index[word]
+						docList = index[word] 
 						docList.append(fileNum)
 						index[word] = docList
 
-					#Just wontonly add the numbers instead of
-					#checking first if the numbers are already there
-
-				elif word not in index:
-					#print("word not in index")
-					docList = [fileNum]
+				elif word not in index: #Word not in index, add automatically
+					#print("word not in index") #DEBUG
+					docList = [fileNum] #Initialize as a list
 					index[word] = docList
-					#if (index[word] and index[word] == word):
-					#	print("this should b happening")
-				#might not even need to check if the word is not in the dictionary
-				#if word not in index:
-
-					#Overwrites instead of appends
-					#index[word] = (fileNum,)
+					
 	#print(index)
 
 
-#returns a list of all files
+#returns a list of all files in the given directory
 def getAllFiles(dirName):
 	directory = os.fsencode(dirName)
 	files = []
 	for file in os.listdir(directory):
 		files.append(file.decode())
 
-		#used if we just want the doc name, not the extension
-		#filename = os.path.splitext(file)[0].decode()	
+		#filename = os.path.splitext(file)[0].decode()	#used if we just want the doc name, not the extension
+
 	return files	   
 
+#Outputs index contents to a file
 def indexOutput():
 	global index
 	docStrings = ''
@@ -91,24 +61,37 @@ def indexOutput():
 			docStrings = ",".join(value)
 			printStatement = key+"  "+docStrings+'\n'
 			file.write(printStatement)	
-			#print(*value, sep=", ")
-			#sys.stdout = original_stdout
 
-		#keyPart = str(key)
-		#valuePart = str(value)
-		#print(keyPart+valuePart)
+def queryCheck(filename):
+	print('gg')
+	#get query
+	#Turn both of the words into a postings list
+	#AND or OR accordingly (Using the algorithm in class)
 
+	queryFile = open(filename,"r")
+	queries = queryFile.readlines() 
+  	for query in queries:
+  		queryParts = query.split()
+  		if queryParts[1] == "AND":
+  			andAlgorithm(queryParts[0],queryParts[2])
+  		else:
+  			orAlgorithm(queryParts[0],queryParts[2])
 
+def andAlgorithm(word1, word2):
+	print('gg')
+
+def orAlgorithm(word1, word2):
+	print('gg')
 
 # Main function
 if __name__ == '__main__':
 	dirName = "data/" #Later make this an input
 	files = getAllFiles(dirName)
+	queryFile = "query.txt"
 	#print(files) #DEBUG
+	#Iterates through files and stores in Inverse Index
 	for file in files:
 		indexGenerator(dirName+file)
-
-	#for key, value in index.items():
-	#	print(key, ' : ', value)
-
 	indexOutput()
+
+	#
