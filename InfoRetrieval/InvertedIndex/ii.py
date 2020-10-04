@@ -1,12 +1,17 @@
 import os
+import re
 
 index = {} #global dict for storing words
 
 def normalization(word):
-	table = str.maketrans(dict.fromkeys(" ,.;: ")) #key used to remove punctuation from words
+	table = str.maketrans(dict.fromkeys(" ,.;:'() ")) #key used to remove punctuation from words
 	word = word.lower()          #turns all letters lowercase
 	word = word.translate(table) #removes most punctuation 
 	word = word.replace('"', '') #removes quotations from words
+
+	return word
+
+
 	#if "-"  in word: #splits hyphenated words                    
     #elif "'"  in word:  #splits concatenated words
                
@@ -36,11 +41,29 @@ def indexGenerator(inputFile):
 		#print(fileNum) #DEBUG
 		for line in file:    
 			for word in line.split():
-				normalization(word) #Break this up later
-				if word not in index:
+				word = normalization(word) #Break this up later
+				#print(word)
+				#index[word] = index[word].append(fileNum,)
+				#index[word] = (1)
+				#if index[word] == 1:
+					#index[word] = (index[word],2)
+				#print(index[word])
+				if word in index:
+					#print("word was already in index")
+					#index[word] = (index[word],fileNum)
+					#index[word] = index[word].append(fileNum)
+					docList = index[word]
+					docList.append(fileNum)
+					index[word] = docList
+				else:
+					#print("word not in index")
+					docList = [fileNum]
+					index[word] = docList
+				#might not even need to check if the word is not in the dictionary
+				#if word not in index:
 
 					#Overwrites instead of appends
-					index[word] = (fileNum,)
+					#index[word] = (fileNum,)
 	#print(index)
 
 
@@ -62,4 +85,7 @@ if __name__ == '__main__':
 	#print(files) #DEBUG
 	for file in files:
 		indexGenerator(dirName+file)
-	print(index)
+
+	for key, value in index.items():
+		print(key, ' : ', value)
+	#print(index)
