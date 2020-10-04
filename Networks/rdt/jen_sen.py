@@ -46,16 +46,12 @@ def send_snw(sock):
 
     # Open local stream
     with open(filename, "r") as f:
-
         # Do-While Trick
         data = True
-
         # Sequential File Access
         while data:
-
             # Lock Context
             with mutex:
-
                 # Debugging Info
                 print("1 - Acquired w/ {}".format(seq+1))
 
@@ -66,7 +62,6 @@ def send_snw(sock):
 
                 # Handle Thread Timing
                 sync = True
-
                 # Send Packet and Increment Sequence
                 udt.send(pkt, sock, RECEIVER_ADDR)
                 seq += 1
@@ -82,9 +77,7 @@ def send_snw(sock):
 
 # Receive thread for stop-n-wait
 def receive_snw(sock, pkt):
-
-    # Shared Resource Access
-    global sync, alive
+    global sync, alive # Shared Resource Access
 
     # Spin lock to synchronize execution
     while not sync:
@@ -162,7 +155,7 @@ def send_gbn(sock):
             data = file.read(PACKET_SIZE)
     
     
-        pktBuffer.append(packet.make(seq, "END".encode())) #Once file is read, append FIN pkt
+        pktBuffer.append(packet.make(seq, "END".encode())) #Once file is stored, append FIN pkt
         seq = seq+1
 
 
@@ -173,14 +166,14 @@ def send_gbn(sock):
     winSize = min(WINDOW_SIZE, buffSize - base) #Ensure Window size doesnt overflow
     
     
-    #while bottom of list hasnt reached top
+    #while lowest value in the window hasn't traversed packet buffer
     while (buffSize > base):
         print("base:%s, buffSize:%s" %(base,buffSize)) #DEBUG
         mutex.acquire()
         #print("MUTEX TAKEN") #DEBUG
 
 
-        #Iterate(Send) until windowSize is met
+        #Send packets until windowSize is met
         while (index < winSize+base): 
             udt.send(pktBuffer[index], sock, RECEIVER_ADDR)
             print("Sent Packet:%s"%(index)) #DEBUG
@@ -195,7 +188,7 @@ def send_gbn(sock):
             #print("MUTEX TAKEN") #DEBUG
 
 
-        #If timer was stopped by receive or timed out
+        #If timer was stopped by receive or a previous timed out
         if not timer.running():
             timer.start()
             #print("Timer Started")  #DEBUG
@@ -211,11 +204,12 @@ def send_gbn(sock):
         #print("MUTEX RELEASED") #DEBUG
         mutex.release() 
 
-        print("index:%d" %(index))
-        #REMINDER: Explain the hogwarts below
-        #NOTE: There's been 1 fail out of ~8 attempts
-        #Maybe change base == buffSize-1?? (i.e base is equal to top)
-        if index == buffSize or base==buffSize-1:
+        print("index:%d" %(index)) #DEBUG
+
+        #Still not sure why only this combination helps counteract the FIN getting lost
+        #Not 100% consistent however
+        if index == buffSize and base==buffSize-1:
+            print("in hogwarts")
             break
 
 
@@ -250,19 +244,18 @@ if __name__ == '__main__':
     #sock.setblocking(0)
     sock.bind(SENDER_ADDR)
 
-    #filename = sys.argv[1]
-    filename = "test3.txt"
-    print("pre")
-    base = 0
+    #filename = "test3.txt"
+    #print("pre")
+    #base = 0
     # _thread.start_new_thread(send_snw, (sock,))
     # time.sleep(1)
     # _thread.start_new_thread(receive_snw, (sock, pkt_buffer))
     # while alive:
     #     continue
-    print("post")
+    #print("post")
 
     #gbn stuff
-    send_gbn(sock) #lose packets at times
+    send_gbn(sock)
 
 
     sock.close()
