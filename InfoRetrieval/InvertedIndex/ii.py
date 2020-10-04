@@ -1,5 +1,6 @@
 import os
 import re
+import sys
 
 index = {} #global dict for storing words
 
@@ -80,6 +81,25 @@ def getAllFiles(dirName):
 		#filename = os.path.splitext(file)[0].decode()	
 	return files	   
 
+def indexOutput():
+	global index
+	docStrings = ''
+	#f.open("index_lastname.txt", "w")
+	with open("index_quinones.txt", 'w') as file:
+		for key, value in index.items():
+
+			docStrings = ",".join(value)
+			printStatement = key+"  "+docStrings+'\n'
+			file.write(printStatement)	
+			#print(*value, sep=", ")
+			#sys.stdout = original_stdout
+
+		#keyPart = str(key)
+		#valuePart = str(value)
+		#print(keyPart+valuePart)
+
+
+
 # Main function
 if __name__ == '__main__':
 	dirName = "data/" #Later make this an input
@@ -88,5 +108,7 @@ if __name__ == '__main__':
 	for file in files:
 		indexGenerator(dirName+file)
 
-	for key, value in index.items():
-		print(key, ' : ', value)
+	#for key, value in index.items():
+	#	print(key, ' : ', value)
+
+	indexOutput()
