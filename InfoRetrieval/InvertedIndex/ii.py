@@ -43,22 +43,24 @@ def indexGenerator(inputFile):
 			for word in line.split():
 				word = normalization(word) #Break this up later
 				#print(word)
-				#index[word] = index[word].append(fileNum,)
-				#index[word] = (1)
-				#if index[word] == 1:
-					#index[word] = (index[word],2)
-				#print(index[word])
+
+				#Need to fix duplicate listings showing up
 				if word in index:
 					#print("word was already in index")
-					#index[word] = (index[word],fileNum)
-					#index[word] = index[word].append(fileNum)
-					docList = index[word]
-					docList.append(fileNum)
-					index[word] = docList
-				else:
+					if (fileNum not in index[word]):					
+						docList = index[word]
+						docList.append(fileNum)
+						index[word] = docList
+
+					#Just wontonly add the numbers instead of
+					#checking first if the numbers are already there
+
+				elif word not in index:
 					#print("word not in index")
 					docList = [fileNum]
 					index[word] = docList
+					#if (index[word] and index[word] == word):
+					#	print("this should b happening")
 				#might not even need to check if the word is not in the dictionary
 				#if word not in index:
 
@@ -88,4 +90,3 @@ if __name__ == '__main__':
 
 	for key, value in index.items():
 		print(key, ' : ', value)
-	#print(index)
