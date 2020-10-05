@@ -8,10 +8,11 @@ index = {} #global dict for storing words
 def normalization(word):
 	ps = PorterStemmer()
 
-	table = str.maketrans(dict.fromkeys(" ,.;:'()-“”% ")) #key used to remove punctuation from words
+	table = str.maketrans(dict.fromkeys(" ,.;:'()“”% ")) #key used to remove punctuation from words
 	word = word.lower()          #turns all letters lowercase
 	word = word.translate(table) #removes most punctuation 
 	word = word.strip('"') #removes special quotations from words
+	word = word.replace('-', ' ')
 	word = word.replace('---', ' ') #literally for one set of words
 
 	word = ps.stem(word) #Stems words (Cuts off prefix and suffix)
@@ -78,13 +79,17 @@ def queryCheck(filename):
 	queryValue = 1
 	for query in queries:
 		queryParts = query.split()
+
+		#Querys succesfully get their algorithm selected
 		if queryParts[1] == "AND":
+			#print("queryPart is %s"%(queryParts[1]))
 			answer = andAlgorithm(queryParts[0],queryParts[2])
-			print("q%d: %s" %(queryValue, answer))
+			print("AND q%d: %s\n" %(queryValue, answer))
 			queryValue+=1
 		else:
+			#print("queryPart is %s"%(queryParts[1]))
 			answer = orAlgorithm(queryParts[0],queryParts[2])
-			print("q%d: %s" %(queryValue, answer))
+			print("OR q%d: %s\n" %(queryValue, answer))
 			queryValue+=1
 
 def andAlgorithm(word1, word2):
@@ -94,6 +99,8 @@ def andAlgorithm(word1, word2):
 	try:
 		p1 = index[word1.lower()]
 		p2 = index[word2.lower()]
+		print("word1 %s \t posting1:%s" %(word1, p1))
+		print("word2 %s \t posting2:%s" %(word2, p2))
 	except:
 		return -1
 
@@ -131,6 +138,8 @@ def orAlgorithm(word1, word2):
 	try:
 		p1 = index[word1.lower()]
 		p2 = index[word2.lower()]
+		print("word1 %s \t posting1:%s" %(word1, p1))
+		print("word2 %s \t posting2:%s" %(word2, p2))
 	except:
 		return -1
 
@@ -159,7 +168,7 @@ def orAlgorithm(word1, word2):
 if __name__ == '__main__':
 	dirName = "data/" #Later make this an input
 	files = getAllFiles(dirName)
-	queryFile = "query.txt"
+	queryFile = "stemmedQuery.txt"
 	#print(files) #DEBUG
 	#Iterates through files and stores in Inverse Index
 	for file in files:
@@ -167,3 +176,5 @@ if __name__ == '__main__':
 	indexOutput()
 
 	queryCheck(queryFile)
+	
+	#print(index)
