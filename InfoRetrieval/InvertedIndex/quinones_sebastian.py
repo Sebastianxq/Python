@@ -1,14 +1,20 @@
 import os
 import re
 import sys
-
+from nltk.stem import PorterStemmer
+from nltk.tokenize import word_tokenize
 index = {} #global dict for storing words
 
 def normalization(word):
-	table = str.maketrans(dict.fromkeys(" ,.;:'() ")) #key used to remove punctuation from words
+	ps = PorterStemmer()
+
+	table = str.maketrans(dict.fromkeys(" ,.;:'()-“”% ")) #key used to remove punctuation from words
 	word = word.lower()          #turns all letters lowercase
 	word = word.translate(table) #removes most punctuation 
-	word = word.replace('"', '') #removes quotations from words
+	word = word.strip('"') #removes special quotations from words
+	word = word.replace('---', ' ') #literally for one set of words
+
+	word = ps.stem(word) #Stems words (Cuts off prefix and suffix)
 
 	#Might have to add something that removes hyphens later.
 	return word               
@@ -23,7 +29,7 @@ def indexGenerator(inputFile):
 		for line in file:    
 			for word in line.split():
 				word = normalization(word) #Removes certain special chars
-
+				print(word)
 				if word in index: #If word already in index, ensure that we don't enter a duplicate document
 					#print("word was already in index") #DEBUG
 					if (fileNum not in index[word]):					
