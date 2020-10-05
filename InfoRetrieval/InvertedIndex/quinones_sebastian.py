@@ -63,25 +63,59 @@ def indexOutput():
 			file.write(printStatement)	
 
 def queryCheck(filename):
-	print('gg')
 	#get query
 	#Turn both of the words into a postings list
 	#AND or OR accordingly (Using the algorithm in class)
 
 	queryFile = open(filename,"r")
 	queries = queryFile.readlines() 
-  	for query in queries:
-  		queryParts = query.split()
-  		if queryParts[1] == "AND":
-  			andAlgorithm(queryParts[0],queryParts[2])
-  		else:
-  			orAlgorithm(queryParts[0],queryParts[2])
+	queryValue = 1
+	for query in queries:
+		queryParts = query.split()
+		if queryParts[1] == "AND":
+			answer = andAlgorithm(queryParts[0],queryParts[2])
+			print("q%d: %s" %(queryValue, answer))
+			queryValue+=1
+		else:
+			#orAlgorithm(queryParts[0],queryParts[2])
+			#print("q%d: %s" %(queryValue, answer))
+			queryValue+=1
 
 def andAlgorithm(word1, word2):
-	print('gg')
+	global index
+	try:
+		p1 = index[word1.lower()]
+		p2 = index[word2.lower()]
+	except:
+		#print("word not found!")
+		return -1
+
+	answer = []
+	p1Index = 0
+	p2Index = 0
+	while p1 and p2:
+		try:
+			p1Value = p1[p1Index]
+			p2Value = p2[p2Index]
+		except:
+			break #one or more lists are done, loop doesnt end though
+
+		if p1[p1Index] == p2[p2Index]:
+			answer.append(p1[p1Index])
+			p1Index+=1
+			p2Index+=1
+		elif p1[p1Index][1] < p2[p2Index][1]:
+			p1Index+=1
+		else:
+			p2Index+=1
+
+	if answer ==[]:
+		return -1
+	return answer
+
 
 def orAlgorithm(word1, word2):
-	print('gg')
+	print('gg HUH')
 
 # Main function
 if __name__ == '__main__':
@@ -94,4 +128,4 @@ if __name__ == '__main__':
 		indexGenerator(dirName+file)
 	indexOutput()
 
-	#
+	queryCheck(queryFile)
