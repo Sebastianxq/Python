@@ -5,6 +5,7 @@ from nltk.stem import PorterStemmer
 
 index = {} #global dict for storing words
 
+#Removes punctuations/special characters and stems the input
 def normalization(word):
 	ps = PorterStemmer()
 
@@ -146,21 +147,15 @@ def orAlgorithm(word1, word2):
 	p1Index = 0
 	p2Index = 0
 
-	#Split up into 2 tries in the event that one posting is empty but the other isn't
+	#Split up into 2 try blocks (in the event that one posting is empty but the other isn't)
 	try:
 		p1 = index[word1.lower()]
 
-		#All values in p1 are valid
+		#All values in p1 are valid answers
 		while p1Index < len(p1):
-			if p1[p1Index] not in answer: 
+			if p1[p1Index] not in answer: #ensures no duplicate entries
 				answer.append(p1[p1Index])
 			p1Index+=1
-		p2 = index[word2.lower()]
-		#All values in p2 are valid
-		while p2Index < len(p2):
-			if p2[p2Index] not in answer: 
-				answer.append(p2[p2Index])
-			p2Index+=1
 		#print("word1 %s \t posting1:%s" %(word1, p1)) #DEBUG
 		#print("word2 %s \t posting2:%s" %(word2, p2)) #DEBUG
 	except:
@@ -183,14 +178,14 @@ def orAlgorithm(word1, word2):
 
 
 
-	#if both lists were succesfully traversed and no match was made for query, return -1
+	#if both lists are empty/don't exist, return -1, otherwise: return list
 	if answer ==[]:
 		return -1
 	return answer
 
 # Main function
 if __name__ == '__main__':
-	dirName = "data/" #Later make this an input
+	dirName = "data/" 
 	files = getAllFiles(dirName)
 	queryFile = "stemmedQuery.txt"
 	#print(files) #DEBUG
@@ -198,8 +193,9 @@ if __name__ == '__main__':
 	#Iterates through files and stores in Inverse Index
 	for file in files:
 		indexGenerator(dirName+file)
-	indexOutput()
 
-	queryCheck(queryFile)
+	indexOutput() #Output Inverted Index into a text file
+
+	queryCheck(queryFile) #Check queries against index and output into a text file
 	
 	#print(index) #DEBUG
