@@ -83,39 +83,43 @@ def queryCheck(filename):
 
 def andAlgorithm(word1, word2):
 	global index
+
+	#If either word doesnt have a posting available, automatically cancel
 	try:
 		p1 = index[word1.lower()]
 		p2 = index[word2.lower()]
 	except:
-		#print("word not found!")
 		return -1
 
 	answer = []
 	p1Index = 0
 	p2Index = 0
-	while p1 and p2:
+	while p1 and p2: #While that i'm definitely using wrong
+		
+		#Try to load the next posting, if either fails then we're done 
 		try:
 			p1Value = p1[p1Index]
 			p2Value = p2[p2Index]
 		except:
 			break #one or more lists are done, loop doesnt end though
 
-		if p1[p1Index] == p2[p2Index]:
+		if p1[p1Index] == p2[p2Index]: #If postings match (AND==True)
 			answer.append(p1[p1Index])
 			p1Index+=1
 			p2Index+=1
-		elif p1[p1Index][1] < p2[p2Index][1]:
+		elif p1[p1Index][1] < p2[p2Index][1]: 	#If doc num for p1 is less than p2
 			p1Index+=1
-		else:
+		else:									#if doc num for p2 less than p1
 			p2Index+=1
 
+	#if both lists were succesfully traversed and no match was made for query, return -1
 	if answer ==[]:
 		return -1
 	return answer
 
 
 def orAlgorithm(word1, word2):
-	print('gg HUH')
+	print("TBD")
 
 # Main function
 if __name__ == '__main__':
