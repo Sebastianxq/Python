@@ -1,0 +1,25 @@
+#1 Query interfac OR system
+ Results: ['d1', 'd2', 'd3', 'd4', 'd5', 'd6']
+#2 Query sensit AND inform
+ Results: ['d2', 'd4', 'd6']
+#3 Query semant OR web
+ Results: ['d1', 'd2', 'd3', 'd4', 'd5', 'd6']
+#4 Query retriev OR queri
+ Results: ['d1', 'd2', 'd3', 'd4', 'd5', 'd6']
+#5 Query We AND present
+ Results: ['d1', 'd2', 'd3', 'd4', 'd5', 'd6']
+#6 Query silo OR system
+ Results: ['d1', 'd2', 'd3', 'd4', 'd5', 'd6']
+#7 Query label AND data
+ Results: ['d1', 'd6']
+#8 Query pseudo OR feedback
+ Results: ['d2']
+#9 Query search AND expertis
+ Results: ['d3']
+#10 Query relev AND estim
+ Results: ['d5']
+#11 Query rank OR model
+ Results: ['d1', 'd2', 'd3', 'd5', 'd6']
+#12 Query seek AND sensemak
+ Results: ['d6']
+#13 Query san AND diego Results: -1

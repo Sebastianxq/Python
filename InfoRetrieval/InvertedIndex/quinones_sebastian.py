@@ -72,6 +72,7 @@ def indexOutput():
 def queryCheck(filename):
 	queryFile = open(filename,"r")
 	queries = queryFile.readlines() 
+	answerFile = open("answer.txt", "w")
 	queryValue = 1
 	for query in queries:
 		queryParts = query.split()
@@ -81,13 +82,18 @@ def queryCheck(filename):
 			#print("queryPart is %s"%(queryParts[1]))
 			answer = andAlgorithm(queryParts[0],queryParts[2])
 			print("#%d Query %s Results: %s\n" %(queryValue, query, answer))
+			answerFile.write("#%d Query %s Results: %s\n" %(queryValue, query, answer))
 			queryValue+=1
 		else:
 			#print("queryPart is %s"%(queryParts[1]))
 			answer = orAlgorithm(queryParts[0],queryParts[2])
 			answer.sort(key=lambda x:x[1]) #Sorts documents in ascending order
 			print("#%d Query %s Results: %s\n" %(queryValue, query, answer))
+			answerFile.write("#%d Query %s Results: %s\n" %(queryValue, query, answer)
 			queryValue+=1
+	
+	queryFile.close()
+	answerFile.close()
 
 #returns documents where both words are present
 def andAlgorithm(word1, word2):
