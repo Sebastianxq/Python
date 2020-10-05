@@ -81,15 +81,15 @@ def queryCheck(filename):
 		if queryParts[1] == "AND":
 			#print("queryPart is %s"%(queryParts[1]))
 			answer = andAlgorithm(queryParts[0],queryParts[2])
-			print("#%d Query %s Results: %s\n" %(queryValue, query, answer))
+			#print("#%d Query %s Results: %s\n" %(queryValue, query, answer)) #DEBUG
 			answerFile.write("#%d Query %s Results: %s\n" %(queryValue, query, answer))
 			queryValue+=1
 		else:
 			#print("queryPart is %s"%(queryParts[1]))
 			answer = orAlgorithm(queryParts[0],queryParts[2])
 			answer.sort(key=lambda x:x[1]) #Sorts documents in ascending order
-			print("#%d Query %s Results: %s\n" %(queryValue, query, answer))
-			answerFile.write("#%d Query %s Results: %s\n" %(queryValue, query, answer)
+			#print("#%d Query %s Results: %s\n" %(queryValue, query, answer)) #DEBUG
+			answerFile.write("#%d Query %s Results: %s\n" %(queryValue, query, answer))
 			queryValue+=1
 	
 	queryFile.close()
@@ -109,7 +109,7 @@ def andAlgorithm(word1, word2):
 		#print("word1 %s \t posting1:%s" %(word1, p1)) #DEBUG
 		#print("word2 %s \t posting2:%s" %(word2, p2)) #DEBUG
 	except:
-		print("%s or %s not found in index" %(word1,word2)) #DEBUG
+		#print("%s or %s not found in index" %(word1,word2)) #DEBUG
 		return -1
 
 	answer = []
@@ -164,7 +164,8 @@ def orAlgorithm(word1, word2):
 		#print("word1 %s \t posting1:%s" %(word1, p1)) #DEBUG
 		#print("word2 %s \t posting2:%s" %(word2, p2)) #DEBUG
 	except:
-		print("%s not found in index" %(word1)) #DEBUG
+		#print("%s not found in index" %(word1)) #DEBUG
+		pass #Do nothing, print statement is only for debugging purposes
 
 	try:
 		p2 = index[word2.lower()]
@@ -176,7 +177,8 @@ def orAlgorithm(word1, word2):
 		#print("word1 %s \t posting1:%s" %(word1, p1)) #DEBUG
 		#print("word2 %s \t posting2:%s" %(word2, p2)) #DEBUG
 	except:
-		print("%s not found in index" %(word2)) #DEBUG
+		#print("%s not found in index" %(word2)) #DEBUG
+		pass
 	
 
 
