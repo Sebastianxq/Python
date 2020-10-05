@@ -29,7 +29,7 @@ def indexGenerator(inputFile):
 		for line in file:    
 			for word in line.split():
 				word = normalization(word) #Removes certain special chars
-				print(word)
+				#print(word) #DEBUG
 				if word in index: #If word already in index, ensure that we don't enter a duplicate document
 					#print("word was already in index") #DEBUG
 					if (fileNum not in index[word]):					
@@ -83,8 +83,8 @@ def queryCheck(filename):
 			print("q%d: %s" %(queryValue, answer))
 			queryValue+=1
 		else:
-			#orAlgorithm(queryParts[0],queryParts[2])
-			#print("q%d: %s" %(queryValue, answer))
+			answer = orAlgorithm(queryParts[0],queryParts[2])
+			print("q%d: %s" %(queryValue, answer))
 			queryValue+=1
 
 def andAlgorithm(word1, word2):
@@ -125,7 +125,35 @@ def andAlgorithm(word1, word2):
 
 
 def orAlgorithm(word1, word2):
-	print("TBD")
+	global index
+
+	#If either word doesnt have a posting available, automatically cancel
+	try:
+		p1 = index[word1.lower()]
+		p2 = index[word2.lower()]
+	except:
+		return -1
+
+	answer = []
+	p1Index = 0
+	p2Index = 0
+
+	#All values in p1 are valid
+	while p1Index < len(p1):
+		if p1[p1Index] not in answer: 
+			answer.append(p1[p1Index])
+		p1Index+=1
+
+	#All values in p2 are valid
+	while p2Index < len(p2):
+		if p2[p2Index] not in answer: 
+			answer.append(p2[p2Index])
+		p2Index+=1
+
+	#if both lists were succesfully traversed and no match was made for query, return -1
+	if answer ==[]:
+		return -1
+	return answer
 
 # Main function
 if __name__ == '__main__':
