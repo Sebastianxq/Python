@@ -89,6 +89,7 @@ def queryCheck(filename):
 		else:
 			#print("queryPart is %s"%(queryParts[1]))
 			answer = orAlgorithm(queryParts[0],queryParts[2])
+			answer.sort(key=lambda x:x[1]) #Sorts documents in ascending order
 			print("Query %s Results: %s\n" %(query, answer))
 			queryValue+=1
 
@@ -177,4 +178,4 @@ if __name__ == '__main__':
 
 	queryCheck(queryFile)
 	
-	#print(index)
+	#print(index) #DEBUG
