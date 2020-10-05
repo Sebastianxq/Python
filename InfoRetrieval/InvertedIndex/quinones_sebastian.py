@@ -84,12 +84,12 @@ def queryCheck(filename):
 		if queryParts[1] == "AND":
 			#print("queryPart is %s"%(queryParts[1]))
 			answer = andAlgorithm(queryParts[0],queryParts[2])
-			print("AND q%d: %s\n" %(queryValue, answer))
+			print("Query %s Results: %s\n" %(query, answer))
 			queryValue+=1
 		else:
 			#print("queryPart is %s"%(queryParts[1]))
 			answer = orAlgorithm(queryParts[0],queryParts[2])
-			print("OR q%d: %s\n" %(queryValue, answer))
+			print("Query %s Results: %s\n" %(query, answer))
 			queryValue+=1
 
 def andAlgorithm(word1, word2):
@@ -99,8 +99,8 @@ def andAlgorithm(word1, word2):
 	try:
 		p1 = index[word1.lower()]
 		p2 = index[word2.lower()]
-		print("word1 %s \t posting1:%s" %(word1, p1))
-		print("word2 %s \t posting2:%s" %(word2, p2))
+		#print("word1 %s \t posting1:%s" %(word1, p1)) #DEBUG
+		#print("word2 %s \t posting2:%s" %(word2, p2)) #DEBUG
 	except:
 		return -1
 
@@ -138,8 +138,8 @@ def orAlgorithm(word1, word2):
 	try:
 		p1 = index[word1.lower()]
 		p2 = index[word2.lower()]
-		print("word1 %s \t posting1:%s" %(word1, p1))
-		print("word2 %s \t posting2:%s" %(word2, p2))
+		#print("word1 %s \t posting1:%s" %(word1, p1)) #DEBUG
+		#print("word2 %s \t posting2:%s" %(word2, p2)) #DEBUG
 	except:
 		return -1
 
