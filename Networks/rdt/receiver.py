@@ -11,6 +11,7 @@ def receive_gbn(sock):
    seqList = [] #Holds Sequence numbers prev received
    f = open("gbn_receiver.txt", "w")
    dataStr = ''
+   #retries = 0
 
    #While NO FIN pkt
    while dataStr!='END':
@@ -22,6 +23,7 @@ def receive_gbn(sock):
        #print("data is "+data.decode()) #DEBUG
        if (seq not in seqList and not dataStr == "END"):
           f.write(dataStr)
+          retries = 0
 
        #Data recv, ensure duplicate packets are ignored
        seqList.append(seq)
@@ -31,6 +33,13 @@ def receive_gbn(sock):
        #If ACK lost, retransmission happens on sender side :)
        ack = packet.make(seq, "ACK".encode())
        udt.send(ack, sock, senderaddr)
+       retries+=1
+
+       #retries on receiver end (switch to other side even though this may work)
+       # if retries==5:
+       #  print("max retries reached, resending n-1 pkt")
+       #  ack = packet.make(seq-1, "ACK".encode())
+       #  udt.send(ack, sock, senderaddr)
 
 
    f.close() 

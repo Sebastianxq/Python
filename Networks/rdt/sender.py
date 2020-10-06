@@ -15,11 +15,18 @@ SENDER_ADDR = ('localhost', 9090)
 SLEEP_INTERVAL = 0.05 # (In seconds)
 TIMEOUT_INTERVAL = 0.5
 WINDOW_SIZE = 4
+RETRY_ATTEMPTS = 20
+
 
 #Shared Resources for multithreading
 base = 0 #AKA Min
 mutex = _thread.allocate_lock() #Allows Thread to work/take a break
 timer = Timer(TIMEOUT_INTERVAL) #Needed for retransmissions
+pkt_buffer = []
+
+# RELAY CONTROL
+threads = 0
+sync = False
 
 # Send using Stop_n_wait protocol
 def send_snw(sock): #mod sndr by Jennifer
@@ -114,24 +121,6 @@ def mod_snw(sock):
 		pkt = packet.make(seq, "END".encode())
 		udt.send(pkt, sock, RECEIVER_ADDR)
 
-#Debug function. sends text file in lines rather than bytes
-#Easier to send way more packets with this one (for debugging retransmission)
-def lineSnW(sock):
-	seq = 0
-	bio = open("bio.txt", "r")
-	lines = bio.readlines()
-	for line in lines:
-		#Send here
-		data = line
-		pkt = packet.make(seq, data.encode())
-		print("Sending seq ", seq, "\n")
-		udt.send(pkt, sock, RECEIVER_ADDR)
-		seq = seq+1
-		time.sleep(TIMEOUT_INTERVAL)
-	#Signifies end of comms
-	pkt = packet.make(seq, "END".encode())
-	udt.send(pkt, sock, RECEIVER_ADDR)
-
 
 
 # Send using GBN protocol
@@ -185,7 +174,10 @@ def send_gbn(sock):
 
 
 
-		
+		#If timer was stopped by receive or timed out
+		if not timer.running():
+			timer.start()
+			#print("Timer Started")  #DEBUG
 
 		#As long as timer is still running with no timeouts
 		while not timer.timeout() and timer.running():
@@ -195,11 +187,7 @@ def send_gbn(sock):
 			mutex.acquire()
 			#print("MUTEX TAKEN") #DEBUG
 
-
-		#If timer was stopped by receive or timed out
-		if not timer.running():
-			timer.start()
-			#print("Timer Started")  #DEBUG
+		
 
 		#If timeout, retransmit entire frame
 		if timer.timeout():
@@ -214,8 +202,9 @@ def send_gbn(sock):
 
 	#End of comms
 	#print("sending FIN pkt") #DEBUG
-	pkt = packet.make(seq, "END".encode())
-	udt.send(pkt, sock, RECEIVER_ADDR)
+	for i in range(0,3):
+		FIN = packet.make(seq, "END".encode())
+		udt.send(FIN, sock, RECEIVER_ADDR)
 
 
 # Receive thread for GBN
@@ -262,8 +251,22 @@ if __name__ == '__main__':
     # print("starting send")
     send_gbn(sock)
 
-    #Test
-    #good_snw(sock)
+    #SNW
+    #filename = sys.argv[1]
+    # filename = "test3.txt"
+
+    # print("pre")
+
+    # base = 0
+
+    # _thread.start_new_thread(send_snw, (sock,))
+    # time.sleep(1)
+    # _thread.start_new_thread(receive_snw, (sock, pkt_buffer))
+
+    # while threads:
+    #     continue
+
+    # print("post")
 
 
 
