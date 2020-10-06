@@ -148,7 +148,7 @@ def send_gbn(sock):
     #of sliced up packets
     seq = 0 
     pktBuffer = [] 
-    with open("test5.txt", "rb") as file:
+    with open("testFiles/test4.txt", "rb") as file:
         data = file.read(PACKET_SIZE)
         while data:
             #print("adding seq:%d" %(seq)) #DEBUG
