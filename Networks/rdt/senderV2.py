@@ -27,13 +27,6 @@ timer = Timer(TIMEOUT_INTERVAL)
 sync = False
 alive = True
 
-# Generate random payload of any length
-def generate_payload(length=10):
-    letters = string.ascii_lowercase
-    result_str = ''.join(random.choice(letters) for i in range(length))
-
-    return result_str
-
 
 # Send using Stop_n_wait protocol
 def send_snw(sock):
