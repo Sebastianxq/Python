@@ -6,50 +6,13 @@ import udt
 
 RECEIVER_ADDR = ('localhost', 8080)
 
-# Receive packets from the sender w/ GBN protocol
-def receive_gbn(sock):
-   seqList = [] #Holds Sequence numbers prev received
-   f = open("gbn_receiver.txt", "w")
-   dataStr = ''
-   #retries = 0
-
-   #While NO FIN pkt
-   while dataStr!='END':
-       pkt, senderaddr = udt.recv(sock)
-       seq, data = packet.extract(pkt)
-       dataStr = data.decode()
-
-       #Does not write if duplicate pkt or FIN pkt 
-       #print("data is "+data.decode()) #DEBUG
-       if (seq not in seqList and not dataStr == "END"):
-          f.write(dataStr)
-          retries = 0
-
-       #Data recv, ensure duplicate packets are ignored
-       seqList.append(seq)
-       #print("From: ", senderaddr, ", Seq# ", seq, dataStr) #DEBUG
-
-       #Send back ACK to confirm rcpt. 
-       #If ACK lost, retransmission happens on sender side :)
-       ack = packet.make(seq, "ACK".encode())
-       udt.send(ack, sock, senderaddr)
-       retries+=1
-
-       #retries on receiver end (switch to other side even though this may work)
-       # if retries==5:
-       #  print("max retries reached, resending n-1 pkt")
-       #  ack = packet.make(seq-1, "ACK".encode())
-       #  udt.send(ack, sock, senderaddr)
-
-
-   f.close() 
-
 # Receive packets from the sender w/ SR protocol
 def receive_sr(sock, windowsize):
     # Fill here
     return
 
-def newGBN(sock):
+#Working version of GBN 10-5-2020
+def receive_gbn(sock):
     initSeq = 0
     seqList = [] #Holds Sequence numbers prev received
     f = open("gbn_receiver.txt", "w")
@@ -78,11 +41,8 @@ def newGBN(sock):
        elif dataStr == 'END':
         print("Received end, we're done")
         break
-
-       #ack = packet.make(seq, "ACK".encode())
-       #udt.send(ack, sock, senderaddr)
-
     f.close() 
+
 # Receive packets from the sender w/ Stop-n-wait protocol
 def receive_snw(sock): #Mod rcvr SNW by Jennifer
     endStr = ''
@@ -127,7 +87,7 @@ if __name__ == '__main__':
     #SNW (Does not work with GBN)
     #receive_snw(sock)
 
-    #receive_gbn(sock)
-    newGBN(sock)
+    receive_gbn(sock)
+    
     # Close the socket
     sock.close()
