@@ -148,39 +148,35 @@ def send_gbn(sock):
             pktBuffer.append(packet.make(seq, data))
             seq = seq+1
             data = file.read(PACKET_SIZE)
-    
-    
-        #pktBuffer.append(packet.make(seq, "END".encode())) #Once file is stored, append FIN pkt
-        #seq = seq+1
-
 
 
     #print("packets added to buffer") #DEBUG
     buffSize = seq  
     index = 0
-    winSize = min(WINDOW_SIZE, buffSize - base) #Ensure Window size doesnt overflow
+    winSize = min(WINDOW_SIZE, buffSize - base) #Ensure Window size doesnt go out of bounds
     retries = 0
     
     
     #while lowest value in the window hasn't traversed packet buffer
     while (buffSize > base):
-        print("base:%s, buffSize:%s" %(base,buffSize)) #DEBUG
+        #print("base:%s, buffSize:%s" %(base,buffSize)) #DEBUG
         mutex.acquire()
         #print("MUTEX TAKEN") #DEBUG
 
 
-        #Send packets until windowSize is met
+        #Send packets in window sized segments
         while (index < winSize+base): 
             udt.send(pktBuffer[index], sock, RECEIVER_ADDR)
             print("Sent Packet:%s"%(index)) #DEBUG
             index = index+1
 
-        #If timer was stopped by receive or a previous timed out
+        #If timer was stopped by receive or a previous timed out: restart it for the timeout
         if not timer.running():
             timer.start()
             #print("Timer Started")  #DEBUG
 
-        #As long as timer is still running with no timeouts
+        #If timer has not timed out or been stopped by ACK receiver, wait for a timeout
+        #for the current window
         while not timer.timeout() and timer.running():
             mutex.release()
             #print("MUTEX RELEASED")  #DEBUG
@@ -188,45 +184,38 @@ def send_gbn(sock):
             mutex.acquire()
             #print("MUTEX TAKEN") #DEBUG
 
-        #If timeout, retransmit entire frame
-        if timer.timeout():
+        if timer.timeout():         #If timeout, retransmit entire frame
+            retries+=1  
             index = base
             timer.stop()
-            retries+=1
             #print("timeout, resend") #DEBUG
+
         else: #Transmission is fine, prepare window for next batch
             winSize = min(WINDOW_SIZE, buffSize - base)
-            retries=0
+            retries=0 #reset retries since ACKS are fine
             #print("Moving on to next set of packets") #DEBUG
         #print("MUTEX RELEASED") #DEBUG
 
-        if retries >= 10: #if there has been 5 timeouts in a row, resend n-1 pkt
-            print("retry maxed, sending n+1 pkt")
+        #if packet has been sent 10 times without an ACK, just assume it made it. 
+        #Used to account for scenarios where receiver ends early
+        if retries >= 10: 
+            #print("retry maxed, sending n+1 pkt") #DEBUG
             base+=1 #try this out??
             udt.send(pktBuffer[index], sock, RECEIVER_ADDR)
             retries = 0
 
 
         mutex.release() 
-
-        print("index:%d" %(index)) #DEBUG
-
-        #Still not sure why only this combination helps counteract the FIN getting lost
-        #Not 100% consistent however
+        #print("index:%d" %(index)) #DEBUG
 
 
-        #if index == buffSize and base==buffSize-1:
-        #    print("in hogwarts") #DEBUG
-
-    #For safety, send FIN packet 3 times
-    #At a 20% failure rate per drop this results in only a .008 change of a failed transmission
+    #For safety, send FIN packet 5 times at the end of comms
     #Currently at a 0.00032 failure rate
     for i in range(0,5):
         print("sending final ACK")
         FIN = packet.make(seq, "END".encode())
         udt.send(FIN, sock, RECEIVER_ADDR)
 
-    #Issue where sometimes sender doesn't increment the final packet, resulting in a infinite loop of retransmissions
 
 
 # Receive thread for GBN
@@ -240,11 +229,11 @@ def receive_gbn(sock):
 
     #Check for incoming ACKS
     while True:
-        pkt,senderAddress = udt.recv(sock); #Address unused
-        ack,ackData = packet.extract(pkt)   #Data could be checked for corruption
+        pkt,senderAddress = udt.recv(sock); #get packet and address of sender (currently only packet is needed)
+        ack,ackData = packet.extract(pkt)   #Get ACK # and data. data is unused (as there should only be a confirmed ack #)
         #print("got ack") #DEBUG
 
-        #Might have multiple ACKS in buffer, empty it out and iterate accordingly
+        #For each confirmed ack (that is relevant), move the base up
         if (base <= ack):
             print("ack is relevant") #DEBUG
             mutex.acquire() #Stops sending to update base
