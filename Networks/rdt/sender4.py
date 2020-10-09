@@ -134,7 +134,7 @@ def receive_snw(sock, pkt):
     # Data misordering at fail doesn't occur
 
 # Send using GBN protocol
-def send_gbn(sock):
+def send_gbn(sock, filename):
     #Global Vars for comms with receiver
     global base
     global mutex
@@ -154,7 +154,8 @@ def send_gbn(sock):
     #of sliced up packets
     seq = 0 
     pktBuffer = [] 
-    with open("testFiles/test4.txt", "rb") as file:
+    print("opening empty text")
+    with open(filename, "rb") as file:
         data = file.read(PACKET_SIZE)
         while data:
             #print("adding seq:%d" %(seq)) #DEBUG
@@ -198,7 +199,7 @@ def send_gbn(sock):
             #print("MUTEX TAKEN") #DEBUG
 
         if timer.timeout():         #If timeout, retransmit entire frame
-            retries+=1  
+            retries = retries+1  
             index = base
             timer.stop()
             #print("timeout, resend") #DEBUG
@@ -213,7 +214,7 @@ def send_gbn(sock):
         #Used to account for scenarios where receiver ends early
         if retries >= 10: 
             #print("retry maxed, sending n+1 pkt") #DEBUG
-            base+=1 #try this out??
+            base=base+1 #try this out??
             udt.send(pktBuffer[index], sock, RECEIVER_ADDR)
             retries = 0
 
@@ -269,29 +270,34 @@ if __name__ == '__main__':
     args = parse_args()
 
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    sock.setblocking(0)
+    #sock.setblocking(0)
     sock.bind(SENDER_ADDR)
 
-    print("pre")
+    #print("pre") #DEBUG
 
     base = 0
+    filename = args.path
+
 
     if args.method == 'snw':
+        sock.setblocking(0)
         _thread.start_new_thread(send_snw, (sock,))
         time.sleep(1)
         _thread.start_new_thread(receive_snw, (sock,))
+        # problem with alive and sync on recv
+        while alive:
+            continue
     elif args.method == 'gbn':
-        send_gbn(sock)
+        send_gbn(sock, filename)
     else:
         sys.stderr.write("Protocol selection must be one of [\'snw\', \'gbn\']\n")
         sys.stderr.flush()
 
-    filename = args.path
 
     # problem with alive and sync on recv
-    while alive:
-        continue
+    #while alive:
+    #    continue
 
-    print("post")
+    #print("post") #DEBUG
     sock.close()
 
