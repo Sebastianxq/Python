@@ -42,7 +42,7 @@ def generate_payload(length=10):
 def send_snw(sock):
 
     # Access to shared resources
-    global sync, data
+    global sync, data, alive
 
     # Track packet count
     seq = 0
@@ -79,6 +79,7 @@ def send_snw(sock):
             pkt = packet.make(seq, "END".encode())            # Prepare last packet
             pkt_buffer.append(pkt)
             udt.send(pkt, sock, RECEIVER_ADDR)                # Send EOF
+            alive = false
 
 # Receive thread for stop-n-wait
 def receive_snw(sock, pkt):
