@@ -26,7 +26,7 @@ if __name__ == '__main__':
 	if args.function == '1':
 		pkt = sniff(filter="icmp", prn=print_pkt)
 	elif args.function == '2':
-		IPfilter = "host "+args.IP+" and port "+args.port
+		IPfilter = "tcp and host "+args.IP+" and port "+args.port
 		#print(IPfilter) #DEBUG
 		pkt = sniff(filter=IPfilter, prn=print_pkt)
 	else:
