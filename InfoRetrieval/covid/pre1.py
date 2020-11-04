@@ -58,9 +58,19 @@ if __name__ == '__main__':
 	#Combines lists and turns them to a pandas dataFrame that has days on one row and the corresponding infections on the next row
 	marchList = list(zip(marchDates,marchInfections))
 	julyList = list(zip(julyDates,julyInfections))
+
+	#Some pandas dataframe formatting
 	marchDF = pd.DataFrame(marchList)
 	julyDF = pd.DataFrame(julyList)
+	marchDF.rename(columns={0:'Date', 1:'Infections'}, inplace=True)
+	julyDF.rename(columns={0:'Date', 1:'Infections'}, inplace=True)
 
+	#print(marchDF) #DEBUG
+
+	#store lists into their respective CSV files.
+	marchDF.to_csv('marchInfections.csv', sep = ',', encoding = 'cp1251', index = False)
+	#marchDF.to_csv('marchInfections.csv')
+	julyDF.to_csv('julyInfections.csv', sep = ',', encoding = 'cp1251', index = False)
 
 	#print(marchDF) #DEBUG
 
