@@ -43,6 +43,8 @@ for div in divs:
     if facultyEmail is not None:
       #print(facultyEmail.text)
       email.append(facultyEmail.text)
+      filename = facultyEmail.text[:-9] #@utep.edu, 9 numbers
+      #print(facultyEmail.text)
     else:
       email.append("N/A")
 
@@ -65,9 +67,10 @@ for div in divs:
       #print(facultyURL)
       website.append(facultyURL)
       content = BeautifulSoup(webPageContent.text, "lxml")
-          #file = open(facultyName.text+".txt", "wt")
-          #n = file.write(content.text)
-          #file.close()
+      path2 = "professors/"+filename
+      file = open(path2+".txt", "wt")
+      n = file.write(content.text)
+      file.close()
     else:
       website.append("N/A")
     #print("=========================")
