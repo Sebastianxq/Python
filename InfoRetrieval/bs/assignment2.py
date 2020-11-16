@@ -9,7 +9,6 @@ soup = BeautifulSoup(req.text,'lxml')
 #store all "div" tags in a list
 divs = soup.findAll("div", {"class":"col-md-6"})
 
-professors = pd.DataFrame()
 names = []
 titles = []
 room = []
@@ -23,48 +22,67 @@ for div in divs:
   facultyTitle = div.find("span",{"class":"Title"})
   if facultyTitle is not None:
     if "Professor" in facultyTitle.text:
-      print(facultyTitle.text)
+      #print(facultyTitle.text)
       titles.append(facultyTitle.text)
+    else:
+      titles.append("N/A")
 
  #get professor names
     facultyName = div.find("h3",{"class":"name"})
     if facultyName is not None:
-      print(facultyName.text)
+      #print(facultyName.text)
       names.append(facultyName.text)
 
     facultyRoom = div.find("span", {"class":"address"})
     if facultyRoom is not None:
-      print(facultyRoom.text)
+      #print(facultyRoom.text)
       room.append(facultyRoom.text)
 
    #get professor emails
     facultyEmail = div.find("span", {"class": "email"})
     if facultyEmail is not None:
-      print(facultyEmail.text)
+      #print(facultyEmail.text)
       email.append(facultyEmail.text)
+    else:
+      email.append("N/A")
 
     #get professor emails
     facultyPhone = div.find("span", {"class": "phone"})
     if facultyPhone is not None:
-      print(facultyPhone.text)
+      #print(facultyPhone.text)
       phone.append(facultyPhone.text)
+    else:
+      phone.append("N/A")
 
    #get professors webpage (if applicable)
     facultyWebPage = div.findAll("a")
-    print(len(facultyWebPage))
+    #print(len(facultyWebPage))
     facultyURL = facultyWebPage[len(facultyWebPage)-1].get("href")
 
    #if professor has webpage, store it in a text file
     if len(facultyURL) > 0:
       webPageContent = requests.get(facultyURL)
-      print(facultyURL)
+      #print(facultyURL)
       website.append(facultyURL)
       content = BeautifulSoup(webPageContent.text, "lxml")
           #file = open(facultyName.text+".txt", "wt")
           #n = file.write(content.text)
           #file.close()
-    print("=========================")
+    else:
+      website.append("N/A")
+    #print("=========================")
 
 
 
-print(names)
+#print(names)
+print(len(names))
+print(len(titles))
+print(len(room))
+print(len(email))
+print(len(phone))
+print(len(website))
+
+
+d = {'Name': names, 'Title': titles, 'Office': room, 'Email': email,'Phone': phone, 'Website': website}
+professors = pd.DataFrame(data = d)
+print(professors)
