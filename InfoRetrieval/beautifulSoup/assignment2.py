@@ -73,16 +73,8 @@ for div in divs:
     #print("=========================")
 
 
-
-#print(names)
-print(len(names))
-print(len(titles))
-print(len(room))
-print(len(email))
-print(len(phone))
-print(len(website))
-
-
 d = {'Name': names, 'Title': titles, 'Office': room, 'Email': email,'Phone': phone, 'Website': website}
 professors = pd.DataFrame(data = d)
 print(professors)
+
+professors.to_pickle("professors.pkl")
