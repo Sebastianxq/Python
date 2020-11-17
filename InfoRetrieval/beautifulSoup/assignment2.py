@@ -105,15 +105,31 @@ for file in os.listdir(directory):
 
 #Iterates throught files and counts the term
 
-wordCount = []
+wordCount = [] #append a tuple of wordCount, fileName
 start = time.time()
 for file in files:
   filePtr = open(dirName+file)
   fileContents = filePtr.read()
   #print(fileContents) #Debug
   numTimes =  fileContents.count(term)
+  if numTimes>0:
+    wordCount.append( (numTimes,file) )
 
-  print("Number of times", term, " appeared is:",numTimes)
-print("Search Time:%s seconds" % (time.time()-start))
+#sort (rank) listings
+wordCount.sort(key = lambda x: x[0], reverse = True)
+
+print("%d Results found in %s seconds" % (len(wordCount), time.time()-start))
+for x in wordCount:
+  print(x)
+
+#print("Number of times", term, " appeared is:",numTimes)
+#print("Search Time:%s seconds" % (time.time()-start))
+  
+
   #Now need to rank, exclude anytime numTimes=0
+
+#need to rank, so order some sort of tuple by num occurance
+  #exclude those with 0
+#from there, filter from dataframe and output the relevant stuff 
+
 
