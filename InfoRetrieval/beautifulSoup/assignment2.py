@@ -155,3 +155,23 @@ for x in wordCount:
     print(row['Office'], row['Email'], row['Phone']+'')
     print("Website: %s\n"% (row['Website']))
     #{'Name': names, 'Title': titles, 'Office': room, 'Email': email,'Phone': phone, 'Website': website}
+
+
+
+##################################
+"""
+TODO 
+1.)Clean Up commented code
+2.)Add real comments to everything
+3.)Restructure bs scrapper to be more ordered
+4.)Modularize into classes
+5.)Fix error on longpre email
+6.)Maybe look into removing those who aren't profs
+  From df
+7.)It would be cool if the final query got 
+  pulled into a text file titled 
+  X_Query_Results.txt
+
+
+"""
+##################################
