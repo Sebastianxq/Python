@@ -1,7 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
-
+import os
+import time
 #get webpage and create bs object
 req = requests.get('https://www.utep.edu/cs/people/index.html')
 soup = BeautifulSoup(req.text,'lxml')
@@ -81,3 +82,38 @@ professors = pd.DataFrame(data = d)
 print(professors)
 
 professors.to_pickle("professors.pkl")
+
+
+term = input("Enter a search term:")
+
+#Search for the term within the text files in professor/
+#Ranking Function
+  #USes number of times the team appear in each text file
+
+#file = fileLoc
+#fileContents = file.read()
+#numTimes =  fileContents.count(term)
+#print("Number of times %s appeared is %d",term, numTimes)
+
+
+#Get names of all the files in the directory
+dirName = "professors/" 
+directory = os.fsencode(dirName)
+files = []
+for file in os.listdir(directory):
+ files.append(file.decode())
+
+#Iterates throught files and counts the term
+
+wordCount = []
+start = time.time()
+for file in files:
+  filePtr = open(dirName+file)
+  fileContents = filePtr.read()
+  #print(fileContents) #Debug
+  numTimes =  fileContents.count(term)
+
+  print("Number of times", term, " appeared is:",numTimes)
+print("Search Time:%s seconds" % (time.time()-start))
+  #Now need to rank, exclude anytime numTimes=0
+
