@@ -79,12 +79,13 @@ for div in divs:
 
 d = {'Name': names, 'Title': titles, 'Office': room, 'Email': email,'Phone': phone, 'Website': website}
 professors = pd.DataFrame(data = d)
-print(professors)
+#print(professors)
 
 professors.to_pickle("professors.pkl")
 
 
-term = input("Enter a search term:")
+#term = input("Enter a search term:")
+term = "system"
 
 #Search for the term within the text files in professor/
 #Ranking Function
@@ -118,18 +119,39 @@ for file in files:
 #sort (rank) listings
 wordCount.sort(key = lambda x: x[0], reverse = True)
 
-print("%d Results found in %s seconds" % (len(wordCount), time.time()-start))
-for x in wordCount:
-  print(x)
+print("\n%d Results found in %s seconds" % (len(wordCount), time.time()-start))
+#for x in wordCount:
+  #print(x)
 
 #print("Number of times", term, " appeared is:",numTimes)
 #print("Search Time:%s seconds" % (time.time()-start))
   
 
   #Now need to rank, exclude anytime numTimes=0
-
 #need to rank, so order some sort of tuple by num occurance
   #exclude those with 0
 #from there, filter from dataframe and output the relevant stuff 
 
+#dataframe name:professors
+#pull all parts of the dataframe that match
+count = 0
+for x in wordCount:
+  count += 1
+  fullEmail = x[1][:-4]+"@utep.edu"
+  #print(fullEmail)
+  #print(professors)
+  
+  #ehh sorta works but not really
+  #row = professors['Email'] == fullEmail
+  #print(row)
 
+  prof = professors[professors['Email'] == fullEmail]
+  for index, row in prof.iterrows():
+    #print(x[1])
+    #print(x[0])
+
+    print("Rank #%d: The search term '%s' appear(s) %d times" % (count,term,x[0]) )
+    print(row['Name'], row['Title']+'')
+    print(row['Office'], row['Email'], row['Phone']+'')
+    print("Website: %s\n"% (row['Website']))
+    #{'Name': names, 'Title': titles, 'Office': room, 'Email': email,'Phone': phone, 'Website': website}
