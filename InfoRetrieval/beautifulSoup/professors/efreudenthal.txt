@@ -1,0 +1,519 @@
+
+
+
+
+
+
+
+
+		Eric Freudenthal
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to main content
+
+
+
+
+
+
+
+
+
+MinerAlert
+
+
+
+
+
+
+
+
+
+
+
+
+
+Search pages and people
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Toggle navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+
+About 
+Undergraduate 
+Graduate 
+People
+Research
+Support
+Partners
+News
+
+
+
+Search pages and people
+
+
+
+My UTEP
+
+
+Resources for 
+INFORMATION FOR:
+
+
+
+Students
+
+
+Faculty & Staff
+
+
+Alumni
+
+
+Parents
+
+
+
+
+
+Quick Links 
+            
+
+
+
+
+
+
+
+
+
+
+X
+
+Quick Links
+
+
+
+Library
+
+
+Parking & Maps
+
+
+UTEP News
+
+
+Events
+
+
+Student Affairs
+
+
+Business Affairs
+
+
+Employment Opportunities
+
+
+University Bookstore
+
+
+Technology Support
+
+
+
+
+
+
+
+
+Computer Science
+
+
+
+
+
+
+
+Main Content
+
+
+
+
+UTEP
+            Computer Science
+    
+            People
+    
+
+
+
+
+
+
+
+
+
+
+
+UTEP
+            Computer Science
+    
+            People
+    
+
+
+
+
+
+Eric Freudenthal
+
+
+
+Associate Professor in Computer Science· The University of Texas at El Paso· efreudenthal@utep.edu
+
+ 
+ 
+Associate Professor in Computer Science (2004)University of Texas, El Paso, TX
+Prior to joining UTEP's Computer Science faculty, Dr. Eric Freudenthal was an Associate Research Scientist at New York University's Courant Institute.
+Technical research investigates techniques for providing secure and self-managed services that are responsive to changes in operating context. His educational research examines the design of creative activities that utilize programming to motivate analytical engagement with mathematics.
+ 
+
+
+
+
+ 
+                    Student appointments
+                
+
+
+
+  For advising, please check my calendar and request a 20 minute appointment with me (see below).  My "drop in" office hours during the spring and fall semesters are on
+
+Mondays & Thursdays 2-3 PM on days when school is in session
+
+However, I'll depart after 15 minutes if nobody is there (and nobody is expected).
+Even if you want to meet with me during office hours, I encourage you to send me an email indicating day, time, and reason for the appointment.
+If you'd like to meet for advising, or if my office hours inconvenient for you, please follow the directions below to request an appointment at another time:
+
+Search my online calendar for mutually convenient times during normal business hours. (I'm not generally available late at night and on weekends)
+Send an  email indicating your motivation for scheduling this meeting, and (if you're comfortable), a phone number I can use to reach you should I be delayed or need to negotiate a different meeting time.
+
+
+
+
+
+
+ 
+                    Research
+                
+
+
+
+I have active research efforts in both computer systems and STEM education.
+Systems Research
+I lead the  Robust Autonomic Systems Group. Present thrusts are:
+
+Hardware-software energy-senstivie co-design of high performance systems.
+Strategies for improving caches and memory allocation in garbage-collected mobile systems.
+
+I tend to focus on the design of robust but simple protocols that effectively respond to system dynamism. Contributions include scalable coordination primitives for parallel computers and techniques for implementing security, indexing, load-balancing, and locality-aware redirection for coalitions of self-managed autonomous (peer-to-peer) systems. I am one of the creators of Coral-CDN, a locality aware, scalable, and self-managed content distribution network.        
+Education Research
+I lead the iMPaCT-STEM educational research project (http://impact-stem.org). This multi-disciplinary effort has developed a family of learning activities that leverage graphical programming to engage high school and college students in the examination of principles underlying algebra, calculus, and Newtonian mechanics.   
+With support from NSF, DHS, TI, and Microsoft, we are developing "iMPaCT" (Media Propelled Computational Thinking) learning modules that quickly (generally in less than an hour) introduce students to programming and engage them in the exploration of computer graphics and simulations of kinematics. The intended learning outcomes include
+
+A holistic understanding of programming and its relationship to math, science, and engineering.
+Deepened conceptual understandings of the mathematical foundations of calculus, high school algebra, kinematics, and electrodynamics.
+
+Most attendees in iMPaCT activities are highly engaged - independent of gender, ethnicity, and intended academic major. These findings suggest that many more students could be attracted to study science and engineering through problem solving activities that build conceptual understandings underlying math and physics. iMPaCT has spawned several sub-projects
+
+iMPaCT-CS0: an introduction to computing suitable for integration with an entering students program.
+iMPaCT-CS1: a first semester course in programming that begins with graphical programming in Jython and transitions to Java that has learning outcomes equivalent to a traditional Java-based CS-1 course.
+iMPaCT-STEM: A family of programming activities designed for integration into otherwise unmodified math and science classes that reinforce and contextualize those courses primary learning outcomes while inadvertantly introducing all to the foundational ideas of programming.
+
+Visit our web http://www.impact-stem.org.
+
+
+
+
+
+ 
+                    Areas of Interest
+                
+
+
+
+ Specific interests in techniques for:
+
+ Detection and maintenance of localized clusters.
+ Construction self-organizing ad-hoc coalitions of systems that provide security.
+ High performance and robustness.
+ Dynamic modulation of service quality and access levels based on connectivity and level-of-authorization.
+ Decentralized access control of systems that expose and therefore are able to reason over partial transitive trust.
+
+
+
+
+
+
+ 
+                    Contact Information
+                
+
+
+
+Office: Room 3.0424, Chemistry and Computer Science building (at the corner of Hawthorne Street and Rim Road)
+Shared Fax: (915)747-5030
+Work Phone: (915)747-6954
+E-mail:efreudenthal @ utep.edu
+Cell Phone: (915)317-6246
+
+
+
+
+            For more information, visit my website. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+People
+
+
+            Faculty and Staff
+    
+            Student Employees
+    
+            Instructional Assistants
+    
+            Peer Leaders
+    
+            Teaching Assistants
+    
+
+
+
+Advising
+
+
+Course Schedule
+
+
+Internships
+
+
+Opportunities
+
+
+Organizations
+
+
+Undergraduate Catalog
+
+
+Graduate Catalog
+
+
+
+Connect With Us
+
+The University of Texas at El Paso
+Department of Computer Science
+
+Chemistry & Computer Science Building, Room 3.1100
+
+500 W University Ave
+
+El Paso, Texas 79902
+ 
+E: csfrontdesk@utep.edu
+
+
+    P: (915)613-1982MXP: +52 66 2690 3182
+            
+    F: (915) 747-5030
+    
+
+
+
+
+
+
+
+Location
+ 
+
+Donate
+
+
+Give Now
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+THE UNIVERSITY OF TEXAS AT EL PASO
+
+
+CARES Act Compliance
+
+
+Clery Crime Statistics
+
+
+Emergency Information
+
+
+Employment
+
+
+Mental Health Resources
+
+
+
+
+Public Course Information
+
+
+Report Fraud
+
+
+Required Links
+
+
+State Reports
+
+
+Texas Veterans Portal
+
+
+
+
+Title IX Reporting
+
+
+Title IX Sexual Misconduct Policy
+
+
+UT System
+
+
+Web Accessibility
+
+
+Web Privacy Policy
+
+
+
+
+500 West University Avenue |
+El Paso, TX 79968 |
+915-747-5000 |
+
+SITE FEEDBACK
+
+
+
+
+
+
+
+
+
+
+Modal
+
+
+X
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

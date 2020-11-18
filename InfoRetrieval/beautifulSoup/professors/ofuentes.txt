@@ -1,0 +1,523 @@
+
+
+
+
+
+
+
+
+		Olac Fuentes
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to main content
+
+
+
+
+
+
+
+
+
+MinerAlert
+
+
+
+
+
+
+
+
+
+
+
+
+
+Search pages and people
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Toggle navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+
+About 
+Undergraduate 
+Graduate 
+People
+Research
+Support
+Partners
+News
+
+
+
+Search pages and people
+
+
+
+My UTEP
+
+
+Resources for 
+INFORMATION FOR:
+
+
+
+Students
+
+
+Faculty & Staff
+
+
+Alumni
+
+
+Parents
+
+
+
+
+
+Quick Links 
+            
+
+
+
+
+
+
+
+
+
+
+X
+
+Quick Links
+
+
+
+Library
+
+
+Parking & Maps
+
+
+UTEP News
+
+
+Events
+
+
+Student Affairs
+
+
+Business Affairs
+
+
+Employment Opportunities
+
+
+University Bookstore
+
+
+Technology Support
+
+
+
+
+
+
+
+
+Computer Science
+
+
+
+
+
+
+
+Main Content
+
+
+
+
+UTEP
+            Computer Science
+    
+            People
+    
+
+
+
+
+
+
+
+
+
+
+
+UTEP
+            Computer Science
+    
+            People
+    
+
+
+
+
+
+Olac Fuentes
+
+
+
+Associate Professor in Computer Science· The University of Texas at El Paso· ofuentes@utep.edu
+
+ 
+ 
+B.S. degree in Industrial Engineering from the  Instituto Tecnologico de Chihuahua, in Chihuahua, Chihuahua, Mexico.
+M.S. degree in Computer Science from the University of Texas at El Paso, in El Paso, Texas, U.S.A.
+Ph.D. degree in Computer Science from the University of Rochester, in Rochester, New York, U.S.A.
+
+
+I am interested in Machine Learning and its applications to Computer Vision, Bioinformatics, Scientific Data Analysis, Robotics, and Natural Language Processing. I lead the  Vision and Learning Laboratory (VL-Lab) at UTEP and I am also affiliated with the  Interactive Systems Group (ISG).
+ 
+
+
+
+
+ 
+                    Contact Information
+                
+
+
+
+
+Computer Science DepartmentUniversity of Texas at El PasoEl Paso, TX 79968.E-mail: ofuentes@utep.edu  CCS 3.0412 - Telephone: 915-747-6956
+
+
+
+
+
+
+ 
+                    Research
+                
+
+
+
+Research Interests and Publications
+
+
+
+
+
+ 
+                    Thesis
+                
+
+
+
+Ph.D. Theses
+
+Geovany Ramirez,  Multi-dimensional Emotion Recognition from Geometry and Color Information, Ph.D. in Computer Science, University of Texas at El Paso, May 2014.
+Jun Zheng,   Stochastic Optimization for Learning-based Super-resolution: Algorithms and Applications, Ph.D. in Computer Science, University of Texas at El Paso, December 2010.
+Steven M. Gutstein,  Transfer Learning Techniques for Deep Neural Nets,Ph.D. in Computer Science, University of Texas at El Paso, May 2010.
+Juan Carlos Gómez-Carranza, Inverse Active machine Learning in Optimization Processes with Application in Astronomy, Ph.D. in Computer Science, INAOE, February 2007.
+Vittorio Zanella-Palacios, Automated Morphing of Face Images, Ph.D. in Computer Science, INAOE, January 2005.
+José Federico Ramírez-Cruz, Instance and Feature Selection for Instance-Based machine Learning Using Evolutionary Algorithms, Ph.D. in Computer Science, INAOE, October 2003.
+Juan Jaime Sánchez-Escobar, Obtención de la Fase de un Interferograma Empleando Estrategias Evolutivas, Ph.D. in Optics, INAOE, November 2002. (Co-supervised with Sergio Vázquez).
+
+M.S. Theses
+
+Sumi Dey, Forecasting Space Weather using Deep Learning Techniques , M.S in Computational Science, UTEP, December 2018.
+Jonathan Quijas, Analyzing the Effects of Data Augmentation and Free Parameters for Text Classification with Recurrent Convolutional Neural Networks, M.S in Computer Science, UTEP, May 2017.
+Emmanuel Tafoya, Using Word Embeddings for Text Classification in Positive and Unlabeled Learning, M.S in Computer Science, UTEP, December 2016.
+Luis Ramirez, Single Image Haze Removal, M.S in Computer Science, UTEP, May 2015.
+Shajib Khan, Real-time Eye Gaze Correction for Video Conferencing, M.S in Computer Science, UTEP, December 2013.
+Tariq Iqbal, A Robust Real-time Eye Tracking and Gaze Estimation System using Particle Filters, M.S in Computer Science, UTEP, August 2012.
+Gesuri Ramirez,  Assessing Data Quality in a Sensor Network for Environmental Monitoring, M.S in Computer Science, UTEP, November 2011.
+Christopher Cuellar,  Prediction of Ribonucleic Acid Secondary Structure using a Heuristic Backtracking Search , M.S in Computer Science, UTEP, November 2011.
+Manali Chakraborty,  Real-time Image-based Motion Detection using Color and Structure, M.S in Computer Science, UTEP, December 2009.
+Geovany Ramírez, Detección de Rostros con Aprendizaje Autmático, M.S in Computer Science, INAOE, March 2006.
+Hugo Jair Escalante, Noise-aware Machine Learning Algorithms, M.S in Computer Science, INAOE, February 2006.
+Topilzin Flores Lucero, Stereo Vison Using Evolutionary Algorithms, M.S in Computer Science, INAOE, February 2005.
+José Luis Saul Malagón Borja, Pedestrian Detection using Image Reconstruction with PCA, M.S in Computer Science, INAOE, February 2005.
+Luis Álvarez Ochoa, Extracción de Parámetros de Poblaciones Estelares de Galaxias a Partir de Datos Fotométricos Usando Estrategias Evolutivas, M.S in Computer Science, INAOE, October 2004 (co-supervised with Roberto Terlevich).
+Trilce Procyón Estrada Piedra, Identificación Automática de Poblaciones Estelares a Partir de Espectros Galácticos, M.S in Computer Science, INAOE, October 2004.
+Antonio Salim Maza, Development of Local Vision-based Behaviors for a Robotic Soccer Player, M.S in Computer Science, INAOE, September 2004 (co-supervised with Angélica Muñoz).
+José Edgar Lara Ramírez, Robot Navigation and Map Construction Using Machine Learning and Probabilistic Models, M.S in Computer Science, INAOE, February 2004.
+Carmen Carlota Martínez Gil, Face Recognition using Template-based Methods and Unlabeled Data, M.S in Computer Science, INAOE, January 2004.
+Jorge de la Calleja Mora, Classification of Galaxy Images using Machine Learning and Image Analysis, M.S in Computer Science, INAOE, September 2003.
+María Teresa Orozco-Aguilera, Creación de Atributos Relevantes para la Predicción de Parámetros de Atmósferas Estelares, M.S. in Astrophysics, INAOE, December 2002.
+Oscar Manuel Martínez-Lazalde, Razonamiento con conocimiento incompleto y su aplicación al juego del Dominó, M.S in Computer Science, INAOE, December 2002. 
+Thamar Ivette Solorio Martínez, Using Unlabeled Data to Improve Classifier Accuracy, M.S in Computer Science, INAOE, August 2002.
+Juan Carlos Gómez-Carranza, Determinación de Parámetros Orbitales de Galaxias Interactuantes Utilizando Estrategias Evolutivas, M.S. in Astrophysics, INAOE, February 2002. (Co-supervised with Ivanio Puerari).
+Darío César Peregrina-Albores, Seguimiento de Objetos por Medio de Visión Activa, M.S in Computer Science, INAOE, May 2002. (Co-supervised with Leopoldo Altamirano and Miguel Arias).
+
+B.S. Theses
+
+Jorge de la Calleja Mora, B.S in Computer Science, Clasificación Morfológica de Galaxias usando Aprendizaje Automático, Benemérita Universidad Autónoma de Puebla, August 2002. 
+Carmen Carlota Martínez Gil, Comparación de Clasificadores Aplicando la Técnica de Eigenfaces y Realizando Ensambles para la Clasificación de Caras, B.S in Computer Science, Benemérita Universidad Autónoma de Puebla, July 2002.
+
+
+
+
+
+
+ 
+                    Course Information
+                
+
+
+
+For detailed listing of courses, please refer to my personal site.
+
+
+
+
+For more information, visit my website. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+People
+
+
+            Faculty and Staff
+    
+            Student Employees
+    
+            Instructional Assistants
+    
+            Peer Leaders
+    
+            Teaching Assistants
+    
+
+
+
+Advising
+
+
+Course Schedule
+
+
+Internships
+
+
+Opportunities
+
+
+Organizations
+
+
+Undergraduate Catalog
+
+
+Graduate Catalog
+
+
+
+Connect With Us
+
+The University of Texas at El Paso
+Department of Computer Science
+
+Chemistry & Computer Science Building, Room 3.1100
+
+500 W University Ave
+
+El Paso, Texas 79902
+ 
+E: csfrontdesk@utep.edu
+
+
+    P: (915)613-1982MXP: +52 66 2690 3182
+            
+    F: (915) 747-5030
+    
+
+
+
+
+
+
+
+Location
+ 
+
+Donate
+
+
+Give Now
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+THE UNIVERSITY OF TEXAS AT EL PASO
+
+
+CARES Act Compliance
+
+
+Clery Crime Statistics
+
+
+Emergency Information
+
+
+Employment
+
+
+Mental Health Resources
+
+
+
+
+Public Course Information
+
+
+Report Fraud
+
+
+Required Links
+
+
+State Reports
+
+
+Texas Veterans Portal
+
+
+
+
+Title IX Reporting
+
+
+Title IX Sexual Misconduct Policy
+
+
+UT System
+
+
+Web Accessibility
+
+
+Web Privacy Policy
+
+
+
+
+500 West University Avenue |
+El Paso, TX 79968 |
+915-747-5000 |
+
+SITE FEEDBACK
+
+
+
+
+
+
+
+
+
+
+Modal
+
+
+X
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

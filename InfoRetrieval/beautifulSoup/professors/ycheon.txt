@@ -1,0 +1,154 @@
+
+
+Yoonsik Cheon
+
+
+
+
+
+
+
+
+
+
+
+
+YOONSIK CHEON
+
+
+ Associate Professor, PhD
+Department of Computer Science
+The University of Texas at El Paso
+El Paso, 
+ Texas
+
+>>contact info and schedule<<
+
+
+
+
+
+
+Experience
+
+
+&nbsp Associate Professor,  
+ Department of Computer Science,
+ The University of Texas at El Paso;
+ September 2009-Present
+&nbsp Assistant Professor,  
+ Department of Computer Science,
+ The University of Texas at El Paso;
+ September 2003-August 2009
+&nbsp Senior Researcher,
+ Electronics
+ and Telecommunications Research Institute (ETRI), 
+ Taejon,
+ South Korea; January 1995-May 2003
+ 
+
+
+Education
+
+
+&nbsp Ph.D. 2003, 
+    Department of Computer Science,
+    Iowa State University, 
+    Ames, 
+    Iowa
+
+&nbsp M.S. 1991, 
+    Department of Computer Science, Iowa State University, Ames, Iowa
+    
+&nbsp B.S. 1989, 
+    Department of Computer Science,
+    Korea University, 
+    Seoul, 
+    South Korea
+
+
+
+ Research
+
+ 
+ Formal methods (languages, techniques, and tool support),
+ programming (languages, semantics, and methodology), and
+ mobile applications
+
+
+I lead the Software 
+Specification and Verification Lab.
+
+
+&nbsp 
+    Recent publications
+
+&nbsp 
+    Software download
+
+
+
+
+
+Teaching
+
+
+
+  Current courses (Fall 2019)
+     
+     CS 3360 - 
+        Design and 
+	Implementation of Programming Languages
+
+     CS 4330/5390 - 
+       Mobile
+        Application Development
+
+
+&nbsp Past courses
+    
+     CS 3331 - 
+        Advanced 
+	Object-Oriented Programming
+
+     CS 4310 - Software Engineering I 
+         
+     CS 4311 - 
+         Software 
+            Engineering II
+
+     CS 4381/5381 - 
+       Topics in 
+       Software Engineering: Mobile Game Programming
+       
+     CS 5381/4390 - 
+       Topics in 
+       Software Engineering: Introduction to Formal Methods
+       
+     CS 5382/4390 - 
+       Model-based 
+       Software Development
+
+     CS 5383 - 
+       Topics 
+        in Software Assurance
+
+
+
+
+Miscellany
+
+
+&nbsp 
+    Current schedule
+&nbsp 
+    Short CV
+
+
+
+Last modified by Yoonsik Cheon:
+$Id: index.html,v 1.103 2019/08/17 17:07:48 cheon Exp $
+
+
+
+

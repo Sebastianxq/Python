@@ -1,0 +1,74 @@
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+Dr. Patricia Teller - Homepage
+
+
+
+
+
+
+
+
+Home
+Research
+Students
+Teaching
+Vitae
+Contact
+
+
+
+
+Welcome
+
+
+
+
+
+
+
+
+Patricia J. Teller, PhD
+ Professor
+				Department of Computer Science
+				University of Texas at El Paso
+				Email: pteller@utep.edu 
+
+
+
+
+About
+
+  Patricia J. Teller is a professor in the Department of Computer Science at The University of Texas at El Paso (UTEP), where she has been a faculty member since 1997. She received her bachelor's degree, Master's degree, and Ph.D. (1992) in computer science from New York University (NYU); her Ph.D. advisors were Drs. Allan Gottlieb and Ralph Grishman. While working on her dissertation, which is entitled "Translation-Lookaside Buffer Consistency in Highly-Parallel Shared-Memory Multiprocessors," she was a research scientist at NYU's Ultracomputer Research Lab and a visiting scientist at IBM T.J. Watson Research Center, where she had previously worked with IBM's RP3 research group. Dr. Teller is well known in the high-performance computing (HPC) world as an accomplished researcher, educator, and author, and for her service to the community. 
+
+     Over the past 16 years, Teller, with students and colleagues, published over 85 papers and attained over $6.6M of research funds from the Army High Performance Computing Research Center (AHPCRC), U.S. Army Research Lab (ARL), Defense Advanced Research Projects Agency (DARPA), Department of Defense (DoD), Department of Energy (DoE), National Aeronautics and Space Administration (NASA), National Science Foundation (NSF), and Sandia National Laboratories, as well as the IBM Corporation and Intel Corporation. Her research interests include dynamic adaptation of applications, operating systems, runtime systems, and computer architectures; performance evaluation, modeling, and enhancements; workload characterization; parallel and distributed computing; and computer architecture, emerging technologies, and operating systems. In addition, she was instrumental in establishing UTEP's HPC infrastructure with approximately $2M in awards, including a UT System 2004-2005 STAR (Science and Technology Acquisition and Retention) Award for $483,000. And, in terms of education, retention, and advancement of students, in particular those from underrepresented populations, she helped garner over $2.5M in awards. Furthermore, she was a CETaL (Center for Excellence in Teaching and Learning) Fellow at UTEP from 2001 to 2004, nominated for several teaching awards, and instrumental in her students attaining noteworthy awards, scholarships, fellowships, and internships. She has involved many undergraduate and graduate students in research; former students are working at such places as Google, IBM T.J. Watson Research Center, Intel Corporation, Microsoft, and San Diego Supercomputing Center.
+
+     Teller's service to the HPC community is best exemplified by her leadership and vision with respect to the SC (Supercomputing or the International Conference for High Performance Computing, Networking, Storage and Analysis) conference series. She has taken on many important roles in the conference since 1996, including Finance Chair, Executive Director, SC Steering Committee member and Chair (2004-2010), and General Chair (2008), for which she received an ACM Service Award. SC08 was an extremely successful conference, with a $6.5M budget and record-breaking numbers of attendees (almost 10,000 attendees, 4,000 of whom attended the Technical Program). In addition to the SC conference series, Teller has served many other conferences in numerous capacities.
+
+     In terms of workforce diversity, Teller, one of the developers of the Affinity Research Group Model, which aims to retain and advance undergraduate students by involving them in research, served the Coalition to Diversify Computing (CDC), a joint organization of the ACM, IEEE-CS, and CRA, from 2000 to 2006 in various capacities, including Chair, Member of the Leadership Team, and Project Lead for CDC's Conference Support for Minority Students in CSE (2000-2006). Additionally, she served the Richard Tapia Celebration of Diversity in Computing Conference as Technical Papers Co-Chair (2005) and as Scholarship Committee Member (2001). Among other outreach activities, in summer 2009 she along with her colleagues, Drs. David Novick and Sarala Arunagiri, led the AHPCRC (Army High Performance Computing Research Center) Education Program at UTEP. The program's goal was to increase the number of middle-school students capable of and interested in technical subjects by equipping them and their teachers with appropriate motivating examples of the usefulness of mathematical concepts and with interactive computational technologies that can be used to hone associated mathematical knowledge and skills. 
+
+     Teller also has served the community as an NSF and DoE proposal reviewer and has reviewed papers for many different journals and conferences. Additionally, she has been invited to speak at workshops, conferences, universities, national laboratories, and industrial centers and has served as a member of various committees and advisory boards, including her current membership on the US Department of Defense National Multidisciplinary Committee for the Assessment of the Participation of Historically Black Colleges and Universities and Minority-Serving Institutions in Research and Education Programs and Activities of the United States Department of Defense (2010-2011), the Texas Advanced Computing Center Board of Visitors (2010-2012) - http://www.tacc.utexas.edu/about/board-of-visitors, and the University of Texas Systems Cyberinfrastructure Committee (2010-2012). In addition, she represents UTEP on the AHPCRC Consortium Management Council (2007-2011) and HiPCAT (High Performance Computing Across Texas), and is a member of both the ACM and IEEE, as well as Phi Beta Kappa and the Golden Key National Honor Society (honorary member).
+
+     On a personal note, Teller and her husband, Joe, live in New Mexico, where they share their lives with two horses, Jesse James and Mister Bojangles, and two cats, Angie and Lucy. In addition to working towards being a good horsewoman and rider, Teller enjoys opportunities to be creative, including cooking, gardening, and art, and enjoys "the great outdoors", nature, music, movies, and reading a good book.
+
+
+
+
+
+Terms of Use&nbsp| 
+            Privacy Statement&nbsp
+Department of Computer Science, The University of Texas at El Paso 
+500 West University Avenue, El Paso, Texas 79968,(915) 747-5480 
+Copyright © 2010 All Rights Reserved
+

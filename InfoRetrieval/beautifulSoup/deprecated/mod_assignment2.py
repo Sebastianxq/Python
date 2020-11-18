@@ -142,12 +142,8 @@ for x in wordCount:
 TODO 
 3.)Restructure bs scrapper to be more ordered
 4.)Modularize into classes
-6.)Maybe look into removing those who aren't profs
-  From df
 7.)It would be cool if the final query got 
   pulled into a text file titled 
   X_Query_Results.txt
-8.)Remove everyone who isn't a teacher
-
 """
 ##################################

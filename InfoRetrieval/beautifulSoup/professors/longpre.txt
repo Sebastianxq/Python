@@ -1,0 +1,882 @@
+
+
+
+
+
+
+
+
+		Luc Longpre
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to main content
+
+
+
+
+
+
+
+
+
+MinerAlert
+
+
+
+
+
+
+
+
+
+
+
+
+
+Search pages and people
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Toggle navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+
+About 
+Undergraduate 
+Graduate 
+People
+Research
+Support
+Partners
+News
+
+
+
+Search pages and people
+
+
+
+My UTEP
+
+
+Resources for 
+INFORMATION FOR:
+
+
+
+Students
+
+
+Faculty & Staff
+
+
+Alumni
+
+
+Parents
+
+
+
+
+
+Quick Links 
+            
+
+
+
+
+
+
+
+
+
+
+X
+
+Quick Links
+
+
+
+Library
+
+
+Parking & Maps
+
+
+UTEP News
+
+
+Events
+
+
+Student Affairs
+
+
+Business Affairs
+
+
+Employment Opportunities
+
+
+University Bookstore
+
+
+Technology Support
+
+
+
+
+
+
+
+
+Computer Science
+
+
+
+
+
+
+
+Main Content
+
+
+
+
+UTEP
+            Computer Science
+    
+            People
+    
+
+
+
+
+
+
+
+
+
+
+
+UTEP
+            Computer Science
+    
+            People
+    
+
+
+
+
+
+Luc Longpre
+
+
+
+Undergraduate Program Director in Computer Science· The University of Texas at El Paso· longpre@utep.edu
+
+ 
+ 
+Associate Professor in Computer Science (1994)University of Texas, El Paso, TX
+B.S. in Computer Science (1979)Université de Montréal, Montréal, Canada
+Ph.D. in Computer Science (1986)Cornell University, Ithaca, NY
+
+I am interested in recasting the study of information theory in a resource bounded framework, and in general, any application of information theory to computer science. More recently, I am interested in computer security, in particular,protection of privacy in databases and cryptographic protocols. 
+
+
+
+
+ 
+                    Honors, Awards, and Professional Service
+                
+
+
+
+Member:
+
+ACM
+SIGACT
+EATCS
+
+ 
+
+
+
+
+
+
+ 
+                    Areas of Interest
+                
+
+
+
+
+
+Information theory
+Kolmogorov complexity 
+Computational complexity
+Computer security
+
+
+
+
+
+
+
+ 
+                    Contact Information
+                
+
+
+
+
+Computer Science DepartmentUniversity of Texas at El PasoEl Paso, TX 79968. e-mail: longpre@utep.edu  CCS 3.0420 - Telephone: 915-747-6804
+
+
+
+
+
+
+ 
+                    Student appointments
+                
+
+
+
+
+Consult the calendar below.  Select an available time (the white areas). Then schedule an appointment for between 15 and 30  minutes.If no available times fit your schedule, send me an e-mail explaining your situation.
+
+Method 1
+For if you use google calendar:
+Schedule an event in your calendar at an available time, between 15 and 30 minutes.
+For the event description, include your name, and optionally the reason for the appointment: advising, exit interview or other. Since this can be seen publicly, do not include your ID number.
+Invite kbi8644n5de1tba5e9r6ibi2go@group.calendar.google.com as your guest.
+If there is no conflict, it will appear immediately in my calendar.
+If there is a conflict, you will get a reject message.
+
+
+
+Method 2
+Send me an e-mail with your selected time. I will add it to the calendar
+
+
+ 
+
+
+
+
+
+
+ 
+                    CS4339 Fall 2018 Syllabus
+                
+
+
+
+Fall 2018 Course Syllabus
+Course Description: A survey of web-based technologies and applications. Topics include: ebusiness models, security and privacy issues, the provisioning, development, and deployment of web sites including dynamic web content generation and the management of database back ends, relevant copyright law.
+Textbook: "Learning PHP, MySQL & JavaScript", Robin Nixon, 5th Edition, O'Reilly Media Inc, 2018. (The 4th Edition is also acceptable.)
+Course website: http://faculty.utep.edu/longpre, follow the CS 4339 menu in the banner.
+Exams and Grades: There will be two tests, a final exam, quizzes, individual assignments and a team project.
+Test 1 17% Test 2 17% Final Exam 26% Quizzes, Assignments, Project 40%
+Standards of Conduct: Students are expected to conduct themselves in a professional and courteous manner, as prescribed by the Standards of Conduct. Students may discuss work assignments and programming exercises in a general way with other students, but the solutions must be done independently. Similarly, groups may discuss group project assignments with other groups, but the solutions must be done by the group itself. Graded work should be unmistakably your own. You may not transcribe or copy a solution taken from another person, book, or other source, e.g., a web page. Professors are required to -- and will -- report academic dishonesty and any other violation of the Standards of Conduct to the Dean of Students.
+Disabilities: If you have a disability and need classroom accommodations, please contact The Center for Accommodations and Support Services (CASS) at 747-5148, or by email to cass@utep.edu, or visit their office located in UTEP Union East, Room 106. For additional information, please visit the CASS website at www.sa.utep.edu/cass.
+Faculty Information: Professor: Luc Longpré Office: 3.0420 CCS building Phone: 747-6804 e-mail: longpre @ utep . edu Office Hours: Monday, Wednesday, 3:00-4:00pm. By appointment: instructions at http://faculty.utep.edu/longpre.
+Topics:
+
+History of internet, static vs dynamic web content, overview of HTTP, HTML, client side vs server side programming, MySQL, CSS. Basic HTML syntax for simple web pages. Web site design process.
+PHP: variables, operators, functions, scope, flow control, objects, arrays, I/O.
+MySQL: basics, database review, commands, indexes, functions, database design, accessing MySQL from PHP, passwords management.
+HTML Form Handling. Input checking, SQL injection attacks.
+Cookies, sessions, authentication. Security concerns (cookie stealing, session highjacking). Review of cryptographic tools.
+JavaScript: variables, operators, functions, flow control, document object model. Cross-site scripting attacks.
+Validation and error handling. Importance for security.
+Ajax.
+CSS.
+Ethical, legal and copyright issues. Electronic commerce transactions. Contract, business models, digital signatures, cryptographic tools, https, non-repudiation, evidence collection and preservation, privacy issues.
+
+Course outcomes:
+Knowledge and Comprehension
+
+Contract law.
+Copyright law.
+Describe the common vulnerabilities in web sites.
+Ethical issues in web-based systems.
+Describe different business models.
+
+Application and Analysis
+
+ 
+Server side programs.
+Client side programs.
+ 
+CSS
+
+Synthesis and Evaluation
+
+Assess common vulnerabilities in a web site and implement countermeasures.
+Create a secure website that includes database access, client side and server side programming.
+Create a web site that includes Cascading Style Sheets and some advanced HTML constructs.
+Create a secure password based authentication on a web site.
+
+ 
+
+
+
+
+
+ 
+                    CS4339 Fall 2018 Documents
+                
+
+
+
+
+
+
+
+
+Title
+
+
+Owner
+
+
+Category
+
+
+Modified Date
+
+
+Size (Kb)
+
+
+Download
+
+
+
+Home Exercise
+Luc Longpre
+
+10/2/2018
+38.93
+Download
+
+
+Java Program for assignment 1
+Luc Longpre
+
+10/2/2018
+3.99
+Download
+
+
+Fall 17 test 1 cheat sheet
+Luc Longpre
+
+10/2/2018
+125.76
+Download
+
+
+Fall 18 test 1 cheat sheet
+Luc Longpre
+
+10/10/2018
+17.20
+Download
+
+
+Practice Test 1
+Luc Longpre
+
+10/2/2018
+54.78
+Download
+
+
+Test 2 cheat sheet
+Luc Longpre
+
+11/7/2018
+14.85
+Download
+
+
+Test 2 from 2017 with solutions
+Luc Longpre
+
+11/6/2018
+142.68
+Download
+
+
+Review items for test 1
+Luc Longpre
+
+10/2/2018
+0.82
+Download
+
+
+Tentative Schedule
+Luc Longpre
+
+10/2/2018
+208.11
+Download
+
+
+Assignment 2
+Luc Longpre
+
+10/23/2018
+86.85
+Download
+
+
+Assignment 3a
+Luc Longpre
+
+11/13/2018
+48.66
+Download
+
+
+Assignment 1
+Luc Longpre
+
+9/27/2018
+94.50
+Download
+
+
+Assignment 1 sample test file
+Luc Longpre
+
+10/2/2018
+0.28
+Download
+
+
+Assignment 3b
+Luc Longpre
+
+11/13/2018
+35.88
+Download
+
+
+Copyright Law
+Luc Longpre
+
+11/15/2018
+510.46
+Download
+
+
+CS degrees for assignment 3b
+Luc Longpre
+
+11/13/2018
+55.29
+Download
+
+
+Assignment 4
+Luc Longpre
+
+12/5/2018
+38.94
+Download
+
+
+Contact law slides
+Luc Longpre
+
+12/7/2018
+280.06
+Download
+
+
+
+
+
+
+
+
+
+ 
+                    CS 5339 Fall 2018 Syllabus
+                
+
+
+
+Fall 2018 Course Syllabus
+Course Description: A survey of web-based technologies and applications. Topics include: ebusiness models, security and privacy issues, the provisioning, development, and deployment of web sites including dynamic web content generation and the management of database back ends, relevant copyright law.
+Textbook: "Learning PHP, MySQL & JavaScript", Robin Nixon, 5th Edition, O'Reilly Media Inc, 2018. (The 4th Edition is also acceptable.)
+Exams and Grades: There will be two tests, a final exam, quizzes, individual assignments, a team project, and a research presentation.
+Test 1 15% Test 2 15% Final Exam 23% Graduate student report and/or presentation 10% Quizzes, Assignments and Project 37%
+Standards of Conduct: Students are expected to conduct themselves in a professional and courteous manner, as prescribed by the Standards of Conduct. Students may discuss work assignments and programming exercises in a general way with other students, but the solutions must be done independently. Similarly, groups may discuss group project assignments with other groups, but the solutions must be done by the group itself. Graded work should be unmistakably your own. You may not transcribe or copy a solution taken from another person, book, or other source, e.g., a web page. Professors are required to -- and will -- report academic dishonesty and any other violation of the Standards of Conduct to the Dean of Students.
+Disabilities: If you have a disability and need classroom accommodations, please contact The Center for Accommodations and Support Services (CASS) at 747-5148, or by email to cass@utep.edu, or visit their office located in UTEP Union East, Room 106. For additional information, please visit the CASS website at www.sa.utep.edu/cass.
+Faculty Information: Professor: Luc Longpré Office: 3.0420 CCS building Phone: 747-6804 e-mail: longpre @ utep . edu Office Hours: Monday, Wednesday, 3:00-4:00pm. By appointment: instructions at http://faculty.utep.edu/longpre.
+Topics:
+
+History of internet, static vs dynamic web content, overview of HTTP, HTML, client side vs server side programming, MySQL, CSS. Basic HTML syntax for simple web pages. Web site design process.
+PHP: variables, operators, functions, scope, flow control, objects, arrays, I/O.
+MySQL: basics, database review, commands, indexes, functions, database design, accessing MySQL from PHP, passwords management.
+HTML Form Handling. Input checking, SQL injection attacks.
+Cookies, sessions, authentication. Security concerns (cookie stealing, session highjacking). Review of cryptographic tools.
+JavaScript: variables, operators, functions, flow control, document object model. Cross-site scripting attacks.
+Validation and error handling. Importance for security.
+Ajax.
+CSS.
+Ethical, legal and copyright issues. Electronic commerce transactions. Contract, business models, digital signatures, cryptographic tools, https, non-repudiation, evidence collection and preservation, privacy issues.
+
+
+
+
+
+
+ 
+                    CS 5350/6350 Fall 2018 Documents
+                
+
+
+
+
+
+
+
+
+Title
+
+
+Owner
+
+
+Category
+
+
+Modified Date
+
+
+Size (Kb)
+
+
+Download
+
+
+
+Programming assignment part 1
+Luc Longpre
+
+11/13/2018
+50.02
+Download
+
+
+CS 5350/6350 syllabus Fall 2018
+Luc Longpre
+
+8/28/2018
+47.75
+Download
+
+
+Tentative Schedule
+Luc Longpre
+
+9/6/2018
+12.68
+Download
+
+
+Programming assignment part 2
+Luc Longpre
+
+11/27/2018
+67.65
+Download
+
+
+Assignment 2
+Luc Longpre
+
+11/13/2018
+58.22
+Download
+
+
+Assignment 1
+Luc Longpre
+
+9/6/2018
+59.25
+Download
+
+
+Assignment 4
+Luc Longpre
+
+11/13/2018
+43.58
+Download
+
+
+Assignment 3
+Luc Longpre
+
+11/13/2018
+37.49
+Download
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+People
+
+
+            Faculty and Staff
+    
+            Student Employees
+    
+            Instructional Assistants
+    
+            Peer Leaders
+    
+            Teaching Assistants
+    
+
+
+
+Advising
+
+
+Course Schedule
+
+
+Internships
+
+
+Opportunities
+
+
+Organizations
+
+
+Undergraduate Catalog
+
+
+Graduate Catalog
+
+
+
+Connect With Us
+
+The University of Texas at El Paso
+Department of Computer Science
+
+Chemistry & Computer Science Building, Room 3.1100
+
+500 W University Ave
+
+El Paso, Texas 79902
+ 
+E: csfrontdesk@utep.edu
+
+
+    P: (915)613-1982MXP: +52 66 2690 3182
+            
+    F: (915) 747-5030
+    
+
+
+
+
+
+
+
+Location
+ 
+
+Donate
+
+
+Give Now
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+THE UNIVERSITY OF TEXAS AT EL PASO
+
+
+CARES Act Compliance
+
+
+Clery Crime Statistics
+
+
+Emergency Information
+
+
+Employment
+
+
+Mental Health Resources
+
+
+
+
+Public Course Information
+
+
+Report Fraud
+
+
+Required Links
+
+
+State Reports
+
+
+Texas Veterans Portal
+
+
+
+
+Title IX Reporting
+
+
+Title IX Sexual Misconduct Policy
+
+
+UT System
+
+
+Web Accessibility
+
+
+Web Privacy Policy
+
+
+
+
+500 West University Avenue |
+El Paso, TX 79968 |
+915-747-5000 |
+
+SITE FEEDBACK
+
+
+
+
+
+
+
+
+
+
+Modal
+
+
+X
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

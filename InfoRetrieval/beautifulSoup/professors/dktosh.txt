@@ -1,0 +1,160 @@
+
+
+
+
+
+
+
+Deepak K. Tosh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Toggle navigation
+
+
+
+
+Deepak K. Tosh
+
+
+
+
+Home
+
+
+Research
+
+Projects
+Publications
+
+
+
+Lab
+
+
+Teaching
+
+
+News
+
+
+Misc
+
+Interesting Links
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Deepak K. Tosh, Ph.D.
+ 
+            Assistant Professor 
+            Department of Computer Science 
+            University of Texas at El Paso 
+            500 W. University Avenue 
+            El Paso, TX 79968-0518
+        
+
+
+Biography
+
+
+          I am an assistant professor in Computer Science at the University of Texas at El Paso. Before that I was a Cybersecurity Researcher at the DoD Sponsored Center of Excellence in Cybersecurity, Norfolk State University (NSU), Norfolk, Virginia. During that time, I have closely collaborated with researchers from Air Force Research Lab and Army Research Lab to establish data provenance mechanisms in cloud computing in addition to addressing research challenges in the arena of distributed system security, Blockchain, cyber-threat information sharing, cyber-insurance, and Internet of Battlefield Things (IoBT). I was appointed shortly as a postdoctoral researcher at the Tennessee State Univerity, where I worked with Dr. Sachin Shetty in the CyberViz Laboratory. I have been collaborating with him since then focussing on research topics such as: distributed consensus models in Blockchain technology, cyber-resiliency in battlefield environment, and various practical issues in cloud computing security. I have received my Ph.D. in Computer Science and Engineering from University of Nevada, Reno, under the supervision of Dr. Shamik Sengupta. My dissertation was focussed on designing market based models to enable cybersecurity information sharing among organizations. I received my masters in Computer Science from University of Hyderabad, India in 2012. My master thesis addressed the issue of cognitive radio transmission parameter adaptation problem using multi-objective optimization techniques.
+        
+
+
+
+
+Research Interests
+
+Cybersecurity: 
+            Security and privacy in cybersecurity information exchange (CYBEX), Distributed system security, Blockchain, Data provenance, Internet of Things (IoT) security, CYBEX Incentivization Models, Cyber-Insurance, Risk assessment, Network security
+        
+Inter-disciplinary Research: Game theory, Mechanism design, Cooperative games, Evolutionary and swarm-intelligence based optimization, Multi-agent learning
+          
+
+
+
+
+Organizational Duties and Activities
+
+TPC member for IEEE ISC2-BLESS Workshop and 5G-SP Workshop
+Reviewer for IEEE Transactions on Information Forensics & Security, 2017, 2018
+Reviewer for IEEE Transactions on Services Computing (TSC), Elsevier Journal of Computer Communication, 2018
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Email me
+
+
+
+      Deepak K. Tosh
+       • 
+      2019
+
+      
+
+      
+      
+
+
+      Theme by
+      beautiful-jekyll
+
+
+
+
+
+
+
+
+
+
+
+
+

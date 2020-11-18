@@ -1,0 +1,673 @@
+
+
+
+
+
+
+
+
+		Natalia Villanueva Rosales 
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to main content
+
+
+
+
+
+
+
+
+
+MinerAlert
+
+
+
+
+
+
+
+
+
+
+
+
+
+Search pages and people
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Toggle navigation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Search
+
+
+
+
+
+
+
+
+
+
+About 
+Undergraduate 
+Graduate 
+People
+Research
+Support
+Partners
+News
+
+
+
+Search pages and people
+
+
+
+My UTEP
+
+
+Resources for 
+INFORMATION FOR:
+
+
+
+Students
+
+
+Faculty & Staff
+
+
+Alumni
+
+
+Parents
+
+
+
+
+
+Quick Links 
+            
+
+
+
+
+
+
+
+
+
+
+X
+
+Quick Links
+
+
+
+Library
+
+
+Parking & Maps
+
+
+UTEP News
+
+
+Events
+
+
+Student Affairs
+
+
+Business Affairs
+
+
+Employment Opportunities
+
+
+University Bookstore
+
+
+Technology Support
+
+
+
+
+
+
+
+
+Computer Science
+
+
+
+
+
+
+
+Main Content
+
+
+
+
+UTEP
+            Computer Science
+    
+            People
+    
+
+
+
+
+
+
+
+
+
+
+
+UTEP
+            Computer Science
+    
+            People
+    
+
+
+
+
+
+Natalia Villanueva Rosales 
+
+
+
+Associate Professor in Computer Science· The University of Texas at El Paso· nvillanuevarosales@utep.edu
+
+My work aims to improve the efficiency and effectiveness of the discovery, integration, and trust of scientific data and models. My approaches link human and machine knowledge to address societally-relevant problems in areas that require interdisciplinary research and international collaborations such as sustainability of water resources and Smart Cities. I am passionate about encouraging and supporting women and Hispanics pursuing a career or education in Science and Engineering.
+In 2011, I obtained a Ph.D. in Computer Science from Carleton University (Canada) with the thesis "Formalizing Relational Databases as OWL Ontologies". I also hold a M.Sc. in Artificial Intelligence from the University of Edinburgh (UK) with the thesis "Learning Heuristic Const Functions for Planning using Genetic Programming". I have Bachelors degree in Computer Science from the "Universidad Panamericana Campus Aguascalientes" and a double-major in Statistics from the Center for Mathematics Research (Mexico).
+ 
+ 
+ 
+
+
+
+
+ 
+                    EXPERIENCE
+                
+
+
+
+
+
+
+
+
+Associate Professor
+The University of Texas at El Paso 2020 - Present
+Tenured Associate Professor in Computer Science at the Department of Computer Science.
+Co-Principal Investigator at the NSF-funded CyberShARE Center of Excellence.
+Assistant Professor
+The University of Texas at El Paso 2013 - 2020
+Tenure-track Assistant Professor in Computer Science at the Department of Computer Science.
+Co-Principal Investigator at the NSF-funded  CyberShARE Center of Excellence
+
+
+
+
+Faculty in Residence
+GoogleSummer 2019
+Faculty in Residence member of the 2019 Cohort. Professional development program.
+
+
+
+
+Research Assistant Professor
+The University of Texas at El Paso2012 - 2013
+Research Assistant Professor at the NSF-funded  CyberShARE Center of Excellence
+
+
+
+
+Research and Teaching Assistant
+Carleton University2005 - 2011
+Research Assistant at the Dumontier Lab and Human Oriented Technology (HOT) Lab.
+Teaching Assistant at the School of Computer Science.
+
+
+
+
+IT Director, Department Chair
+Polytechnic University of Aguascalientes2003 - 2004
+IT Director in charge of IT Infrastructure and Services of the University.
+Chair of the Mechatronics Department
+
+
+
+
+Lecturer
+Panamerican University Campus Aguascalientes2002 - 2003
+Teaching computer science courses, degree plan reviews and advising.
+
+
+
+
+Head of the Information Processing Department
+Ministry of Education in Aguascalientes1999 - 2001
+In charge of scholarships and student loans processing at the Directorate of Scholarships.
+
+
+
+
+
+
+
+
+
+ 
+                    RESEARCH
+                
+
+
+
+
+The amount of scientific data has dramatically increased with an expectation of 44 trillion gigabytes of digital data in 2020. Manual processing of scientific data is no longer scalable. My research aims to improve the automated discovery, integration, analysis and interpretation of scientific data by providing context, or meaning to information using Semantic Web technologies. The impact of my work can be clearly appreciated when it is applied to interdisciplinary research, where a key challenge is the integration of data and repurpose of models and resources. My work has been recently applied in the areas of Smart Cities and Water Sustainability.
+I was part of the Dumontier Lab working under the supervision of Michel Dumontier. I have previously worked in the areas of Evolutionary Computation and other related AI areas.
+I lead the  iLink Research Group  at the NSF-Funded  Cyber-ShARE Center of Excellence at UTEP.  Learn more about our current projects here.
+
+
+
+Vargas Acosta, R.A., Garnica Chavira, L., Villanueva-Rosales, N., Pennnington, D. 2018. Towards SWIM Narratives for Sustainable Water Management. 2nd International Workshop on Enabling Open Science collocated with ISWC 2018. 
+Garnica Chavira,L., *Caballero, J., Villanueva-Rosales, N., Pennnington, D. 2018. Semi-structured Knowledge Models and Web Service Driven Integration for Online Execution, Visualization and Sharing of Water Sustainability Models. International Congress on Environmental Modelling and Software. Forth Collins, Colorado. 
+Villanueva-Rosales, N., Garnica Chavira, L., *Rajkarnikar Tamrakar, S., Pennnington, D., Vargas-Acosta, R.A., Ward, F., Mayer, A. 2017. Capturing Scientific Knowledge for Water Resources Sustainability in the Rio Grande Area. In Proceedings of the Workshops and Tutorials of the 9th International Conference on Knowledge Capture.
+Mejia, D., Torres, E., Villanueva-Rosales, N., Cheu, K. (2017)Integrating Heterogeneous Freight Performance Data for Smart Mobility. In: 2017 IEEE International Conference on Smart City Innovations (IEEE SCI 2017). [Website]
+Villanueva-Rosales, N., Garnica-Chavira L., Larios V., Gomez L, Aceves E. 2016. Semantic-enhanced Living Labs for better interoperability of Smart Cities solutions. In: 2016 IEEE International Conference on Smart Cities (ISC2). Turin, Italy.  [Website]
+Larios, V. M., Gomez, L., Villanueva-Rosales, N., Mora, O. B., Maciel, R. 2016. Living labs for smart cities: A use case in Guadalajara city to foster innovation and develop citizen-centered solutions. In: 2016 IEEE International Conference on Smart Cities (ISC2). Turin, Italy. IEEE Xplore Digital LIbrary.  [Website]
+Villanueva-Rosales, N., Cheu, R., Gates, N., Rivera, N., Mondragon, O., Cabrera, S., Ferregut, C., Carrasco, C., Nazarian, S., Taboada, H., Larios V., Barbosa-Santillan, L. Svitek, O., Horak, T., Prochazkova, D. 2015.  Collaborative, Interdisciplinary Initiative for a Smart Cities Innovation Network.  In Proceedings of the 1st IEEE International Smart Cities Conference (ISC2). Guadalajara, Mexico. IEEE Xplore Digital Library.  [Website]
+Villanueva-Rosales, N., Del Rio, N., Pennington, D., Garnica Chavira, L. 2015. Semantic Bridges for Biodiversity Sciences.  In Proceedings of the 14th International Semantic Web Conference, Bethelem, PA, USA. 9367:310-317. Springer International. Nominated to Best paper.  [Website]
+Villanueva-Rosales, N., Garnica Chavira, L., Del Rio, N., Pennington, D. 2015. eScience through the integration of data and models: a biodiversity scenario. 11th IEEE International Conference of eScience. 171-176. Munich, Germany. IEEE Computer Society.  [Website]
+Dumontier, M., Baker, C., Baran, J., Callahan, A., Chepelev, L., Cruz-Toledo, J., Del Rio, N., Duck, G., Furlong, L., Keith, N., Klassen, D., McCusker, J., Queralt-Rosinach, N., Samwald, M., Villanueva-Rosales, N., Wilkinson, M., Hoehndorf, R. The Semanticscience Integrated Ontology (SIO) for Biomedical Research and Knowledge Discovery. 2014. Journal of Biomedical Semantics, 5(14).  [Website]
+Peters, D. P.C., Havstad, K. M., Cushing, J., Tweedie, C. E., Fuentes, O., Villanueva-Rosales, N.  Harnessing the power of big data: infusing the scientific method with machine learning to transform ecology. 2014. Ecosphere 5(6). [Website]
+Del Rio, N., Villanueva-Rosales, N., Pennington, D. , Benedict, K., Stewart, A., Grady, C.J. 2013. "ELSEWeb meets SADI: Supporting Data-to-Model Integration for Biodiversity Forecasting" 2013. AAAI Fall Symposium on Discovery Informatics.  [PDF]
+A. Gandara, N. Villanueva-Rosales. 2012. "Documenting and Sharing Scientific Research over the Semantic Web" International Conference on Knowledge Management and Knowledge Technologies (i-KNOW'12). Graz, Austria. [Website]
+M. Dumontier, L. Ferres, N. Villanueva-Rosales. "Modeling and Querying Graphical Representations of Statistical Data" 2009. Journal of Web Semantics.  [Website]
+M. Dumontier, N Villanueva-Rosales."Towards Pharmacogenomics Knowledge Discovery on the Semantic Web"  2009. Briefings in Bioinformatics. [Website]
+N. Villanueva-Rosales and M. Dumontier. "yOWL: an Ontology-Driven Knowledge Base for Yeast Biologists" 2008. Journal of Biomedical Informatics.  [Website]
+M. Dumontier, L. Ferres, N. Villanueva-Rosales. 2008. "Semantic Annotation and Question Answering of Statistical Graphs" 7th Mexican International Conference on Artificial Intelligence (MICAI 2008), Mexico City, Mexico. [Website]
+M. Dumontier and N. Villanueva-Rosales. 2008.  "Modeling Life Science Knowledge with OWL 1.1" OWL Experiences and Design (OWLED-DC 2008), Washington DC, USA.
+*Vargas-Acosta, R. A., Gurbuz, O., Villanueva-Rosales, N., Nunez-Mchiri, G. G., Cheu, R. L. 2019. Smart Mobility for Seniors through Urban Connector. In: 5th IEEE International Smart Cities Conference (ISC2 2019). [Website]. Accepted.
+*Avila, J., *Castro, U., *Hernandez, M. A., *Sustaita, C. V., *Fuentes, S., Villanueva-Rosales, N., Larios, V.M., Mondragon, O., Cheu, R. L.. Towards Smart Mobility During Flooding Events in Urban Areas using Crowdsourced Information. In: 5th IEEE International Smart Cities Conference (ISC2 2019). [Website]. Accepted.
+*Chavez, C. V., *Ruiz, E., *Gomez Rodriguez, A., *Rivas Pena, I., *Barba, S., Larios, V. M., Villanueva-Rosales, N., Mondragon, O., Cheu, R. L. 2019. Towards Improving Urban Mobility With Crowdsourcing Incident Data. In: 5th IEEE International Smart Cities Conference (ISC2 2019). [Website]. Accepted.
+Vechione, M., Marrufo, C., Vargas-Acosta, R. A., Jimenez-Velasco, M. G., Gurbuz, O., Dmitriyeva, A., … Chow, J. Y. J. 2018. Smart Mobility for Seniors: Challenges and Solutions in El Paso, TX, and New York, NY. In: 2018 IEEE International Smart Cities Conference (ISC2), 1–8. IEEE Xplore Digital LIbrary.
+
+
+
+SELECTED PEER-REVIEWED PUBLICATIONS
+A complete list of publications can be found on my Google Scholar page.
+
+
+
+
+
+
+ 
+                    TEACHING
+                
+
+
+
+
+UNIVERSITY COURSES
+The University of Texas at El Paso
+2012 - Present . 
+
+ Introduction to Computer Science (CS1)
+ Database Management Systems
+ Web-based Data Integration
+ Cyberinfrastructure Applications for Smart Cities
+ Advanced Databases
+
+
+
+WORKSHOPS
+The University of Texas at El Paso
+2014 - Present . 
+
+ La Red Semántica y sus aplicaciones científicas (Mexico)
+ ARG Workshops - Jumpstarting your Research targeting graduate and undergraduate students, Interdisciplinary collaborations targeting participants of the US-Mexico Smart Cities Exchange program, Interdisciplinary collaborations in the classroom targeting faculty, Elevator Speech targeting undergraduate students.
+
+
+
+
+
+
+
+ 
+                    SERVICE
+                
+
+
+
+
+Professional Service
+I have participated in the following activities to support the scientific community and professional organizations:
+
+ Guest Editor of the Semantic Web Journal for the Special Issue on Semantic eScience: Methods, tools and applications. 2018-2019.
+ Reviewer of the following conferences/journals: AAAI Conference (2018), International Semantic Web Conference (ISWC) 2015-2019, IEEE Smart Cities Innovations 2017-2019, AAAI Discovery Informatics Workshop 2014, Journal of Biomedical Semantics 2014, International Conference on Ambient Assisted Living 2013-2015.
+ Co-chair of the 2nd International Workshop on Enabling Open Science (SemSci) collocated with ISWC 2018, AAAI 2013 Fall Symposium on Discovery Informatics.
+
+ 
+Leadership & Outreach
+I have been a member of groups that aim to encourage and support women pursuing an education of career in Science or Engineering:
+
+ Faculty Advisor of the ACM-W WICS student group at UTEP, 2018-present.
+ Chair of the Advancement of Women in Computing Committee, Department of Computer Science at UTEP, 2014-present.
+ Member of the Women’s Advisory Council to the President at UTEP, 2013-2014.
+ Executive Member of the Carleton University Women in Science and Engineering Branch (CU-WISE), 2007-2011.
+Organized and participated in more than 2000 hours of the Hour of Code.
+
+ 
+
+
+
+
+
+
+ 
+                    INTERESTS
+                
+
+
+
+
+I have been a member of groups that aim to encourage and support women pursuing an education of career in Science or Engineering:
+
+ Faculty Advisor of the ACM-W WICS student group at UTEP, 2018-present.
+ Chair of the Advancement of Women in Computing Committee, Department of Computer Science at UTEP, 2014-present.
+ Member of the Women’s Advisory Council to the President at UTEP, 2013-2014.
+ Executive Member of the Carleton University Women in Science and Engineering Branch (CU-WISE), 2007-2011.
+
+When I get a chance to go out, I love hiking and camping. When forced indoors, I love cooking and eating Mexican food.
+
+
+
+
+
+
+ 
+                    AWARDS & GRANTS
+                
+
+
+
+
+Awards
+
+
+
+
+Recipient of the 2019 Hispanic Engineer National Achievements Awards Conference (HEENAC) Education Award. Award given by Great Minds in STEM (GMis) . This awards recognizes the achievements of the country's top engineers and scientists within the Hispanic Community. The Education award honors individuals involved in higher education across the United States who demonstrate a strong commitment to promoting STEM education program awareness. Press Release.
+
+
+Recipient of the 2019 Undergraduate Research Mentoring Award - Junior Faculty member in Research Track. National Center for Women & Information Technology (NCWIT). This awards recognizes outstanding mentorship, high-quality research opportunities, recruitment of women and minority students, and efforts to encourage and advance undergraduates in computing-related fields. This award includes student nominations that highlight the short- and long-term impact of the mentoring of the awardees.
+
+
+
+
+Current Grants
+
+
+
+
+IRES:US-Mexico Interdisciplinary Research Collaboration for Smart Cities (PI) in collaboration with the University of Guadalajara (Mexico). NSF Award# IRES-1658733. The goal of the IRES program is to globally-engage student in a research abroad experience to advance knowledge on converting cities to Smart Cities. The research areas of this program focus on sensor data management, data analytics and optimization for Smart Mobility and Smart Buildings.
+
+
+SWIM:Sustainable Water through Integrated Modeling (PI). NSF Award# OAC-1835897. The goal of the SWIM project is to advance water sustainability research capabilities through the integration, execution and interpretation of water models and participatory reasoning processes. Using the meaning of data and models, SWIM facilitates interpretations of water availability in the US Southwest. SWIM enables stakeholder-driven analysis of water systems from the socio-environmental perspective.
+
+
+The Urban Connector (Co-PI), which aims to increase connectedness to seniors through the user of technology and provide smart mobility solutions during their commute in urban communities. The Urban Connector is funded through the Center for Connect Cities for Smart Mobility towards Accessible and Resilient Transportation (C2SMART), a Tier 1 University Transportation Center awarded U.S. Department of Transportation Contract# 69A3551747124.
+
+
+Cyber-ShARE Center of Excellence (Co-PI). NSF Awards HRD-0734825, HRD-1242122. Cyber-ShARE conducts research on the integration of knowledge, models, and data in collaborative contexts, especially across disciplinary and organizational boundaries. This includes research on collaborative processes, collaborative technologies, and a variety of application-focused tools. A driving theme at the Center is developing trust – of products that are generated, of information that is shared, and between people working together on a problem. I lead the iLink Research Group, one of the three research groups at the core of the center.
+
+
+
+
+
+
+
+For more information, visit my website. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+People
+
+
+            Faculty and Staff
+    
+            Student Employees
+    
+            Instructional Assistants
+    
+            Peer Leaders
+    
+            Teaching Assistants
+    
+
+
+
+Advising
+
+
+Course Schedule
+
+
+Internships
+
+
+Opportunities
+
+
+Organizations
+
+
+Undergraduate Catalog
+
+
+Graduate Catalog
+
+
+
+Connect With Us
+
+The University of Texas at El Paso
+Department of Computer Science
+
+Chemistry & Computer Science Building, Room 3.1100
+
+500 W University Ave
+
+El Paso, Texas 79902
+ 
+E: csfrontdesk@utep.edu
+
+
+    P: (915)613-1982MXP: +52 66 2690 3182
+            
+    F: (915) 747-5030
+    
+
+
+
+
+
+
+
+Location
+ 
+
+Donate
+
+
+Give Now
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+THE UNIVERSITY OF TEXAS AT EL PASO
+
+
+CARES Act Compliance
+
+
+Clery Crime Statistics
+
+
+Emergency Information
+
+
+Employment
+
+
+Mental Health Resources
+
+
+
+
+Public Course Information
+
+
+Report Fraud
+
+
+Required Links
+
+
+State Reports
+
+
+Texas Veterans Portal
+
+
+
+
+Title IX Reporting
+
+
+Title IX Sexual Misconduct Policy
+
+
+UT System
+
+
+Web Accessibility
+
+
+Web Privacy Policy
+
+
+
+
+500 West University Avenue |
+El Paso, TX 79968 |
+915-747-5000 |
+
+SITE FEEDBACK
+
+
+
+
+
+
+
+
+
+
+Modal
+
+
+X
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

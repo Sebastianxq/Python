@@ -1,0 +1,256 @@
+  Vladik Kreinovich    Vladik Kreinovich  
+Professor of Computer
+Science University of Texas
+at El Paso, El Paso, Texas, USA  M.S.
+in Mathematics, B.S. in Computer Science (1974)  St. Petersburg (Leningrad)
+University, St. Petersburg, Russia  Ph.D. in
+Mathematics (1979) Institute
+of Mathematics, Soviet Academy of Sciences, Novosibirsk,
+Russia    Honors, Awards, and
+Professional Service Areas of Interest,
+Summary of Research, Links to Latest Papers and Presentations
+Selected Publications Detailed
+Curriculum Vitae (research experience, complete publications
+list, grants, thesis supervision, etc.) Teaching Appointments
+Message to students and alumni:
+what information I need to
+write a recommendation letter for you or, more generally, to serve
+as your reference
+Contact Information
+ How to pronounce my name: VLAH-dik Kray-NOH-vich
+
+Family and friends: photos
+My story (in progress)
+ 
+
+Honors, Awards, and Professional Service 
+Member, Editorial Board, International Journal of Reliable
+Computing, "International Journal of Approximate Reasoning",
+"International Journal of General Systems", "Journal of Advanced
+Computational Intelligence and Intelligent Informatics", "Journal
+of Intelligent and Fuzzy Systems", "Journal of Applied Statistics
+and Intelligent Technology", and "Soft Computing"
+
+Co-editor, several special issues of the International Journal
+of Interval Computations
+
+Member, Program Committees of Conferences in Interval
+Computations (SCAN'2018, SCAN'2016, SCAN'2014, etc.) and
+Fuzzy Logic and Intelligent Control (FUZZ-IEEE'2019,
+IFSA/NAFIPS'2019, FUZZ-IEEE'2018, IPMU'2018, NAFIPS'2017,
+FUZZ-IEEE'2017, IFSA'2017, NAFIPS'2016, IPMU'2016, etc.).
+
+ El Paso
+representative of
+Berkeley Initiative in Soft Computing (BISC).
+ Fellow, International Fuzzy Systems Association (IFSA)
+
+ Fellow, Mexican Society for Artificial Intelligence (SMIA)
+
+Fellow,
+Russian Association for Fuzzy Systems and Soft Computing
+
+ Life Fellow, International Society of Management Engineers
+(ISME)
+
+ Elite Member, Society for Mathematics of Uncertainty (SMU)
+
+Foreign Member, Russian Academy of Metrological Sciences
+
+Senior Member, Association for Computing Machinery (ACM)
+
+ 2017-21, Vice-President, International Fuzzy Systems Association
+(IFSA)
+
+ 2017-21, Vice President, European Society for Fuzzy Logic
+and Technology (EUSFLAT)
+
+ Best Student
+Paper Award, Annual Workshop on Constraint Programming and
+Decision Making CoProd'2020, Redmond, Washington, August 19, 2020
+
+2019,
+Meritorious Service Award, IEEE Systems, Man, and Cybernetics
+Society
+ 2018, Doctor Honoris Causa, Ostrava University, Czech Republic
+
+2015-18, Vice President for Publications, IEEE Systems, Man,
+and Cybernetics Society
+
+2012-14, President, North American Fuzzy Information
+Processing Society (NAFIPS)
+
+2013, Chair, Fuzzy Technical Committee, IEEE Computational
+Intelligence Society
+
+ 2015 Society for Design and Process
+Science (SDPS) Fay and Lotfi A. Zadeh Award for Major
+Contributions to the Theory and Applications of Fuzzy Systems and
+Related Fields
+
+Outstanding Paper Award,
+Joint Annual Conference of the North American Fuzzy
+Information processing Society NAFIPS'2015 and 5th World
+Conference on Soft Computing, Redmond, Washington, August 17-19,
+2015.
+
+Best 2014 Individual Paper, International
+Journal of General Systems.
+
+Excellent Paper Award, 11th
+International Symposium on Management Engineering ISME'2014,
+Kitakyushu, Japan, July 27-30, 2014.
+
+Best Student Interval Paper
+Award, Joint World Congress of the International Fuzzy Systems
+Association and an Annual Conference of the North American Fuzzy
+Information Processing Society IFSA/NAFIPS'2013, Edmonton, Canada,
+June 24-28, 2013.
+
+Best Paper Award, 2012
+International Conference of the North American Fuzzy Information
+Processing Society NAFIPS'2012, Berkeley, California, August 6-8,
+2012.
+
+Best Paper Award, 2011
+International Conference of the North American Fuzzy Information
+Processing Society NAFIPS'2011, El Paso, Texas, March 18-20, 2011.
+
+Meritorious Paper Award, 2010
+International Conference of the North American Fuzzy Information
+Processing Society NAFIPS'2010, Toronto, Canada, July 12-15, 2010.
+
+Best Paper Award, 1st Latin-American Workshop on Non-Monotonic
+Reasoning LA-NMR'2004, Mexico City, Mexico, April 26, 2004.
+
+Personal Interface AccessGrid, Award from the Education,
+Outreach and
+  Training Partnership for Advanced Computational Infrastructure
+  EOT-PACI, 2003.
+
+University of Texas at El Paso: 
+College of Science, Best Thesis Award to L. Octavio Lerma, a
+student of V. Kreinovich, 2014
+
+El Paso Energy Foundation Faculty Achievement Award for
+Research, 2003
+
+Best Dissertation Award to Raul A. Trejo, a student of V.
+Kreinovich, 2002
+
+College of Engineering, Top Performer in Teaching and Research
+Categories, 2001
+
+College of Engineering, Top Performer in the Teaching
+Category, 1999
+
+College of Engineering, Award for Excellence for Student
+Services, 1992
+
+
+
+ Back to the main menu
+
+
+Areas of Interest  Interval
+computations, intelligent control (including fuzzy and neural
+approaches), reasoning under uncertainty More than 1500
+publications 
+Summary of Research
+
+In interval computations, I am looking for general (feasible) methods to
+estimate the accuracy of the results of data processing algorithms.
+I am also interested in the mathematical foundations of intelligent
+control, with the goal of finding the optimal way to transform
+expert operator's knowledge into the actual control strategy.
+
+Links to Latest Papers
+
+Published and submitted papers are available as Departmental Technical
+Reports
+
+
+Links to Latest Presentations  Presentations at
+professional meetings are available at this webpage Presentations at
+professional meetings by supervised students are available at this webpage  
+
+ Back to the main menu
+
+
+Selected Publications
+
+
+V. Kreinovich, "Solving equations (and systems of equations)
+  under uncertainty: how different practical problems lead to
+  different mathematical and computational formulations", Granular
+  Computing, 2016, Vol. 1, No. 3, pp. 171-179.
+
+V. Kreinovich and S. Shary, "Interval methods for data
+  fitting under uncertainty: a probabilistic treatment", Reliable
+  Computing, 2016, Vol. 23, pp. 105-141.
+
+C. Servin and V. Kreinovich, Propagation of
+Interval and Probabilistic Uncertainty in
+Cyberinfrastructure-Related Data Processing and Data Fusion,
+Springer Verlag, Berlin, Heidelberg, 2015.
+
+V.-N. Huynh, V. Kreinovich, S. Sriboonchitta, and
+K. Suriya (eds.), Econometrics of Risk, Springer Verlag,
+Berlin, Heidelberg, 2015.
+
+L. Thompson, A. Velasco, V.Kreinovich,
+  "Construction of ShearWave models by applying multi-objective
+  optimization to multiple geophysical data sets", In: G. O. Tost and
+  O. Vasilieva (eds.), Analysis, Modelling,
+  Optimization, and Numerical Techniques, Springer Verlag, Berlin,
+  Heidelberg, 2015, pp. 309-326.
+
+A. Jalal-Kamali, M. S. Hossain, and V. Kreinovich,
+"How to Understand Connections Based on Big Data: From Cliques to
+Flexible Granules", In: S.-M. Chen et al. (eds.),
+Information Granularity, Big Data, and Computational Intelligence,
+  Springer, Cham, 2015, pp. 63-87.
+
+V. Kreinovich, "Interval computations and interval-related
+statistical techniques", In: F. Pavese et al. (eds.),
+Advanced Mathematical and Computational
+Tools in Metrology and Testing, World Scientific,
+  Singapore, 2015, pp. 38-49.
+
+V. Kreinovich, "Decision Making under Interval Uncertainty
+(and beyond)", In: P. Guo and W. Pedrycz (eds.),
+Human-Centric Decision-Making Models for Social Sciences,
+Springer Verlag, 2014, pp. 163-193.
+
+M. Beer, S. Ferson,
+and V. Kreinovich, "Imprecise probabilities in engineering
+analyses", Mechanical Systems and Signal Processing, 2013,
+Vol. 37, pp. 4-29.
+
+M. Stein, M. Beer, and V. Kreinovich,
+"Bayesian Approach for Inconsistent Information",
+Information Sciences, 2013, Vol. 245, No. 1, pp. 96-111.
+
+
+ Back to the main menu
+
+
+Contact Information 
+
+
+Vladik Kreinovich
+Department of Computer Science
+University of Texas at El Paso
+500 W. University
+El Paso, TX 79968, USA
+
+email: vladik at utep.edu
+office phone: (915) 747-6951
+fax: (915) 747-5030
+
+
+
+ Back to the main menu
+
+
+

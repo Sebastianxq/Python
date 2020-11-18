@@ -1,0 +1,129 @@
+
+
+
+ Nigel Ward | Computer Science | UTEP
+
+
+
+
+
+
+
+
+
+
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Nigel G. Ward, Professor of Computer Science, received his Ph.D. from
+the University of California at Berkeley in 1991.  On the faculty of
+the University of Tokyo for ten years before joining UTEP in 2002,
+ in 2015-2016 he was a Fulbright Scholar and
+Visiting Professor at Kyoto University.  In
+2019 he co-organized special sessions on Modeling Meaning-Bearing
+Configurations of Prosodic Features at ICPhS
+ and Implications of Deep Learning for Dialog
+Modeling at Sigdial, and taught introduction to prosody
+as an Interspeech mini-tutorial and as a course
+at  the LSA Linguistics Institute. He is 
+chair of the Speech Prosody SIG
+
+and the author of 
+Prosodic Patterns in English Conversation. 
+ 
+
+more background
+vita
+
+
+
+Ward's research areas are at the intersection of spoken language and
+human-computer interaction.  Current topics include the subtle
+non-lexical and prosodic signals that enable inference of a dialog
+partner's needs, intentions, and feelings at the sub-second level; and
+ways to model and exploit these phenomena to improve dialog system
+responsiveness, information retrieval from audio, and language
+assessment and teaching.   These projects apply multiple methods:
+linguistic, corpus-based modeling, systems building, and experimental.
+
+
+
+
+
+
+
+
+Contact
+
+nigelward@acm.org
++1 (915) 747-6827
+3.0408 CCSB, 1825 Hawthorne
+
+
+
+
+
+Research
+
+Publications
+Projects
+
+
+Courses
+
+Speech and Language Proc., 5319  
+Human-Computer Interaction, 5317  
+Programming Languages,  3360
+
+
+
+other
+
+
+
+
+Resources
+
+Mid-Level Prosodic Feature Code
+Acceptance Estimator for CS Graduate Admissions
+Backchannel Facts 
+Dialog Technology Bibliography
+Events Organized
+other
+
+
+
+
+
+Advisees 
+
+
+ Anindita Nath, Jonathan Avila,  Gerardo Cervantes, Aaron Alarcon;
+ISG Alumni;
+Sanpo Alumni 
+
+
+
+Laboratory
+
+ group portrait 
+
+
+
+
+
+

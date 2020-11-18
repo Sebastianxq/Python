@@ -1,0 +1,167 @@
+
+
+
+
+
+Omar Badreddin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Omar Badreddin
+
+
+
+Menu
+Skip to content
+Home
+Research
+
+Predictive Software Quality
+
+
+Publications
+
+Complete Publications
+Seven Key Publications
+
+
+Research Group
+Contact
+ 
+
+
+
+
+
+
+
+
+
+Dr. Omar Badreddin
+Dr. Badreddin is a faculty member at the Computer Science Department at the University of Texas. His research is focused on predicting software evolution using a variety of approaches, including software quality predictive analysis, with the goal of enhancing upfront software designs, and enabling effective continuous design refactoring. This research entails understanding the fundamentals of software design and developing of novel approaches and advanced software analytical tools. Dr. Badreddin contributes to the UML standard and key open source projects, including Eclipse, Umple, ModelMine, and Susereum. His research explores opportunities to reduce software and data complexities, and the complexity of the tools used for software development and data management. This involves exploration of novel design languages and methodologies and investigations to evaluate their effectiveness. This research often results in direct contributions to software design and modeling tools, such as Papyrus.
+Key Recent Publications
+[1] Maged Elaasar, Florian Noyrit, Omar Badreddin, and Sébastien Gérard. “Adaptation and Implementation of the ISO42010 Standard to Software Design and Modeling Tools.” In Springer Model-Driven Engineering and Software Development, pp. 236-258. Springer, Cham, 2019.
+[2] Omar Badreddin, Hamou-Lhadj W., Abdelzad V., Khandoker R., Elassar M. (2018) Collaborative Software Design and Modeling in Open Source Systems. In: Khendek F., Gotzhein R. (eds) System Analysis and Modeling. Languages, Methods, and Tools for Systems Engineering. SAM 2018. Lecture Notes in Computer Science, vol 11150. pp 219-228. Springer, Cham.
+[3] Omar Badreddin. Powering Software Sustainability with Blockchain. In Proceedings of the 28th Annual International Conference on Computer Science and Software Engineering, pp. 315-322. IBM Corp., 2018.
+[4] Omar Badreddin, Rahad Khandoker, Andrew Forward, Omar Masmali and Timothy Lethbridge. A Decade of Software Design and Modeling: A Survey to Uncover Trends of the Practice. In Proceedings of the 21th ACM/IEEE International Conference on Model Driven Engineering Languages and Systems (MODELS), pp. 245-255. ACM, 2018.
+View complete list of my publications. All publication text is made publicly accessible.
+Public Profiles: Google Scholar, Microsoft Researcher Profile, LinkedIn, Academia, ResearchGate, ACM Digital Library, and DBLB.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Blog at WordPress.com.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Post to
+
+
+
+Cancel
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,123 @@
+
+
+
+
+
+
+The DeBlasio Lab – @ The UTEP Department of Computer Science
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+The DeBlasio Lab
+@ The UTEP Department of Computer Science
+
+
+Menu
+
+People
+Projects
+
+
+
+
+
+
+
+
+Research Focus
+
+30 July 201930 July 2019 Dan DeBlasio 
+
+
+Our group studies how to improve science by automating and optimizing the tools used by domain scientists. We do this primarily by making input specific parameter value choices which help to reduce false information introduced by using less than ideal (or default) parameter choice. Using a framework called Parameter Advising we are able to, without an increase in wall clock time in most cases, find parameter vectors that are much better then the defaults.  This framework has been applied to both protein multiple sequence alignment and reference-based transcript assembly, but is very general and can be applied to domains both within and outside of computational biology. 
+Beyond the algorithm configuration problem, Dr. DeBlasio also has interests in hashing and sketching, primarily focused on minimizer schemes (also called winnowing schemes). Minimizer schemes are a method to represent long strings by some representative k-mer (k length substring) in order to improve the resource consumption of sequence analysis applications (such as genomic read mapping, or document similarity). 
+This site is currently under development, for details about Dr. DeBlasio’s previous work see his personal website: dandeblasio.com
+
+
+
+
+Looking for new students
+
+30 July 201930 July 2019 Dan DeBlasio 
+
+
+
+The DeBlasio Lab is currently in search of PhD students interested in working on topics related to algorithm configuration or high-throughput genomics. If you’re interested contact Dr. DeBlasio at dfdeblasio@utep.edu! 
+
+
+
+
+
+Spring 2021 Course
+
+14 October 202014 October 2020 Dan DeBlasioLeave a comment 
+
+
+I will be teaching a special topics in data science course this spring. The information can be found below or at http://specialtopics.deblasiolab.org/s21/. The course numbers are CS 4364 for undergrads and CS 5364 for graduates (the CRNs can be found on the CS department course schedule).
+Special Topics in Data Science:Algorithms for Computational Biology
+Continue reading “Spring 2021 Course” →
+
+
+
+
+Talk in the Biology Department Seminar
+
+8 October 201911 October 2019 Dan DeBlasio 
+
+
+Dr. DeBlasio will give a talk in the UTEP Biology Department Seminar on Friday 11 October 2019 at 12:30pm in room 2.168 in the Biological Sciences Research Building.  This talk gives an overview of his work geared towards building an automated bioinformatician though the application of a framework called Parameter Advising. Below are links to his slides and relevant publications discussed. 
+Continue reading “Talk in the Biology Department Seminar” →
+
+
+
+
+Fall 2019 Course Offering
+
+30 July 201930 July 2019 Dan DeBlasio 
+
+
+Dr. DeBlasio will be teaching a course in Fall 2019 called “Algorithmic Foundations of Computational Biology” aimed at taking a survey of computational biology from a computer science point of view. We will be covering both classical results such as sequence alignment and Burroughs-Wheeler Transforms as well as emerging topics such as the use of minHash sketches, minimizers, and read-to-graph alignments at the cutting edge of the field. 
+The course numbers are CS4390/CS5390, meeting Tuesdays and Thursdays 4:30-5:50 in CCSB1.0204. No biological background will be needed. 
+Continue reading “Fall 2019 Course Offering” →
+
+
+
+
+
+
+
+			© 2020 by Dan DeBlasio
+		
+
+
+
+
+
+
+
+
+
+
