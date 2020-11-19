@@ -134,7 +134,7 @@ def rankingEngine(wordCount):
 if __name__ == '__main__':
   professors = webScrapper() #Scrapes Utep webpage and returns a dataframe with prof info
   
-  term = input("Enter a search term:") 
+  term = input("Enter a search term: ") 
   wordCount = searchEngine(term) #Obtains a list of results from faculty websites
 
   #Prints out ranking and attributes from the df
