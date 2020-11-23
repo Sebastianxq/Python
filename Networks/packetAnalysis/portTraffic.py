@@ -50,12 +50,14 @@ if __name__ == '__main__':
 			dstDict[lines[16]] = int(lines[5])
 
 	#print(totalData)
-	#Error in counting??
-	sortedDict = sorted(srcDict.items())
-	#sorted_d = sorted(srcDict.items(), key=lambda (k,v): v)
+	
+	sortedSrc = dict(sorted(srcDict.items(), key=lambda item: item[1]))
+	top10Src = list(sortedSrc.items())
+	print("Top 10 SOURCE ports: %s\n" % (top10Src[-10:]))
 
-	print(sortedDict)
-	#print(srcDict)
+	sortedDst = dict(sorted(dstDict.items(), key=lambda item: item[1]))
+	top10Dst = list(sortedDst.items())
+	print("Top 10 DESTINATION ports: %s\n" % (top10Dst[-10:]))
 	#for pair in srcDict.items():
 	#	print(pair) #DEBUG
 
