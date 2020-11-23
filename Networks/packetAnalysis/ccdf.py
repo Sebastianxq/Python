@@ -6,9 +6,7 @@ if __name__ == '__main__':
 	packetCap = open("Netflow_dataset.csv", "r")
 	csvPacketCap = csv.reader(packetCap, delimiter=',')
 	
-	dpkts = []
-	doctets = []
-	totalTime = []
+	dpkts,doctets,totalTime = [],[],[]
 	next(csvPacketCap) #Ignores first line of csv (col name)
 	for lines in csvPacketCap:
 		
@@ -23,7 +21,11 @@ if __name__ == '__main__':
 
 	#print(dpkts)
 	#print(totalTime) #DEBUG
+
+	#Graph 1, linear
 	plt.plot(totalTime, dpkts) #format is x,y
-	#plt.ylabel('Total Packets')
-	#plt.xlabel('totalTime')
+	plt.ylabel('Total Packets')
+	plt.xlabel('totalTime')
+	#plt.yscale("log")
+	#plt.xscale("log")
 	plt.show()
