@@ -31,24 +31,32 @@ if __name__ == '__main__':
 	srcDict, dstDict = {},{}
 	next(csvPacketCap) #Ignores first line of csv (col name)
 	for lines in csvPacketCap:
-		totalData+= int(lines[5])
-
-		if lines[15] in srcDict:
-			srcDict[lines[15]] += lines[5]	
+		totalData += int(lines[5])
+		#print(lines[15])
+		#print(lines[5])
+		if lines[15] in srcDict.keys():
+			#print("dict value curr:%d" % srcDict[lines[15]])
+			newValue = srcDict[lines[15]]+int(lines[5])
+			#print(newValue)
+			srcDict[lines[15]] = newValue
+			#print(srcDict)
 		else:
-			srcDict[lines[15]] = lines[5]
+			#print("adding new port")
+			srcDict[lines[15]] = int(lines[5])
 
 		if lines[16] in dstDict:
-			dstDict[lines[16]] += lines[5]	
+			dstDict[lines[16]] += int(lines[5])
 		else:
-			dstDict[lines[16]] = lines[5]
+			dstDict[lines[16]] = int(lines[5])
 
-
+	#print(totalData)
+	#Error in counting??
 	sortedDict = sorted(srcDict.items())
 	#sorted_d = sorted(srcDict.items(), key=lambda (k,v): v)
 
 	print(sortedDict)
-	for pair in srcDict.items():
-		print(pair) #DEBUG
+	#print(srcDict)
+	#for pair in srcDict.items():
+	#	print(pair) #DEBUG
 
 
