@@ -44,14 +44,39 @@ if __name__ == '__main__':
 	#print(totalData)
 	
 	sortedSrc = dict(sorted(srcIPs.items(), key=lambda item: item[1]))
-	top10Src = list(sortedSrc.items())
-	
-	print(top10Src)
+	listIPs = list(sortedSrc.items())
 
-	numSrcIPs = len(sortedSrc)
+
+	numSrcIPs = len(listIPs)
+	topPoint1 = int(numSrcIPs/1000)
+	#print(type(topPoint1)) #DEBUG
+	topOne = int(numSrcIPs/100)
+	topTen = int(numSrcIPs/10)
+
 	print("total num src IPs:%d" % numSrcIPs)
-	print("0.1 is: %d IPs" % (numSrcIPs/1000))
-	print("1 is: %d IPs" % (numSrcIPs/100))
-	print("10 is: %d IPs" % (numSrcIPs/10))
+	print("0.1 contains: %d IPs" % topPoint1)
+	print("1 contains: %d IPs" % topOne)
+	print("10 contains: %d IPs" % topTen)
+	
+	topPoint1List = listIPs[-topPoint1:]
+	topOneList = listIPs[-topOne:]
+	topTenList = listIPs[-topTen:]
+
+	topPoint1Bytes = 0
+	topOneBytes = 0
+	topTenBytes = 0
+	for ip in topPoint1List:
+		topPoint1Bytes+=ip[1]
+	print("Top 0.1 Percentage: %f" % (float(100*topPoint1Bytes/totalData)))
+
+	for ip in topOneList:
+		topOneBytes+=ip[1]
+	print("Top 1 Percentage: %f" % (float(100*topOneBytes/totalData)))
+
+
+	for ip in topTenList:
+		topTenBytes+=ip[1]
+	print("Top 10 Percentage: %f" % (float(100*topTenBytes/totalData)))
+
 
 
