@@ -44,7 +44,7 @@ if __name__ == '__main__':
 			#print("adding new port")
 			srcDict[lines[15]] = int(lines[5])
 
-		if lines[16] in dstDict:
+		if lines[16] in dstDict.keys():
 			dstDict[lines[16]] += int(lines[5])
 		else:
 			dstDict[lines[16]] = int(lines[5])
@@ -53,12 +53,31 @@ if __name__ == '__main__':
 	
 	sortedSrc = dict(sorted(srcDict.items(), key=lambda item: item[1]))
 	top10Src = list(sortedSrc.items())
-	print("Top 10 SOURCE ports: %s\n" % (top10Src[-10:]))
+	top10Src = top10Src[-10:]
+	#print("Top 10 SOURCE ports: %s\n" % (top10Src))
 
 	sortedDst = dict(sorted(dstDict.items(), key=lambda item: item[1]))
 	top10Dst = list(sortedDst.items())
-	print("Top 10 DESTINATION ports: %s\n" % (top10Dst[-10:]))
-	#for pair in srcDict.items():
-	#	print(pair) #DEBUG
+	top10Dst = top10Dst[-10:]
+	#print("Top 10 DESTINATION ports: %s\n" % (top10Dst))
+	
+	"""Change the print statement to be 
+	print(TOP 10 SOURCE)
+	for item in list[-10]:
+		print(port:%s, total:%s percentage:%s % (list,data/Total))
 
+	"""
+
+	print("Top 10 SOURCE Ports")
+	for port in top10Src:
+		#print(float(port[1]))
+		percentage = float(port[1])/float(totalData)
+		print("port: %s,\t total: %d bytes,\t percentage: %f" % (port[0], port[1], percentage))
+
+	print("\nTop 10 DESTINATION Ports")
+	for port in top10Dst:
+		#print(float(port[1]))
+		percentage = float(port[1])/float(totalData)
+		print("port: %s,\t total: %d bytes,\t percentage: %f" % (port[0], port[1], percentage))
+	
 
