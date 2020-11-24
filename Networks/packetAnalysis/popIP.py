@@ -30,11 +30,11 @@ if __name__ == '__main__':
 		if lines[10] in srcIPs.keys():
 			#print("dict value curr:%d" % srcDict[lines[15]])
 			#print(newValue)
-			srcIPs[lines[15]] += int(lines[5])
+			srcIPs[lines[10]] += int(lines[5])
 			#print(srcDict)
 		else:
 			#print("adding new port")
-			srcIPs[lines[15]] = int(lines[5])
+			srcIPs[lines[10]] = int(lines[5])
 
 		if lines[20] in srcMask.keys():
 			srcMask[lines[20]] += int(lines[5])
@@ -45,10 +45,13 @@ if __name__ == '__main__':
 	
 	sortedSrc = dict(sorted(srcIPs.items(), key=lambda item: item[1]))
 	top10Src = list(sortedSrc.items())
-	top10Src = top10Src[-10:]
+	
+	print(top10Src)
 
 	numSrcIPs = len(sortedSrc)
 	print("total num src IPs:%d" % numSrcIPs)
 	print("0.1 is: %d IPs" % (numSrcIPs/1000))
 	print("1 is: %d IPs" % (numSrcIPs/100))
 	print("10 is: %d IPs" % (numSrcIPs/10))
+
+
