@@ -43,6 +43,7 @@ if __name__ == '__main__':
 
 	#print(totalData)
 	
+	#Sorts IPs and dumps into list
 	sortedSrc = dict(sorted(srcIPs.items(), key=lambda item: item[1]))
 	listIPs = list(sortedSrc.items())
 
@@ -56,7 +57,7 @@ if __name__ == '__main__':
 	print("total num src IPs:%d" % numSrcIPs)
 	print("0.1 contains: %d IPs" % topPoint1)
 	print("1 contains: %d IPs" % topOne)
-	print("10 contains: %d IPs" % topTen)
+	print("10 contains: %d IPs\n" % topTen)
 	
 	topPoint1List = listIPs[-topPoint1:]
 	topOneList = listIPs[-topOne:]
@@ -73,10 +74,19 @@ if __name__ == '__main__':
 		topOneBytes+=ip[1]
 	print("Top 1 Percentage: %f" % (float(100*topOneBytes/totalData)))
 
-
 	for ip in topTenList:
 		topTenBytes+=ip[1]
-	print("Top 10 Percentage: %f" % (float(100*topTenBytes/totalData)))
+	print("Top 10 Percentage: %f\n" % (float(100*topTenBytes/totalData)))
 
 
+
+	#Sorts flows with no mask
+	maskSorted = dict(sorted(srcMask.items(), key=lambda item: item[1]))
+	listMask = list(maskSorted.items())
+	maskBytes = 0
+	for maskIP in listMask:
+		if maskIP[0] == "0":
+			maskBytes +=maskIP[1]
+	#print(maskBytes) DEBUG
+	print("Mask Traffic Percentage: %f" % (float(100*maskBytes/totalData)))
 
