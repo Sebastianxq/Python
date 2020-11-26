@@ -1,0 +1,69 @@
+El sitio Apps Móviles México requiere JavaScript activo para funcionar
+correctamente. Por favor, actívelo y recargue esta página o actualice el
+navegador
+
+[![Dr.Salamah Salamah](salamah2.jpg)](index.php)
+
+## Dr. Salamah Salamah   ![UTEP](img/UTEP-Logo.jpg) ![MINERS](img/miner1.png)
+
+Office phone:  (915)-747-6671   Email:
+[isalamah@utep.edu](mailto:isalamah@utep.edu)
+
+  * [Home](index.php)
+  * [Vitae](Vitae.html)
+  * [MSSwE Program](msswe.php)
+  * [Teaching](teaching.php)
+  * [Research](research.php)
+  * [CyWAR Lab](cywar.php)
+  * [Scholarships](scholarships.php)
+
+### Biography
+
+Dr. Salamah is an Associate Professor and Chair of the Computer Science
+Department at UTEP. Prior to joining UTEP in 2013, he spent five and a half
+years as an assistant and later associate professor in Computer Science and
+Software Engineering at Embry-Riddle Aeronautical University in Daytona Beach,
+Florida. At UTEP, Dr. Salamah directs the Masters of Science in Software
+Engineering. He's also the director of the DHS/NSF CyberCoprs Scholarship for
+Service Program, the NSF Scholarship for STEM program, and the Cybersecurity
+through Workshops, Analysis, and Research (CyWAR) lab.
+
+Dr. Salamah's teaching and research interests include formal software quality
+assurance, secure software development, and computer science and software
+engineering education. Over his career, Dr. Salamah has secured over $10
+million in external funding from NSF, U.S. Department of Education, the Army
+Research Lab, NASA, the Software Engineering Institute (SEI), Honeywell
+Corporation, and Lockheed Martin.
+
+W3.CSS
+
+  * ![](img/miner2-banner.jpg)
+  * ![](img/SFS-Cert.jpg)
+  * ![](img/softwareengineering.jpg)
+  * ![](img/cybercorps.jpg)
+  * ![](img/cybercorps.jpg)
+  * ![](img/CyWAR.PNG)
+  * ![](img/index/Miners-WiCyS3.jpg)
+  * ![](img/HENAAC-Salamah.JPG)
+  * ![](img/index/Miners-WiCyS2.jpg)
+
+  * 1
+  * 2
+  * 3
+  * 4
+  * 5
+  * 6
+  * 7
+  * 8
+
+Dr. Salamah Salamah | Associate Professor | Director of the Masters of Science
+in Software Engineering MSSwE Program | The University of Texas at El Paso
+
+Department of Computer Science | Office: Chemistry and Computer Science
+Building 3.0608
+
+Phone: 915-747-6671 | [isalamah@utep.edu](mailto:isalamah@utep.edu) |
+[UTEP](http://www.utep.edu) | [Computer Science](http://www.cs.utep.edu/)
+
+  
+

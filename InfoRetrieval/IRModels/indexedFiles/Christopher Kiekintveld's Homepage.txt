@@ -1,0 +1,92 @@
+![](spacer.gif)  
+---  
+![](spacer.gif) |  ![](utep_logo.gif)  
+  
+|  ![](spacer.gif)  
+---  
+[ Christopher Kiekintveld's Homepage](http://www.cs.utep.edu/kiekintveld/)  
+  
+|  Your browser does not support JavaScript! OR The JavaScript has been turned
+off! Please upgrade your browser OR turn on the JavaScript on your browser.  
+---  
+|  ![Chris Kiekintveld](images/Chris_Kiekintveld.jpg) |  **_Research
+Interests:_** artificial intelligence, multi-agent systems, computational game
+theory, adversarial reasoning, risk analysis, machine learning, trading
+agents, supply chain management, security, distributed optimization, mechanism
+design, behavioral game theory, team and coalition formation
+
+I am an associate professor in [computer science](http://www.cs.utep.edu) at
+the [University of Texas at El Paso](http://www.utep.edu). My research work in
+the area of artificial intelligence is driven by fundamental questions about
+how we can use computational analysis techniques to make good decisions in
+highly complex environments. I am especially interested in situations with
+multiple decision-makers, which raises questions about how to predict and
+react to the behavior of other intelligent agents (including humans) in both
+cooperative and adversarial settings. In artificial intelligence, this class
+of problems is often referred to as multi-agent systems. Some examples of
+multi-agent systems include teams of rescue workers, soldiers, or robots
+coordinating to achieve a mission, trading agents participating in auctions of
+financial markets, and security forces trying to prevent attacks on critical
+infrastructure or computer networks.
+
+My basic research centers around developing novel techniques for strategic
+reasoning in multi-agent domains, including new algorithms, models, and
+computing methodologies that exploit the availability of computational
+resources to scale to ever larger and more complex domains than existing
+methods. This work contributes to computational game theory, adversarial
+reasoning, distributed optimization, agent-based simulation, and other related
+areas. The unifying theme across these areas is predicting how other
+intelligent agents will act, based on knowledge of their capabilities, goals,
+historical patterns of behavior, and other factors. One goal of my work is to
+develop _computationally scalable_ methods for systems with hundreds or
+thousands of agents and massive strategy spaces. I am also very interested in
+developing techniques for improving the _robustness_ of solutions to various
+types of uncertainty, including model uncertainty and bounded rationality.
+
+Working on real-world applications is an important element of my research
+approach, and often provides great inspiration to address fundamental
+challenges. I have interests in a variety of application areas, including
+electronic commerce, infrastructure security, transportation, and energy.
+Recently I have worked extensively on applications of game theory to
+infrastructure protection, including a decision support system called IRIS
+that is currently deployed by the Federal Air Marshals Service (FAMS) and a
+second system that is in testing for nationwide deployment by the
+Transportation Security Administration. I have several new projects underway
+in this area, including work on border security applications. Another area
+that I have been heavily involved in is automated trading agents for
+e-Commerce applications. I participated in the [Trading Agent
+Competition](http://www.tradingagents.org), and was a lead developer for the
+Deep Maize agent, which won the tournament in 2008 and has consistently been
+among the top few performers in every tournament to date.
+
+Prior to joining UTEP I was a postdoctoral reseach associate at the
+[University of Southern California](http://www.usc.edu), where I worked with
+[Milind Tambe](http://teamcore.usc.edu/tambe) and the
+[Teamcore](http://teamcore.usc.edu) research group. I received my Ph.D. from
+the [University of Michigan](http://www.umich.edu), where I was advised by
+[Michael Wellman](http://ai.eecs.umich.edu/people/wellman). During my time at
+Michigan I was active as a fellow of the [STIET](http://stiet.si.umich.edu)
+program, which provides interdisciplinary training and brings together
+researchers from diverse disciplines with shared interests in incentive-
+centered design.  
+---|---  
+![Contact Information](images/contact_info_utep.png)  
+[![UAI
+tutorial](images/UAI_27.jpg)](http://videolectures.net/uai2011_tambe_kiekintveld_game/)
+
+An invited tutorial given by Milind Tambe and Chris Kiekintveld at UAI 2011:
+[Game Theory for Security: Lessons learned from deployed
+applications](http://videolectures.net/uai2011_tambe_kiekintveld_game/)  
+[![Uncertainty in Security
+Games](images/overview_uncertainty.jpg)](http://edumeta.com/channels/OpenInformatics/38889041)
+
+A talk given at the International Workshop on Safety, Security, and Efficiency
+for Critical Infrastructures: [An Overview of Recent Progress on Uncertainty
+in Security Games](http://edumeta.com/channels/OpenInformatics/38889041)  
+  
+* * *
+
+Your browser does not support JavaScript! OR The JavaScript has been turned
+off! Please upgrade your browser OR turn on the JavaScript on your browser.  
+---
+
