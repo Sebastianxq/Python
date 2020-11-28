@@ -1,9 +1,13 @@
+#!/usr/bin/python3
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 import os
 import time
 from re import search
+from matchup.structure.vocabulary import Vocabulary
+import html2text
+from urllib.request import urlopen
 
 def webScrapper():
   names, titles, room, email, phone, website = [],[],[],[],[],[]
@@ -134,8 +138,85 @@ def rankingEngine(wordCount):
 if __name__ == '__main__':
   professors = webScrapper() #Scrapes Utep webpage and returns a dataframe with prof info
   
-  term = input("Enter a search term: ") 
-  wordCount = searchEngine(term) #Obtains a list of results from faculty websites
 
+  #Assignment 2's ranking engine, likely wont be needed (read: REMOVED) on final submission
+  #term = "test" #input("Enter a search term: ") 
+  #wordCount = searchEngine(term) #Obtains a list of results from faculty websites
   #Prints out ranking and attributes from the df
-  rankingEngine(wordCount)
+  #rankingEngine(wordCount)
+
+  # List of URLs. Insert the URLs of all faculty's web pages.
+  #listWebpages = ['http://www.cs.utep.edu/isalamah/','http://www.cs.utep.edu/kiekintveld/','http://www.cs.utep.edu/makbar/']
+
+  # Indexing faculty webpages
+  #indexingWebpages(listWebpages)
+
+
+  #===================================
+  #           PREPROCESSING
+  #===================================
+
+  # Creating the data structure that represents and store all text processing
+  # The first parameter is the 'path' where results are stored. In this case, the results will be stored in the folder 'results'.
+  # The second parameter is the path where the stop words file is located.
+  vocabulary = Vocabulary('results',stopwords='stopWords/stopwords.txt')
+
+  # This function receive a folder path and try to append all documents of this folder into some structure. 
+  vocabulary.import_folder('professors')
+
+  # This function try to process all content of files that have been inserted before (using vocabulary.import_folder), 
+  # generating the vocabulary data structure ready for use.
+  vocabulary.index_files()
+
+  # Persist data structure on disc.
+  vocabulary.save()
+
+  # This is a function that recover the vocabulary previously generated.
+  vocabulary.import_collection()
+
+  # Importing the Query module to process queries.
+  from matchup.structure.query import Query
+
+  # The Query is responsible for processing and generating user input to search a previously built create_collection
+  # The parameter 'vocabulary' indicates which set of documents will be used.
+  query = Query(vocabulary=vocabulary)
+
+  query.ask(answer="agent data algorithm parallel information")
+
+  #===================================
+  #        Boolean IR model
+  #===================================
+  # Importing the Boolean model.
+  from matchup.models.algorithms import Boolean
+
+  # Receive an IR model and execute the query based in user answer and the vocabulary.
+  # Selecting the Boolean model
+  results = query.search(model=Boolean()) 
+
+  # Printing the results.
+  print(results)
+
+
+  #Models below might need weighting params!!!
+  #===================================
+  #        Vector Space IR model
+  #===================================
+  from matchup.models.algorithms import Vector
+  #print(Vector)
+
+  results = query.search(model=Vector())
+
+  # Printing the results.
+  print(results)
+
+
+  #===================================
+  #        Probabilistic IR model
+  #===================================  
+  from matchup.models.algorithms import Probabilistic
+  #print(Probabilistic)
+  #print(Boolean)
+  results = query.search(model=Probabilistic())
+
+  # Printing the results.
+  print(results)
