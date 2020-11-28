@@ -6,7 +6,6 @@ from matchup.structure.vocabulary import Vocabulary
 
 # pip install html2text
 import html2text
-
 from urllib.request import urlopen
 
 #pip install beautifulsoup4
@@ -93,6 +92,42 @@ def main():
 
 	# Printing the results.
 	print(results)
+
+
+
+
+
+
+
+
+
+	#Models below will need weighting params!!!
+
+
+	#===================================
+	#        Vector Space IR model
+	#===================================
+	from matchup.models.algorithms import Vector
+	#print(Vector)
+
+	results = query.search(model=Vector())
+
+	# Printing the results.
+	print(results)
+
+
+	#===================================
+	#        Probabilistic IR model
+	#===================================	
+	from matchup.models.algorithms import Probabilistic
+	#print(Probabilistic)
+	#print(Boolean)
+	results = query.search(model=Probabilistic())
+
+	# Printing the results.
+	print(results)
+
+
 
 if __name__=="__main__":
 	main()
