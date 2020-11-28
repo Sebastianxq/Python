@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 
 # pip install wheel
 # pip install git+https://github.com/marcosfpr/match_up_lib.git
