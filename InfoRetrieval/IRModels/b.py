@@ -166,16 +166,26 @@ def matchup(listing):
       print(row['Office'], row['Email'], row['Phone']+'')
       print("Website: %s\n"% (row['Website']))
 
+#Goes through query file and takes in ONLY the query content.
+#Returns queries as a list
+def getQueries():
+  lines = []
+  try:
+      queryFile = open("query.txt", "r")
+      for line in queryFile: 
+        if search("Query",line):
+          line = line[7:].rstrip() #Takes out "QUERY:" portion and the trailing newline
+          lines.append(line)
+      #print(lines) #DEBUG
+  except IOError:
+     print("Could not find Query File!")
 
+  return lines
   
 
 if __name__ == '__main__':
   professors = webScrapper() #Scrapes Utep webpage and returns a dataframe with prof info
   
-
-  
-
-
   #===================================
   #           PREPROCESSING
   #===================================
@@ -192,7 +202,14 @@ if __name__ == '__main__':
 
   # The Query is responsible for processing and generating user input to search a previously built create_collection
   # The parameter 'vocabulary' indicates which set of documents will be used.
+
+  queryList = getQueries()
   query = Query(vocabulary=vocabulary)
+
+
+  #Create some loop here that will go through ALL of the queries
+  for x in queryList:
+    print(x)
   query.ask(answer="agent data algorithm parallel information")
 
 
@@ -205,35 +222,26 @@ if __name__ == '__main__':
   finalTime = time.time()-start
   print('\033[1m' + "Boolean Model" + '\033[0m')
   print("%s Results found (%f sec)\n" % (len(results.results),finalTime))
-
-  # Printing the results.
-  #print(results)
-
   matchup(results)
 
-
-  #Models below might need weighting params!!!
+  #Models below may need weights (tf and idf)
   #===================================
   #        Vector Space IR model
   #===================================
-  # start = time.time() #calculates search time
-  # results = query.search(model=Vector())
-  # finalTime = time.time()-start
-  # print('\n'+'\033[1m' + "Vector Space Model" + '\033[0m')
-  # print("X Results found (%f sec)\n" % finalTime)
-
-  # # Printing the results.
-  # print(results)
-
-
+  start = time.time() #calculates search time
+  vectorResults = query.search(model=Vector())
+  finalTime = time.time()-start
+  print('\n'+'\033[1m' + "Vector Space Model" + '\033[0m')
+  print("%s Results found (%f sec)\n" % (len(vectorResults.results),finalTime))
+  matchup(vectorResults)
   #===================================
   #        Probabilistic IR model
   #===================================  
-  # start = time.time() #calculates search time
-  # results = query.search(model=Probabilistic())
-  # finalTime = time.time()-start
-  # print('\n'+'\033[1m' + "Probabilistic Model" + '\033[0m')
-  # print("X Results found (%f sec)\n" % finalTime)
-
+  start = time.time() #calculates search time
+  probResults = query.search(model=Probabilistic())
+  finalTime = time.time()-start
+  print('\n'+'\033[1m' + "Probabilistic Model" + '\033[0m')
+  print("%s Results found (%f sec)\n" % (len(probResults.results),finalTime))
+  matchup(probResults)
   # # Printing the results.
   # print(results)
