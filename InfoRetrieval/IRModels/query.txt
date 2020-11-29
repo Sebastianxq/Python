@@ -1,9 +1,9 @@
-Query: Cyber Security
-Justification: Retrieve all faculties that work in Cyber Security
+Query: Cyber Security 
+Justification: Retrieve all faculties that work in Cyber Security.
 Query: CCAA
-Justification: Retrieve all faculties that worked with the CCAA lab (A collaboration with ARL/AFC)
-Query: Bio
-Justification: Retrieve any faculties that may work with the bio field
+Justification: Retrieve all faculties that collaborate with the ARL/AFC via the CCAA lab.
+Query: Biology Bio
+Justification: Retrieve any faculties that may work with the bio field.
 Query: Networking
 Justification: Retrieve any faculty that works within Networks
 Query: Moving Target Defense
@@ -12,9 +12,9 @@ Query: Information Retrieval
 Justification: Retrieve Dr.Akbar and any other faculty that has experience within the realm of IR
 Query: Akbar
 Justification: Retrieve a specific faculty's webpage
-Query: 
-Justification: Purposely left blank in an attempt to see what the program would return.
+Query:  Cyber Security Parallel Processing Natural Language Processing Computer Vision Mathematics Software Engineering
+Justification: Attempt to see what multiple disciplines would yield.
 Query: computer science
-Justification: generalized query to see what the system would return
-Query: asdf 
-Justification: nonsensical query to see what the system would return
+Justification: generalized query that should match everyone, done to see what the system would return.
+Query: asdffdsjhaklvhcjkxz 
+Justification: nonsensical query done to see what the system would return.
