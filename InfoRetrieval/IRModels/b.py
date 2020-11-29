@@ -8,6 +8,10 @@ from re import search
 from matchup.structure.vocabulary import Vocabulary
 import html2text
 from urllib.request import urlopen
+from matchup.structure.query import Query #Process Queries
+from matchup.models.algorithms import Boolean #Import Boolean Model
+from matchup.models.algorithms import Vector #Import Vector Model
+from matchup.models.algorithms import Probabilistic #Import Probabilistic Model
 
 def webScrapper():
   names, titles, room, email, phone, website = [],[],[],[],[],[]
@@ -88,7 +92,6 @@ def webScrapper():
   professors.to_pickle("professors.pkl")
   return professors
 
-
 def searchEngine(term):
   #Get names of all the files in the directory
   dirName = "professors/" 
@@ -115,9 +118,9 @@ def searchEngine(term):
   return wordCount
 
 def rankingEngine(wordCount):
-  rankingIndex = 0 
+  #rankingIndex = 0 
   for x in wordCount:
-    rankingIndex += 1
+    #rankingIndex += 1
     fullEmail = x[1][:-4]+"@utep.edu"
     #print(fullEmail)
 
@@ -135,21 +138,42 @@ def rankingEngine(wordCount):
       print(row['Office'], row['Email'], row['Phone']+'')
       print("Website: %s\n"% (row['Website']))
 
+def matchup(listing):
+  """listing has 2 attributes: 
+    listing.results which returns a list of results
+
+    str_n(n) which returns the Nth ranking of the results"""
+  resultList = listing.results
+  rankingIndex = 0
+  for item in resultList:
+    #items in the list have the form [fileName, ranking]
+    #print(item[0])
+    #print(item[1])
+    #professors/agates.txt needs to remove everything except "agates"
+    rankingIndex+=1
+    fullEmail = item[0][11:-4]+"@utep.edu"
+    term="TEST"
+    if search("longpre",fullEmail):
+      prof = professors[professors['Email'] == "longpre@utep.edu "]
+    else:
+      prof = professors[professors['Email'] == fullEmail]
+    for index, row in prof.iterrows():
+      #print(x[1]) #DEBUG
+      #print(x[0])
+
+      print("Rank #%d: %s" % (rankingIndex,item[1]) )
+      print(row['Name'], row['Title']+'')
+      print(row['Office'], row['Email'], row['Phone']+'')
+      print("Website: %s\n"% (row['Website']))
+
+
+  
+
 if __name__ == '__main__':
   professors = webScrapper() #Scrapes Utep webpage and returns a dataframe with prof info
   
 
-  #Assignment 2's ranking engine, likely wont be needed (read: REMOVED) on final submission
-  #term = "test" #input("Enter a search term: ") 
-  #wordCount = searchEngine(term) #Obtains a list of results from faculty websites
-  #Prints out ranking and attributes from the df
-  #rankingEngine(wordCount)
-
-  # List of URLs. Insert the URLs of all faculty's web pages.
-  #listWebpages = ['http://www.cs.utep.edu/isalamah/','http://www.cs.utep.edu/kiekintveld/','http://www.cs.utep.edu/makbar/']
-
-  # Indexing faculty webpages
-  #indexingWebpages(listWebpages)
+  
 
 
   #===================================
@@ -160,63 +184,56 @@ if __name__ == '__main__':
   # The first parameter is the 'path' where results are stored. In this case, the results will be stored in the folder 'results'.
   # The second parameter is the path where the stop words file is located.
   vocabulary = Vocabulary('results',stopwords='stopWords/stopwords.txt')
-
-  # This function receive a folder path and try to append all documents of this folder into some structure. 
   vocabulary.import_folder('professors')
-
-  # This function try to process all content of files that have been inserted before (using vocabulary.import_folder), 
-  # generating the vocabulary data structure ready for use.
   vocabulary.index_files()
-
-  # Persist data structure on disc.
   vocabulary.save()
-
-  # This is a function that recover the vocabulary previously generated.
   vocabulary.import_collection()
 
-  # Importing the Query module to process queries.
-  from matchup.structure.query import Query
 
   # The Query is responsible for processing and generating user input to search a previously built create_collection
   # The parameter 'vocabulary' indicates which set of documents will be used.
   query = Query(vocabulary=vocabulary)
-
   query.ask(answer="agent data algorithm parallel information")
+
+
 
   #===================================
   #        Boolean IR model
   #===================================
-  # Importing the Boolean model.
-  from matchup.models.algorithms import Boolean
-
-  # Receive an IR model and execute the query based in user answer and the vocabulary.
-  # Selecting the Boolean model
+  start = time.time() #calculates search time
   results = query.search(model=Boolean()) 
+  finalTime = time.time()-start
+  print('\033[1m' + "Boolean Model" + '\033[0m')
+  print("%s Results found (%f sec)\n" % (len(results.results),finalTime))
 
   # Printing the results.
-  print(results)
+  #print(results)
+
+  matchup(results)
 
 
   #Models below might need weighting params!!!
   #===================================
   #        Vector Space IR model
   #===================================
-  from matchup.models.algorithms import Vector
-  #print(Vector)
+  # start = time.time() #calculates search time
+  # results = query.search(model=Vector())
+  # finalTime = time.time()-start
+  # print('\n'+'\033[1m' + "Vector Space Model" + '\033[0m')
+  # print("X Results found (%f sec)\n" % finalTime)
 
-  results = query.search(model=Vector())
-
-  # Printing the results.
-  print(results)
+  # # Printing the results.
+  # print(results)
 
 
   #===================================
   #        Probabilistic IR model
   #===================================  
-  from matchup.models.algorithms import Probabilistic
-  #print(Probabilistic)
-  #print(Boolean)
-  results = query.search(model=Probabilistic())
+  # start = time.time() #calculates search time
+  # results = query.search(model=Probabilistic())
+  # finalTime = time.time()-start
+  # print('\n'+'\033[1m' + "Probabilistic Model" + '\033[0m')
+  # print("X Results found (%f sec)\n" % finalTime)
 
-  # Printing the results.
-  print(results)
+  # # Printing the results.
+  # print(results)
