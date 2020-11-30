@@ -5,25 +5,6 @@ import matplotlib.pyplot as plt
 if __name__ == '__main__':
 	packetCap = open("Netflow_dataset.csv", "r")
 	csvPacketCap = csv.reader(packetCap, delimiter=',')
-	
-	#1.	Create two tables, listing the top-ten port numbers 
-	#by sender traffic volume and by receiver traffic volume 
-	#including the percentage of traffic (by bytes) 
-	#they contribute. 
-
-	"""
-	So for the first table: get top 10 src ports
-	based on traffic
-	1.)make a dict of src_port:bytes
-	2.)Sort and take top 10 list
-	3.)Get total num of bytes too to get percentage
-
-	For second: get top 10 dst ports by traffic
-
-
-	For dicts: store all unique ports first
-
-	"""	
 
 	#data=5,src=15, dst=16
 	#dictName[src] += bytes
@@ -61,12 +42,6 @@ if __name__ == '__main__':
 	top10Dst = top10Dst[-10:]
 	#print("Top 10 DESTINATION ports: %s\n" % (top10Dst))
 	
-	"""Change the print statement to be 
-	print(TOP 10 SOURCE)
-	for item in list[-10]:
-		print(port:%s, total:%s percentage:%s % (list,data/Total))
-
-	"""
 
 	print("Top 10 SOURCE Ports")
 	for port in top10Src:
