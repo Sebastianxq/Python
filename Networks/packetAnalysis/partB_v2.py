@@ -21,27 +21,12 @@ if __name__ == '__main__':
 	dpkts.sort(); totalTime.sort(); doctets.sort()
 
 
-	"""new new attempt with other stack ovverflow"""
+	"""calculates and plots cdf"""
 	#plt.plot(dpkts, np.linspace(0,1,len(dpkts), endpoint=False))
 	#plt.show()
 
 	#ccdf is 1-cdf
-	plt.plot(dpkts, 1-np.linspace(0,1,len(dpkts), endpoint=False))
+	plt.plot(doctets, 1-np.linspace(0,1,len(doctets), endpoint=False))
 	#plt.xscale('log')
 	#plt.yscale('log')
 	plt.show()
-
-	"""new attempt with bins"""
-	#counts, binEdges = np.histogram(dpkts, bins=20)
-	#cdf = np.cumsum(counts)
-
-	#plt.plot(binEdges[1:],cdf)
-	#plt.xscale('log')
-	#plt.yscale('log')
-	#plt.show()
-
-	"""New attempt without bins"""
-	#yvals = np.arange(len(dpkts))/float(len(dpkts)-1)
-	#plt.plot(dpkts, yvals)
-	#plt.xscale('log')
-	#plt.yscale('log')
