@@ -182,6 +182,44 @@ def getQueries():
 
   return lines
   
+def performQueries(queryList):
+  query = Query(vocabulary=vocabulary)
+  count = 1
+  for question in queryList:
+    #Results for query 1 : agent data algorithm parallel information
+    print("\033[1m \033[91m \033[4m Results for query %d: %s \033[0m" % (count,question))
+    count+=1
+    query.ask(answer=question)
+
+
+    #===================================
+    #        Boolean IR model
+    #===================================
+    start = time.time() #calculates search time
+    results = query.search(model=Boolean()) 
+    finalTime = time.time()-start
+    print('\033[1m' + "Boolean Model" + '\033[0m')
+    print("%s Results found (%f sec)\n" % (len(results.results),finalTime))
+    matchup(results)
+
+    #===================================
+    #        Vector Space IR model
+    #===================================
+    start = time.time() #calculates search time
+    vectorResults = query.search(model=Vector())
+    finalTime = time.time()-start
+    print('\n'+'\033[1m' + "Vector Space Model" + '\033[0m')
+    print("%s Results found (%f sec)\n" % (len(vectorResults.results),finalTime))
+    matchup(vectorResults)
+    #===================================
+    #        Probabilistic IR model
+    #===================================  
+    start = time.time() #calculates search time
+    probResults = query.search(model=Probabilistic())
+    finalTime = time.time()-start
+    print('\n'+'\033[1m' + "Probabilistic Model" + '\033[0m')
+    print("%s Results found (%f sec)\n" % (len(probResults.results),finalTime))
+    matchup(probResults)
 
 if __name__ == '__main__':
   professors = webScrapper() #Scrapes Utep webpage and returns a dataframe with prof info
@@ -204,44 +242,12 @@ if __name__ == '__main__':
   # The parameter 'vocabulary' indicates which set of documents will be used.
 
   queryList = getQueries()
-  query = Query(vocabulary=vocabulary)
 
 
   #Create some loop here that will go through ALL of the queries
-  for x in queryList:
-    print(x)
-  query.ask(answer="agent data algorithm parallel information")
+  #for x in queryList:
+  #  print(x)
 
 
-
-  #===================================
-  #        Boolean IR model
-  #===================================
-  start = time.time() #calculates search time
-  results = query.search(model=Boolean()) 
-  finalTime = time.time()-start
-  print('\033[1m' + "Boolean Model" + '\033[0m')
-  print("%s Results found (%f sec)\n" % (len(results.results),finalTime))
-  matchup(results)
-
-  #Models below may need weights (tf and idf)
-  #===================================
-  #        Vector Space IR model
-  #===================================
-  start = time.time() #calculates search time
-  vectorResults = query.search(model=Vector())
-  finalTime = time.time()-start
-  print('\n'+'\033[1m' + "Vector Space Model" + '\033[0m')
-  print("%s Results found (%f sec)\n" % (len(vectorResults.results),finalTime))
-  matchup(vectorResults)
-  #===================================
-  #        Probabilistic IR model
-  #===================================  
-  start = time.time() #calculates search time
-  probResults = query.search(model=Probabilistic())
-  finalTime = time.time()-start
-  print('\n'+'\033[1m' + "Probabilistic Model" + '\033[0m')
-  print("%s Results found (%f sec)\n" % (len(probResults.results),finalTime))
-  matchup(probResults)
-  # # Printing the results.
-  # print(results)
+  performQueries(queryList)
+ 
